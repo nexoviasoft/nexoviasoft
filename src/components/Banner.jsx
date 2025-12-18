@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
 
-  // Cursor follow effect
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -72,7 +71,7 @@ const Banner = () => {
 
             {/* Secondary blue glow layer */}
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px]  blur-[100px]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[100px]"
               style={{
                 background:
                   "radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(139, 92, 246, 0.3) 50%, rgba(16, 16, 16, 0) 70%)",

@@ -29,9 +29,10 @@ const Navbar = () => {
                 <Activity />
               </span>
             </div>
-            <span className="text-xl font-bold">Squadlog</span>
+            <span className="text-xl font-bold">
+                Squadlog
+                </span>
           </div>
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {["Home", "About", "Portfolio", "Contact", "FAQ"].map(
@@ -47,7 +48,6 @@ const Navbar = () => {
               )
             )}
           </div>
-
           <SmoothButton> Get In Touch</SmoothButton>
 
           {/* Mobile Menu Button */}
@@ -71,7 +71,10 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
-            <SmoothButton>Get In Touch</SmoothButton>
+            <SmoothButton> 
+                Get In Touch
+                
+                </SmoothButton>
           </div>
         )}
       </div>
