@@ -92,7 +92,7 @@ const Banner = () => {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[80px]"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, rgba(96, 165, 250, 0.4) 40%, rgba(16, 16, 16, 0) 70%)",
+                  "radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(136, 131, 229, 0.6) 40%, rgba(16, 16, 16, 0) 70%)",
               }}
               animate={{
                 scale: [1, 1.2, 1],
@@ -111,12 +111,12 @@ const Banner = () => {
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center space-x-2 bg-purple-600/20 backdrop-blur-sm px-4 py-2 rounded-full mb-8"
+            className="inline-flex items-center space-x-2  bg-black/30 backdrop-blur-8xl px-4 py-2 rounded-full mb-8"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">
+            <span className="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-2xl">
               2025
             </span>
             <span className="text-gray-300 text-sm">Next-Gen AI Studio</span>
@@ -172,7 +172,7 @@ const Banner = () => {
           </motion.div>
 
           {/* Partner Logos */}
-          <motion.div
+          {/* <motion.div
             className="mt-20 flex items-center justify-center space-x-12 opacity-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.4 }}
@@ -181,10 +181,10 @@ const Banner = () => {
             <div className="text-2xl font-bold tracking-wider">IPSUM</div>
             <div className="text-2xl font-bold tracking-wider">∞</div>
             <div className="text-2xl font-bold tracking-wider">BOOL</div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
@@ -197,7 +197,7 @@ const Banner = () => {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
-        </motion.div>
+        </motion.div> */}
       </section>
     </div>
   );

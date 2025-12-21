@@ -1,10 +1,11 @@
+"use client"
 import { motion } from "framer-motion";
 
 export default function SmoothButton({children}) {
   return (
     <div >
       <motion.button
-        className="px-6 py-2.5 bg-gradient-to-br from-purple-600 via-violet-600 to-blue-600 rounded-lg font-semibold text-white text-md shadow-2xl"
+        className="px-6 py-2.5 bg-gradient-to-br from-purple-600 via-violet-600 to-blue-600 rounded-lg  text-white text-md shadow-2xl"
         initial={{ scale: 1 }}
         whileHover={{
           scale: 1.05,
