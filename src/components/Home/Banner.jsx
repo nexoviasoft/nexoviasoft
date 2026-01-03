@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import TextColorLetters from "../TextColorLetters";
+import TextColorLetters from "@/Share/TextColorLetters";
+
 
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
