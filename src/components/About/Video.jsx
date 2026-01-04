@@ -19,19 +19,15 @@ const Video = () => {
           className="relative z-10 p-4 md:p-8"
         >
             <div className="rounded-xl overflow-hidden shadow-2xl shadow-purple-900/20 aspect-video w-full bg-black/50 relative">
-                 {/* Placeholder for video - replacing with image from user request reference for now, or actual video tag */}
-                <img 
-                    src="https://framerusercontent.com/images/kL728uX6eK8GDqQZtC3FwQJqY.png" 
-                    alt="Dashboard Interface" 
-                    className="w-full h-full object-cover"
-                />
-                
-                {/* Play Button Overlay (Optional) */}
-                <div className="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition-colors duration-300 cursor-pointer">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300">
-                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1"></div>
-                    </div>
-                </div>
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/tgc6YH6X9b0" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                ></iframe>
             </div>
         </motion.div>
 
