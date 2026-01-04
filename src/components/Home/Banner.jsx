@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
-
+import Image from "next/image";
 
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,6 +33,16 @@ const Banner = () => {
     };
   }, [cursorX, cursorY]);
 
+  // Partner logos for marquee
+  const logos = [
+    "/logos/logo-ipsum.svg",
+    "/logos/logo-ipsum-2.svg",
+    "/logos/logo-ipsum-3.svg",
+    "/logos/logo-ipsum.svg",
+    "/logos/logo-ipsum-2.svg",
+    "/logos/logo-ipsum-3.svg",
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden cursor-none">
       {/* Custom Cursor */}
@@ -45,167 +55,97 @@ const Banner = () => {
       />
 
       {/* Banner Component */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
-        {/* Animated Background Gradient - Glowing Orb Effect */}
-        <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <div className="relative">
-            {/* Main large glowing orb */}
-            <motion.div
-              className="w-[900px] h-[400px]  blur-[120px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(59, 130, 246, 0.3) 40%, rgba(16, 16, 16, 0) 70%)",
-              }}
-              animate={{
-                scale: [1, 1.15, 1],
-                opacity: [0.4, 0.6, 0.4],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Secondary blue glow layer */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[100px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(139, 92, 246, 0.3) 50%, rgba(16, 16, 16, 0) 70%)",
-              }}
-              animate={{
-                scale: [1.1, 1, 1.1],
-                opacity: [0.5, 0.7, 0.5],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Inner bright core */}
-            <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[80px]"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(167, 139, 250, 0.8) 0%, rgba(136, 131, 229, 0.6) 40%, rgba(16, 16, 16, 0) 70%)",
-              }}
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.6, 0.8, 0.6],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </div>
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
+        {/* Static Background Image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src="/banerImages.png"
+            alt="Background"
+            fill
+            className="object-cover object-bottom opacity-60"
+            priority
+          />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-center flex-grow">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center space-x-2  bg-black/30 backdrop-blur-8xl px-4 py-2 rounded-full mb-8"
+            className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-1.5 py-1.5 pr-4 rounded-full mb-10"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-2xl">
+            <span className="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
               2025
             </span>
-            <span className="text-gray-300 text-sm">Next-Gen AI Studio</span>
+            <span className="text-gray-300 text-sm font-medium">Next-Gen AI Studio</span>
           </motion.div>
 
           {/* Main Heading */}
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6"
+          <motion.div
+            className="mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-
-            <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-              <TextColorLetters
-                text="AI-Driven Success"
-                fontFamily="Urbanist"
-                transitionStartIndex={20}
-              />
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
-              <TextColorLetters
-                text="Redefining the Future."
-                fontFamily="Urbanist"
-                transitionStartIndex={2}
-              />
-
-            </span>
-          </motion.h1>
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium leading-[1.1] tracking-tight text-white">
+              AI-Driven Success
+              <br />
+              <span className="text-white/90">Redefining the Future.</span>
+            </h1>
+          </motion.div>
 
           {/* Description */}
-          <motion.p
-            className="text-gray-400 text-lg md:text-xl mb-4 max-w-3xl mx-auto"
+          <motion.div
+            className="space-y-2 mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Creating latest solutions that redefine innovation.
-          </motion.p>
-          <motion.p
-            className="text-gray-400 text-lg md:text-xl mb-12 max-w-3xl mx-auto"
+            <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide">
+              Creating latest solutions that redefine innovation.
+            </p>
+            <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide">
+              Stay ahead with AI-powered technology for the future.
+            </p>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Stay ahead with AI-powered technology for the future.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-          >
-            <button className="px-8 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 hover:scale-105 cursor-none">
+            <button className="px-8 py-3.5 bg-gray-100 text-black rounded-full font-medium hover:bg-white transition-all duration-300 hover:scale-105 cursor-none min-w-[180px]">
               Connect With Us
             </button>
-            <button className="px-8 py-3 bg-purple-600/20 backdrop-blur-sm text-white rounded-full font-semibold border border-purple-500/50 hover:bg-purple-600/30 transition-all duration-300 hover:scale-105 cursor-none">
-              What is Nubian?
+            <button className="px-8 py-3.5 bg-purple-600/20 backdrop-blur-sm text-white rounded-full font-medium border border-purple-500/30 hover:bg-purple-600/30 transition-all duration-300 hover:scale-105 cursor-none min-w-[180px]">
+              What is Nubien?
             </button>
           </motion.div>
 
-          {/* Partner Logos */}
-          {/* <motion.div
-            className="mt-20 flex items-center justify-center space-x-12 opacity-40"
+          {/* Partner Logos Marquee */}
+          <motion.div 
+            className="w-full max-w-4xl overflow-hidden relative"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
-            transition={{ duration: 1, delay: 1 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 1, delay: 0.8 }}
           >
-            <div className="text-2xl font-bold tracking-wider">IPSUM</div>
-            <div className="text-2xl font-bold tracking-wider">∞</div>
-            <div className="text-2xl font-bold tracking-wider">BOOL</div>
-          </motion.div> */}
+            {/* Gradient masks for smooth fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+            
+            <div className="flex items-center justify-center gap-16 md:gap-24 grayscale">
+                <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span>
+                <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span>
+                <span className="text-2xl font-black italic tracking-tighter">IPSUM</span>
+                <span className="text-2xl font-bold font-sans tracking-widest hidden md:block">LOGO</span>
+                <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2 hidden md:block">LOGO IPSUM</span>
+            </div>
+          </motion.div>
         </div>
-
-        {/* Scroll Indicator
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div className="w-6 h-10 border-4 border-gray-800 rounded-full flex items-start justify-center p-2">
-            <motion.div
-              className="w-1.5 h-3 bg-white rounded-full"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-        </motion.div> */}
       </section>
     </div>
   );

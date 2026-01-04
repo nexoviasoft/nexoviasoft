@@ -68,7 +68,9 @@ const FullCardAdImages = () => {
               className="relative md:sticky transition-all duration-500"
               style={{ top: `calc(130px + ${index * 30}px)` }}
             >
-              <Card {...card} />
+              <div className=" bg-white/10 rounded-2xl p-1.5">
+                <Card {...card} />
+              </div>
             </div>
           ))}
         </div>
