@@ -1,5 +1,6 @@
 import Banner from "@/components/home/Banner";
 import Innovation from "@/components/home/Innovation";
+import Comparision from "@/components/home/Comparision";
 import Service from "@/components/home/Service";
 import Packed from "@/components/home/Packed";
 import AboutSquadLog from "@/components/home/AboutSquadLog";
@@ -11,7 +12,9 @@ import OurProccess from "@/components/home/OurProccess";
 import LanuchYourSite from "@/components/home/LanuchYourSite";
 import React from "react";
 import OurTeam from "@/components/home/OurTeam";
-
+import Testimonial from "@/components/home/Testimonial";
+import Fqa from "@/components/home/Fqa";
+import PartOfus from "@/components/home/PartOfus";
 const TestPages = () => {
   return (
     <div>
@@ -25,6 +28,7 @@ const TestPages = () => {
       <section >
         <Innovation />
       </section>
+
 
 
       <section>
@@ -61,10 +65,25 @@ const TestPages = () => {
       <section>
         <LanuchYourSite />
       </section>
+
       <section>
         <OurTeam />
       </section>
+      <section>
+        <Comparision />
+      </section>
 
+      <section>
+        <Testimonial />
+      </section>
+
+      <section>
+        <Fqa />
+      </section>
+
+      <section>
+        <PartOfus />
+      </section>
     </div>
   );
 };
