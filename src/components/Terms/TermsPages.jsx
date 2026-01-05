@@ -156,7 +156,7 @@ const TermsPages = () => {
           <span className="bg-[#EFFC76] text-black px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">READ</span>
           <span className="text-gray-300">Terms & Conditions</span>
         </motion.div>
-
+{/* fsdfdsfdfs ergh rwth  */}
         {/* Main Title */}
         <motion.h1
             initial={{ opacity: 0, y: 20 }}
