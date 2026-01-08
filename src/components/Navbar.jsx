@@ -55,12 +55,34 @@ const Navbar = () => {
           >
             Services
           </Link>
-          <Link
-            href="/squadcart"
-            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+          
+          {/* Products Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsProductsOpen(true)}
+            onMouseLeave={() => setIsProductsOpen(false)}
           >
-            SquadCart
-          </Link>
+            <button 
+              className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium focus:outline-none"
+            >
+              Products
+              <ChevronDown size={14} className={`transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {/* Dropdown Content */}
+            {isProductsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
+                <div className="bg-[#0A0A0A] border border-white/10 rounded-xl p-2 w-48 shadow-xl">
+                  <Link
+                    href="/squadcart"
+                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg text-sm transition-colors"
+                  >
+                    SquadCart
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="hidden md:block">
@@ -108,13 +130,19 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Link
-              href="/squadcart"
-              className="block text-gray-300 hover:text-white text-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              SquadCart
-            </Link>
+            
+            {/* Mobile Products Menu */}
+            <div className="space-y-2">
+              <p className="text-gray-500 text-sm font-medium px-2">Products</p>
+              <Link
+                href="/squadcart"
+                className="block text-gray-300 hover:text-white text-lg pl-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                SquadCart
+              </Link>
+            </div>
+
             <Link
               href="/faq"
               className="block text-gray-300 hover:text-white text-lg"
