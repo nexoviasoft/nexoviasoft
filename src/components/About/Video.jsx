@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Video = () => {
   return (
     <div className="w-11/12 md:max-w-[1280px] mx-auto py-20">
-      <div className="relative rounded-[2rem] overflow-hidden bg-[#0A0A0A] border border-white/10 group">
+      <div className="relative rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 group">
         
         {/* Top Gradient/Glow Effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-[#EFFC76]/20 blur-[120px] pointer-events-none opacity-50 group-hover:opacity-70 transition-opacity duration-700" />

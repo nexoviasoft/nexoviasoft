@@ -73,7 +73,7 @@ const ElevateBrands = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-[1rem] overflow-hidden aspect-square lg:aspect-[3/3] group bg-black p-2">
+          <div className="relative rounded-[1rem] overflow-hidden aspect-square lg:aspect-[3/3] group bg-white/5 p-2">
             <img 
               src="https://i.ibb.co.com/hRxNb4xf/image.png" 
               alt="Team Working" 

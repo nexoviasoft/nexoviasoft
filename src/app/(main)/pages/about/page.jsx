@@ -5,11 +5,15 @@ import Frequently from "@/components/About/Frequently";
 import BecomePart from "@/components/About/BecomePart";
 import Video from "@/components/About/Video";
 import React from "react";
+import CosmicBackground from "@/components/Home/CosmicBackground";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden pb-30">
-      <div className="mt-20 max-w-11/12 mx-auto space-y-30">
+    <div className="min-h-screen relative overflow-x-hidden pb-30">
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <CosmicBackground />
+      </div>
+      <div className="relative z-10 mt-20 max-w-11/12 mx-auto space-y-30">
         <div className="mt-40 flex flex-col justify-center items-center text-center mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full flex flex-col items-center md:items-center justify-center text-center md:text-center">
             {/* Responsive Button: Center on large screens, Left on mobile */}
