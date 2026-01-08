@@ -162,7 +162,7 @@ const Footer = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="relative z-10 max-w-[1400px] mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500"
       >
-        <p>© 2024 Mandro Design</p>
+        <p>© 2024 SquadLog. All rights reserved.</p>
         <div className="flex items-center gap-8">
           <Link
             href="/terms"

@@ -110,7 +110,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-900 font-medium">
-            All Rights Reserved © 2024 Alytics
+            All Rights Reserved © 2024 SquadLog
           </p>
           <p className="text-gray-900 font-medium">Template by Asad Khaleel</p>
         </div>
