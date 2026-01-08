@@ -45,8 +45,7 @@ const FormFqs = () => {
 
   return (
     <div
-      className="w-11/12 md:max-w-[1280px] border md:px-15 p-5 rounded-lg mx-auto py-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/backgrounnd.png')" }}
+      className="w-11/12 md:max-w-[1280px] border border-white/10 md:px-15 p-5 rounded-lg mx-auto py-20 bg-white/5"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
         {/* Left Side - Header */}

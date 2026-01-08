@@ -26,7 +26,7 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="bg-black py-24 px-4 md:px-8 relative overflow-hidden">
+    <section className="bg-transparent py-24 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -92,7 +92,7 @@ const OurServices = () => {
                 </div>
 
                 {/* Dark Body */}
-                <div className="bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 pt-12 -mt-6 relative z-10 h-full min-h-[180px] flex flex-col justify-center group-hover:border-[#EFFC76]/30 transition-colors duration-300">
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 pt-12 -mt-6 relative z-10 h-full min-h-[180px] flex flex-col justify-center group-hover:border-[#EFFC76]/30 transition-colors duration-300">
                     <p className="text-gray-400 leading-relaxed text-sm md:text-base">
                         {step.description}
                     </p>

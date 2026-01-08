@@ -7,7 +7,7 @@ import SmoothButton from "@/Share/SmoothButton";
 const ContactReady = () => {
   return (
     <div className="w-11/12 md:max-w-[880px] mx-auto py-20">
-      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-black border border-white/10 p-10 md:p-20 text-center">
+      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-transparent border border-white/10 p-10 md:p-20 text-center">
         {/* Top Spotlight Effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-[#EFFC76]/20 blur-[100px] pointer-events-none" />
 
