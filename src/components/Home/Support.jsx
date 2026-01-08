@@ -40,7 +40,7 @@ const Support = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 max-w-xl mx-auto mb-10 text-base"
                     >
-                        Nubien comes with dedicated support to help you launch and maintain
+                        SquadLog comes with dedicated support to help you launch and maintain
                         your site without friction.
                     </motion.p>
 
@@ -51,7 +51,7 @@ const Support = () => {
                         transition={{ delay: 0.3 }}
                         className="bg-[#EFFC76] hover:bg-[#EFFC76] text-black px-8 py-3 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#EFFC76]/20"
                     >
-                        View About Nubien
+                        View About SquadLog
                     </motion.button>
                 </div>
 

@@ -44,7 +44,7 @@ const Comparision = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-4xl md:text-6xl font-medium text-white mb-4 relative z-10 tracking-tight"
                         >
-                            Nubien vs. The Rest
+                            SquadLog vs. The Rest
                         </motion.h2>
                         <motion.h3
                             initial={{ opacity: 0, y: 20 }}
@@ -98,7 +98,7 @@ const Comparision = () => {
                         </motion.div>
                     </div>
 
-                    {/* Nubien - Elevated Card */}
+                    {/* SquadLog - Elevated Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

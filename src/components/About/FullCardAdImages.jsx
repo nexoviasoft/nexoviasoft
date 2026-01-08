@@ -11,7 +11,7 @@ const FullCardAdImages = () => {
       badge: "Innovate",
       title: "Built for Cutting-Edge AI Teams",
       description:
-        "Whether you're developing LLMs, intelligent tools, or autonomous agents, Nubien gives you a launch-ready site that speaks the language of innovation. The layout is purpose-built to help you showcase your services, and vision clearly.",
+        "Whether you're developing LLMs, intelligent tools, or autonomous agents, SquadLog gives you a launch-ready site that speaks the language of innovation. The layout is purpose-built to help you showcase your services, and vision clearly.",
       tags: ["AI Agency", "Future Ready"],
     },
     {
@@ -19,7 +19,7 @@ const FullCardAdImages = () => {
       badge: "Trust",
       title: "Designed to Build Instant Trust",
       description:
-        "Nubien is crafted with clean typography, smooth transitions, and modern layouts that convey credibility at first glance. Perfect for agencies and startups needing to look established and reliable from day one.",
+        "SquadLog is crafted with clean typography, smooth transitions, and modern layouts that convey credibility at first glance. Perfect for agencies and startups needing to look established and reliable from day one.",
       tags: ["Trust By Design", "Modern UX"],
     },
     {
@@ -27,7 +27,7 @@ const FullCardAdImages = () => {
       badge: "Scale",
       title: "Scales With Your Vision",
       description:
-        "From product launches to team showcases and case studies, Nubien is flexible and scalable. As your agency grows, the template adapts—so your site evolves without needing a redesign.",
+        "From product launches to team showcases and case studies, SquadLog is flexible and scalable. As your agency grows, the template adapts—so your site evolves without needing a redesign.",
       buttonText: "Book an Appointment",
     },
   ];
@@ -56,7 +56,7 @@ const FullCardAdImages = () => {
             <span className="text-gray-400">With Bold Ideas</span>
           </h2>
           <p className="text-gray-400 mt-6 text-lg leading-relaxed">
-            Nubien is a next-gen AI agency template built for bold visionaries,
+            SquadLog is a next-gen AI agency template built for bold visionaries,
             researchers, and builders shaping the future of intelligence.
           </p>
         </div>

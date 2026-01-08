@@ -123,7 +123,7 @@ const Banner = () => {
               Connect With Us
             </button>
             <button className="px-8 py-3.5 bg-[#EFFC76] text-black rounded-full font-medium border border-[#EFFC76] hover:bg-[#EFFC76]/90 transition-all duration-300 hover:scale-105 cursor-none min-w-[180px]">
-              What is Nubien?
+              What is SquadLog?
             </button>
           </motion.div>
 

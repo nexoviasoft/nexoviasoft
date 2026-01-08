@@ -168,7 +168,7 @@ const Packed = () => {
                 </motion.h1>
 
                 <p className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed">
-                  Nubien is packed with cutting-edge features designed to <br className=" md:block hidden" />
+                  SquadLog is packed with cutting-edge features designed to <br className=" md:block hidden" />
                   elevate your agency or portfolio.
                 </p>
 
@@ -207,7 +207,7 @@ export default Packed;
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay: 0.4 }}
   >
-    Nubien is packed with cutting-edge features designed to
+    SquadLog is packed with cutting-edge features designed to
     <br />
     elevate your agency or portfolio.
   </motion.p>

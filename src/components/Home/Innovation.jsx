@@ -16,7 +16,7 @@ const Innovation = () => {
 
                     <InnovationCard
                         title="Seamless API Integrations"
-                        description="Nubien supports a wide range of third-party integrations."
+                        description="SquadLog supports a wide range of third-party integrations."
                         type="integrations"
                         delay={0}
                     />

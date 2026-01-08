@@ -79,7 +79,7 @@ const Intregration = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-400 text-base md:text-lg mb-10 max-w-xl mx-auto"
         >
-          Nubien seamlessly integrates with leading tools and platforms,
+          SquadLog seamlessly integrates with leading tools and platforms,
           ensuring a smooth and efficient workflow.
         </motion.p>
 

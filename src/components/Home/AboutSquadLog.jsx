@@ -50,7 +50,7 @@ const AboutSquadLog = () => {
                             delay={0.3}
                             icon={Bot}
                             title="Advanced AI, Streamlined Design"
-                            description="Nubien blends cutting-edge AI capabilities with sleek, modern design. It's built for agencies that need to showcase sophisticated technology."
+                            description="SquadLog blends cutting-edge AI capabilities with sleek, modern design. It's built for agencies that need to showcase sophisticated technology."
                             tags={["AI Design", "Tech Innovation"]}
                         />
                         <AboutSquadLogCard
@@ -64,7 +64,7 @@ const AboutSquadLog = () => {
                             delay={0.5}
                             icon={Zap}
                             title="Future-Proof and Scalable"
-                            description="Nubien is built to grow with your agency. Whether you're adding new services or expanding your team, we scale with you."
+                            description="SquadLog is built to grow with your agency. Whether you're adding new services or expanding your team, we scale with you."
                             hasButton
                         />
                     </div>

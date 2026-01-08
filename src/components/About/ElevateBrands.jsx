@@ -21,7 +21,7 @@ const ElevateBrands = () => {
             <div className="p-1 rounded-full bg-[#EFFC76] flex items-center justify-center">
                <Gift size={14} className="text-black" />
             </div>
-            <span className="text-gray-300 text-sm font-medium">About Nubien</span>
+            <span className="text-gray-300 text-sm font-medium">About SquadLog</span>
           </div>
 
           {/* Title */}
