@@ -55,18 +55,6 @@ const Navbar = () => {
           >
             Services
           </Link>
-          <Link
-            href="/pages/policy"
-            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-          >
-            Policy
-          </Link>
-          <Link
-            href="/pages/terms"
-            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-          >
-            Terms
-          </Link>
         </div>
 
         <div className="hidden md:block">
@@ -118,13 +106,6 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
-            </Link>
-            <Link
-              href="/pages/terms"
-              className="block text-gray-300 hover:text-white text-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Terms
             </Link>
             <div className="pt-4">
               <SmoothButton className="w-full flex justify-center">
