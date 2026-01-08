@@ -56,10 +56,10 @@ const Navbar = () => {
             Services
           </Link>
           <Link
-            href="/demo"
+            href="/squadcart"
             className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
           >
-            Demo
+            SquadCart
           </Link>
         </div>
 
@@ -107,6 +107,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              href="/squadcart"
+              className="block text-gray-300 hover:text-white text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              SquadCart
             </Link>
             <Link
               href="/faq"
