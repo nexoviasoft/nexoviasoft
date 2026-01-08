@@ -82,7 +82,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="space-y-6"
         >
-          <h3 className="text-lg font-medium text-white">Template Pages</h3>
+          <h3 className="text-lg font-medium text-white">Our Company</h3>
           <ul className="space-y-3">
             {[
               { name: "Home", href: "/" },
