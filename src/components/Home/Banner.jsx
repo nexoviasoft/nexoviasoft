@@ -21,13 +21,12 @@ const Banner = () => {
   }, []);
 
   // Partner logos for marquee
-  const logos = [
-    "/logos/logo-ipsum.svg",
-    "/logos/logo-ipsum-2.svg",
-    "/logos/logo-ipsum-3.svg",
-    "/logos/logo-ipsum.svg",
-    "/logos/logo-ipsum-2.svg",
-    "/logos/logo-ipsum-3.svg",
+  const logoItems = [
+    { id: 1, component: <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span> },
+    { id: 2, component: <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span> },
+    { id: 3, component: <span className="text-2xl font-black italic tracking-tighter">IPSUM</span> },
+    { id: 4, component: <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span> },
+    { id: 5, component: <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span> },
   ];
 
   return (
@@ -107,13 +106,21 @@ const Banner = () => {
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
             
-            <div className="flex items-center justify-center gap-16 md:gap-24 grayscale">
-                <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span>
-                <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span>
-                <span className="text-2xl font-black italic tracking-tighter">IPSUM</span>
-                <span className="text-2xl font-bold font-sans tracking-widest hidden md:block">LOGO</span>
-                <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2 hidden md:block">LOGO IPSUM</span>
-            </div>
+            <motion.div 
+              className="flex items-center gap-16 md:gap-24 grayscale w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ 
+                repeat: Infinity, 
+                ease: "linear", 
+                duration: 20 
+              }}
+            >
+              {[...logoItems, ...logoItems].map((item, index) => (
+                <div key={index} className="flex-shrink-0">
+                  {item.component}
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
