@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const ContactForm = () => {
   return (
@@ -42,14 +43,8 @@ const ContactForm = () => {
           ready to assist you.
         </motion.p>
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25"
-        >
-          Fill The Form Out!
-        </motion.button>
+<SmoothButton>   Fill The Form Out!</SmoothButton>
+        
         
         {/* Background glow for header */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#EFFC76]/20 blur-[100px] pointer-events-none -z-10" />

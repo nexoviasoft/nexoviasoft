@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const ContactReady = () => {
   return (
@@ -51,15 +52,7 @@ const ContactReady = () => {
           </motion.p>
 
           {/* Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25 mt-4"
-          >
-            Book an Appointment
-          </motion.button>
+          <SmoothButton>Book an Appointment</SmoothButton>
         </div>
 
         {/* Background Grid Pattern (Optional subtle texture) */}
@@ -68,6 +61,5 @@ const ContactReady = () => {
     </div>
   );
 };
-
 
 export default ContactReady;
