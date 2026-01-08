@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Check } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const PortfolioCard = () => {
   const ref = useRef(null);
@@ -102,9 +103,8 @@ const PortfolioCard = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <button className="bg-[#EFFC76]  hover:from-[#EFFC76]  text-black px-8 py-3 rounded-lg font-medium transition-all duration-300 ">
-              Build Your Product
-            </button>
+            <SmoothButton>Build Your Product </SmoothButton>
+            
           </motion.div>
         </div>
 
