@@ -1,13 +1,13 @@
-import Navbar from "@/components/Demo/Navbar";
 import Footer from "@/components/Demo/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function DemoLayout({ children }) {
   return (
     <>
-      <Navbar />
-      <main>
-        {children}
-      </main>
+      <nav className=" text-black">
+        <Navbar />
+      </nav>
+      <main>{children}</main>
       <Footer />
     </>
   );

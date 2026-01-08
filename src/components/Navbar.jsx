@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl px-4 py-2 md:px-6 md:py-3 flex items-center justify-between w-full max-w-5xl shadow-2xl relative">
+      <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl px-4 py-2 md:px-6 md:py-3 flex items-center justify-between w-full max-w-7xl shadow-2xl relative">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 pl-2">
           <Image
