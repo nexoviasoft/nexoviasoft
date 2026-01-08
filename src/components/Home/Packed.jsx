@@ -169,7 +169,7 @@ const Packed = () => {
 
                 <p className="text-gray-300 text-base md:text-lg mb-10 leading-relaxed">
                   SquadLog is packed with cutting-edge features designed to <br className=" md:block hidden" />
-                  elevate your agency or portfolio.
+                  elevate your agency or case studies.
                 </p>
 
                 <SmoothButton>Book an Appointment</SmoothButton>

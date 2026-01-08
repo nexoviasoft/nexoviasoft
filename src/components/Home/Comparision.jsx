@@ -62,7 +62,7 @@ const Comparision = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="text-gray-400 max-w-xl mx-auto text-lg leading-relaxed"
                     >
-                        Reboot is designed to set your agency and portfolio apart with a
+                        Reboot is designed to set your agency and case studies apart with a
                         premium, clutter-free layout that enhances your work.
                     </motion.p>
                 </div>

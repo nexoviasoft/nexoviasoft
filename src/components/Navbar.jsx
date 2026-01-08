@@ -39,10 +39,10 @@ const Navbar = () => {
             About
           </Link>
           <Link
-            href="/pages/portfolio"
+            href="/pages/case-studies"
             className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
           >
-            Portfolio
+            Case Studies
           </Link>
           <Link
             href="/pages/contact"
@@ -118,11 +118,11 @@ const Navbar = () => {
               About
             </Link>
             <Link
-              href="/pages/portfolio"
+              href="/pages/case-studies"
               className="block text-gray-300 hover:text-white text-lg"
               onClick={() => setIsMenuOpen(false)}
             >
-              Portfolio
+              Case Studies
             </Link>
             <Link
               href="/pages/contact"

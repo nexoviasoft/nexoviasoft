@@ -11,7 +11,7 @@ const Portfolio = () => {
             year: "2024",
             client: "Lemonide Tech",
             features: ["AI Integration", "Responsive Design", "Custom Layouts", "Fast Loading"],
-            tags: ["E-Commerce", "Portfolio"],
+            tags: ["E-Commerce", "Case Studies"],
             gradient: "from-[#EFFC76]/40 to-[#EFFC76]/40",
             images: ["/portfolio/watch.png", "/portfolio/phone.png"]
         },
@@ -27,7 +27,7 @@ const Portfolio = () => {
             year: "2025",
             client: "Million One",
             features: ["Easy Customization", "Interactive Elements", "Retina Ready", "High Performance"],
-            tags: ["Portfolio", "Agency"],
+            tags: ["Case Studies", "Agency"],
             gradient: "from-[#EFFC76]/40 to-[#EFFC76]/40",
             images: ["/portfolio/car.png", "/portfolio/bottle.png"]
         }
@@ -54,7 +54,7 @@ const Portfolio = () => {
                         <span className="bg-[#EFFC76] p-1 rounded-full">
                             <Briefcase size={12} className="text-black" />
                         </span>
-                        <span className="text-sm font-medium text-gray-300">Portfolio</span>
+                        <span className="text-sm font-medium text-gray-300">Case Studies</span>
                     </motion.div>
 
                     <motion.h2
@@ -75,7 +75,7 @@ const Portfolio = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg mb-8 leading-relaxed"
                     >
-                        A portfolio is more than just projects—it&apos;s your story, vision, and expertise.
+                        A case study is more than just projects—it&apos;s your story, vision, and expertise.
                         Reboot ensures your work stands out with a rank.
                     </motion.p>
 

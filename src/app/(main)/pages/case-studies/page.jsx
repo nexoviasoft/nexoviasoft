@@ -1,6 +1,6 @@
-import PortfolioCard from '@/components/portfolio/PortfolioCard';
-import PortfolioFqs from '@/components/portfolio/PortfolioFqs';
-import PortfolioReady from '@/components/portfolio/PortfolioReady';
+import PortfolioCard from '@/components/case-studies/PortfolioCard';
+import PortfolioFqs from '@/components/case-studies/PortfolioFqs';
+import PortfolioReady from '@/components/case-studies/PortfolioReady';
 import React from 'react';
 
 const Portfoliopage = () => {
