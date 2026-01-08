@@ -34,22 +34,8 @@ const Packed = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="text-white overflow-hidden bg-black pb-20">
-      <div className="bg-black/80 backdrop-blur-sm bg-gradient-to-b from-black via-gray-900 to-black max-w-[1480px] mx-auto px-4  border-white">
-        {/* অন্যান্য অংশ অপরিবর্তিত */}
-        <motion.div className="flex justify-center mb-8">
-          <motion.div
-            className="inline-flex items-center border border-white/30  space-x-3 bg-black/50 backdrop-blur-md px-5 py-3 rounded-full"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="bg-[#EFFC76] text-black text-xs font-bold px-3 py-1.5 rounded-2xl">
-              <Atom />
-            </span>
-            <span className="text-gray-200 text-sm font-medium">About Us</span>
-          </motion.div>
-        </motion.div>
+    <div ref={sectionRef} className="relative text-white overflow-hidden pb-20 bg-transparent">
+      <div className="relative z-10 max-w-[1480px] mx-auto px-4">
 
         <motion.div
           ref={sectionRef}

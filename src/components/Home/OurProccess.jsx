@@ -30,14 +30,8 @@ const processSteps = [
 
 const OurProccess = () => {
     return (
-        <section className="relative py-24 bg-black overflow-hidden">
-            {/* Background Glows */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-                <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-[#EFFC76]/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-[#EFFC76]/20 rounded-full blur-[120px]" />
-            </div>
-
-            <div className="relative max-w-7xl mx-auto px-6">
+        <section className="relative py-24 bg-transparent overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-20">
                     <motion.div

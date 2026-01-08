@@ -82,10 +82,7 @@ const Service = () => {
   ];
 
   return (
-    <section className="bg-black py-20 px-4 md:px-8 relative overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[100px] pointer-events-none" />
-
+    <section className="bg-transparent py-20 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20">

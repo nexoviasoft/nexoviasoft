@@ -6,9 +6,9 @@ import SmoothButton from "@/Share/SmoothButton";
 
 const Support = () => {
     return (
-        <section className="bg-black py-24 px-4 relative overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" />
+        <section className="bg-transparent py-24 px-4 relative overflow-hidden">
+            {/* Background Gradients - Removed for global theme */}
+            {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" /> */}
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}

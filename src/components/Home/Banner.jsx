@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
 import Image from "next/image";
-import CosmicBackground from "./CosmicBackground";
-
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,12 +28,10 @@ const Banner = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white overflow-hidden">
+    <div className="min-h-screen text-white overflow-hidden bg-transparent">
       {/* Banner Component */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
-        {/* Animated Cosmic Background */}
-        <CosmicBackground />
-
+        
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-center flex-grow">
           {/* Badge */}

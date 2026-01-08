@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Innovation = () => {
     return (
-        <section className="bg-black py-20 px-4 md:px-8 overflow-hidden">
+        <section className="bg-transparent py-20 px-4 md:px-8 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Top Section - 3 Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 relative">

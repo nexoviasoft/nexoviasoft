@@ -91,11 +91,7 @@ const TeamCard = ({ member, index }) => {
 
 const OurTeam = () => {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EFFC76]/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#EFFC76]/10 blur-[120px] rounded-full pointer-events-none" />
-
+    <section className="py-24 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center mb-16">
           {/* Badge */}

@@ -6,20 +6,7 @@ import SmoothButton from "@/Share/SmoothButton";
 
 const LanuchYourSite = () => {
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
-      {/* Background Gradients/Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#EFFC76]/10 to-[#EFFC76]/10 pointer-events-none" />
-
-      {/* Decorative Grid Background - Optional if needed to match exact texture */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-
+    <section className="relative py-24 bg-transparent overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Image/Visual Placeholder */}
         {/* Based on the design, there is a faint face/image on the bottom left. 

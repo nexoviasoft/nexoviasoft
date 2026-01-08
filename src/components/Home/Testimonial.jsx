@@ -58,10 +58,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section className="bg-black py-20 px-4 md:px-8 relative overflow-hidden">
-      {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-[#EFFC76]/10 blur-[120px] rounded-full pointer-events-none" />
-
+    <section className="bg-transparent py-20 px-4 md:px-8 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">

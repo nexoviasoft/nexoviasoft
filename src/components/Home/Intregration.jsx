@@ -38,9 +38,9 @@ const Intregration = () => {
   ];
 
   return (
-    <section className="bg-black py-24 px-4 overflow-hidden relative">
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#EFFC76]/20 rounded-full blur-[120px]" />
+    <section className="bg-transparent py-24 px-4 overflow-hidden relative">
+      {/* Background Glows - Removed for global theme */}
+      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#EFFC76]/20 rounded-full blur-[120px]" /> */}
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Pill Label */}

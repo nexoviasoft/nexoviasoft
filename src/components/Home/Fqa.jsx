@@ -44,7 +44,7 @@ const Fqa = () => {
     };
 
     return (
-        <section className="py-20 bg-black text-white relative overflow-hidden">
+        <section className="py-20 bg-transparent text-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
                     {/* Left Column: Title & Description */}

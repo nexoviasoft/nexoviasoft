@@ -6,7 +6,7 @@ import ComparisionItem from "./ComparisionItem";
 
 const Comparision = () => {
     return (
-        <section className="bg-black py-20 px-4 md:px-8 overflow-hidden">
+        <section className="bg-transparent py-20 px-4 md:px-8 overflow-hidden">
             <div className="max-w-5xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-20">

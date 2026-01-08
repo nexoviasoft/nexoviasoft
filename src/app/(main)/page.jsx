@@ -14,10 +14,15 @@ import Portfolio from "@/components/Home/Portfolio";
 // import Service from "@/components/Home/Service";
 import Support from "@/components/Home/Support";
 import Testimonial from "@/components/Home/Testimonial";
+import CosmicBackground from "@/components/Home/CosmicBackground";
 
 const TestPages = () => {
   return (
-    <div>
+    <div className="">
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <CosmicBackground />
+      </div>
+      <div className="relative z-10">
       <section>
         <Banner />
       </section>
@@ -70,7 +75,8 @@ const TestPages = () => {
       {/* <section>
         <PartOfUs />
       </section> */}
-    </div>
+      </div>
+      </div>
   );
 };
 
