@@ -1,31 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BackToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      // Calculate scroll percentage
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight;
-      const clientHeight = document.documentElement.clientHeight;
-      
-      const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-
-      // Show button when scrolled 50% or more
-      if (scrollPercentage >= 50) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  // Always visible as per user request
+  const isVisible = true;
 
   const scrollToTop = () => {
     window.scrollTo({
