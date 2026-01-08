@@ -1,7 +1,5 @@
-import { Bai_Jamjuree, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,10 +10,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// const baijamjuree = Bai_Jamjuree({
-
-// })
 
 export const metadata = {
   title: "Squadlog",
@@ -28,15 +22,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>
-          <Navbar />
-        </nav>
-
-
         {children}
-        <footer>
-          <Footer />
-        </footer>
       </body>
     </html>
   );

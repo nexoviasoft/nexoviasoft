@@ -67,6 +67,12 @@ const Navbar = () => {
           >
             Terms
           </Link>
+          <Link
+            href="/demo"
+            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+          >
+            Demo
+          </Link>
         </div>
 
         <div className="hidden md:block">
