@@ -4,23 +4,25 @@ import { motion } from "framer-motion";
 
 const CosmicBackground = () => {
   const stars = useMemo(() => {
-    const seeded = (seed) => {
-      const x = Math.sin(seed) * 10000;
-      return x - Math.floor(x);
+    const rand01 = (seed) => {
+      let a = seed | 0;
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
 
     return [...Array(50)].map((_, i) => {
-      const sizeSeed = seeded(i * 5 + 1);
-      const width = 1 + sizeSeed * 2;
-      const height = 1 + seeded(i * 5 + 2) * 2;
+      const width = 1 + rand01(i * 5 + 1) * 2;
+      const height = 1 + rand01(i * 5 + 2) * 2;
 
       return {
         id: i,
-        width: `${width}px`,
-        height: `${height}px`,
-        top: `${seeded(i * 5 + 3) * 100}%`,
-        left: `${seeded(i * 5 + 4) * 100}%`,
-        duration: 2 + seeded(i * 5 + 5) * 3,
+        width: `${Number(width.toFixed(4))}px`,
+        height: `${Number(height.toFixed(4))}px`,
+        top: `${Number((rand01(i * 5 + 3) * 100).toFixed(4))}%`,
+        left: `${Number((rand01(i * 5 + 4) * 100).toFixed(4))}%`,
+        duration: Number((2 + rand01(i * 5 + 5) * 3).toFixed(4)),
       };
     });
   }, []);

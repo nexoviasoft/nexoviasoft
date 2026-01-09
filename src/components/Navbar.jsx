@@ -1,13 +1,29 @@
 "use client";
 
 import SmoothButton from "@/Share/SmoothButton";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+
+  const products = [
+    {
+      title: "SquadCart",
+      description: "E-commerce platform with analytics and integrations.",
+      href: "/products/squadcart",
+      badge: "Live",
+    },
+    {
+      title: "CleverERP",
+      description: "ERP to manage finance, inventory, and workflows.",
+      href: "/products",
+      badge: "New",
+    },
+  ];
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
@@ -55,13 +71,80 @@ const Navbar = () => {
           >
             Services
           </Link>
-          
-          <Link
-            href="/products"
-            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+
+          <div
+            className="relative"
+            onMouseEnter={() => setIsProductsOpen(true)}
+            onMouseLeave={() => setIsProductsOpen(false)}
           >
-            Products
-          </Link>
+            <Link
+              href="/products"
+              className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium"
+              onFocus={() => setIsProductsOpen(true)}
+            >
+              Products
+              <ChevronDown
+                size={14}
+                className={`transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""}`}
+              />
+            </Link>
+
+            {isProductsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
+                <div className="w-[720px] bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="px-6 pt-6 pb-4 flex items-start justify-between gap-6 border-b border-white/10">
+                    <div>
+                      <div className="text-white font-semibold tracking-tight">
+                        Products
+                      </div>
+                      <div className="text-gray-400 text-sm mt-1">
+                        Browse all our SaaS products in one place.
+                      </div>
+                    </div>
+                    <Link
+                      href="/products"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                    >
+                      View all
+                      <ArrowRight size={14} />
+                    </Link>
+                  </div>
+
+                  <div className="p-6">
+                    <div className="grid grid-cols-2 gap-4">
+                      {products.map((item) => (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          className="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors p-5"
+                        >
+                          <div className="flex items-start justify-between gap-4">
+                            <div>
+                              <div className="text-white font-semibold tracking-tight">
+                                {item.title}
+                              </div>
+                              <div className="text-gray-400 text-sm mt-2 leading-relaxed">
+                                {item.description}
+                              </div>
+                            </div>
+                            <div className="flex flex-col items-end gap-3">
+                              <span className="text-[10px] font-semibold tracking-wider uppercase bg-[#EFFC76] text-black px-2 py-1 rounded-full">
+                                {item.badge}
+                              </span>
+                              <ArrowRight
+                                size={16}
+                                className="text-[#EFFC76] opacity-0 group-hover:opacity-100 transition-opacity"
+                              />
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="hidden md:block">
@@ -123,6 +206,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               SquadCart
+            </Link>
+            <Link
+              href="/products"
+              className="block text-gray-300 hover:text-white text-lg pl-4"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              CleverERP
             </Link>
 
             <Link
