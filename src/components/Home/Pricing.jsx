@@ -67,7 +67,7 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <section className="py-24 -mt-2 md:-mt-18 relative overflow-hidden">
+    <section className="py-24 -mt-26 md:-mt-18 relative overflow-hidden">
       {/* Background Gradients - Removed for global theme */}
       {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#EFFC76]/10 blur-[100px] rounded-full pointer-events-none" /> */}
 

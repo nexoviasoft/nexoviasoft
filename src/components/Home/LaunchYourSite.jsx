@@ -6,7 +6,7 @@ import SmoothButton from "@/Share/SmoothButton";
 
 const LaunchYourSite = () => {
   return (
-    <section className="relative py-24 bg-transparent overflow-hidden">
+    <section className="relative py-24 -mt-20 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Image/Visual Placeholder */}
         {/* Based on the design, there is a faint face/image on the bottom left. 
