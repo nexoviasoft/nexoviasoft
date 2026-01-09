@@ -7,7 +7,7 @@ import CosmicBackground from "@/components/Home/CosmicBackground";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import SmoothButton from "@/Share/SmoothButton";
-import { ArrowLeft, ArrowRight, ExternalLink, Layers, Cpu, Trophy, Globe, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Layers, Cpu, Trophy, Globe, Calendar, Tag, Flag } from "lucide-react";
 import Image from "next/image";
 
 const CaseStudyDetail = () => {
@@ -22,7 +22,7 @@ const CaseStudyDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white relative overflow-x-hidden selection:bg-[#EFFC76] selection:text-black">
+    <div className="min-h-screen  text-white relative overflow-x-hidden selection:bg-[#EFFC76] selection:text-black">
       {/* Background */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-30">
         <CosmicBackground />
@@ -56,7 +56,7 @@ const CaseStudyDetail = () => {
               ))}
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-6xl font-bold mb-8 tracking-tight leading-tight">
               {project.title}
             </h1>
             
@@ -87,7 +87,7 @@ const CaseStudyDetail = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
+          className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-24 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm"
         >
           <div>
             <div className="flex items-center gap-2 text-gray-500 mb-2">
@@ -116,6 +116,13 @@ const CaseStudyDetail = () => {
               <span className="text-sm uppercase tracking-wider">Focus</span>
             </div>
             <p className="text-lg font-semibold">{project.tags[1] || "Development"}</p>
+          </div>
+          <div>
+            <div className="flex items-center gap-2 text-gray-500 mb-2">
+              <Flag size={16} />
+              <span className="text-sm uppercase tracking-wider">Country</span>
+            </div>
+            <p className="text-lg font-semibold">Bangladesh</p>
           </div>
         </motion.div>
 
@@ -215,22 +222,7 @@ const CaseStudyDetail = () => {
           </div>
         </div>
 
-        {/* Secondary Image */}
-        {project.images[1] && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden mb-32 border border-white/10"
-          >
-            <Image
-              src={project.images[1]}
-              alt={`${project.title} secondary`}
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-        )}
+        
 
         {/* Next Project CTA */}
         <div className="border-t border-white/10 pt-20">
@@ -238,12 +230,12 @@ const CaseStudyDetail = () => {
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-[#EFFC76] text-sm font-medium tracking-wider uppercase mb-2 block">Next Case Study</span>
-                <h2 className="text-4xl md:text-6xl font-bold group-hover:text-gray-300 transition-colors">
+                <h2 className="text-2xl md:text-4xl font-bold group-hover:text-gray-300 transition-colors">
                   {nextProject.title}
                 </h2>
               </div>
-              <div className="w-20 h-20 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#EFFC76] group-hover:border-[#EFFC76] group-hover:text-black transition-all">
-                <ArrowRight size={32} className="group-hover:-rotate-45 transition-transform duration-300" />
+              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-[#EFFC76] group-hover:border-[#EFFC76] group-hover:text-black transition-all">
+                <ArrowRight size={22} className="group-hover:-rotate-45 transition-transform duration-300" />
               </div>
             </div>
           </Link>
