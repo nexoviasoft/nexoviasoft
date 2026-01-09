@@ -101,7 +101,7 @@ const PortfolioCard = () => {
               </motion.div>
 
               {/* Image Card 1 - Spans 4 cols */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -114,7 +114,7 @@ const PortfolioCard = () => {
                   alt={`${project.client} Work 1`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-              </motion.div>
+              </motion.div> */}
 
               {/* Image Card 2 - Spans 4 cols */}
               <motion.div
