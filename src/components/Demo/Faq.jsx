@@ -8,29 +8,29 @@ const Faq = () => {
 
   const faqs = [
     {
-      question: "How does your platform track feature usage?",
+      question: "How does SquadLog track project progress?",
       answer:
-        "We automatically collect interaction data across your product and visualize which features are being used most — no manual tagging needed.",
+        "We use industry-standard project management tools like Jira and Trello to track milestones, tasks, and progress. You'll have real-time access to see exactly where your project stands.",
     },
     {
-      question: "Do I need technical skills to use Alytics?",
+      question: "Do I need technical skills to work with you?",
       answer:
-        "Not at all. Alytics is built for product managers, marketers, and founders. Our visual interface lets you create reports and segments without writing a single line of SQL or code.",
+        "Not at all. We handle all the technical heavy lifting. We communicate in plain English, ensuring you understand the solutions we're building for your business.",
     },
     {
-      question: "Can Alytics integrate with tools we already use?",
+      question: "Can SquadLog integrate with tools we already use?",
       answer:
-        "Yes, we integrate with Segment, Slack, HubSpot, Salesforce, and 50+ other tools. You can push data in from your warehouse or send insights out to your marketing platforms.",
+        "Yes, we specialize in API integrations. We can connect your new custom software with existing tools like Salesforce, HubSpot, Slack, Stripe, and many others.",
     },
     {
-      question: "Is my data secure on Alytics?",
+      question: "Is my data secure with your solutions?",
       answer:
-        "Security is our top priority. We are SOC 2 Type II compliant, GDPR ready, and use enterprise-grade encryption for all data in transit and at rest.",
+        "Security is our top priority. We implement best practices for data encryption, secure authentication, and compliance with standards like GDPR and SOC 2 where applicable.",
     },
     {
-      question: "Can I try Alytics before committing?",
+      question: "Can I get a consultation before committing?",
       answer:
-        "Absolutely. We offer a 14-day free trial with full access to all features. No credit card required to start, so you can explore the platform risk-free.",
+        "Absolutely. We offer a free initial consultation to discuss your project ideas, requirements, and business goals before you sign any contract.",
     },
   ];
 

@@ -5,34 +5,34 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
     {
-        question: "What do I need to get started?",
+        question: "What core services does SquadLog provide?",
         answer:
-            "You'll need a basic understanding of React and Next.js. We provide detailed documentation to guide you through the setup process.",
+            "We offer a comprehensive suite of digital services including Custom Web Development, Cloud Computing Solutions, Mobile App Development (iOS & Android), UI/UX Design, and Digital Marketing strategies.",
     },
     {
-        question: "What kind of customization is available?",
+        question: "How does your project development process work?",
         answer:
-            "Everything is customizable! You can change colors, fonts, layouts, and components to match your brand identity using Tailwind CSS.",
+            "Our process is agile and collaborative. We start with Discovery & Strategy, move to Design & Prototyping, then Development & Testing, and finally Deployment & Support, ensuring you are involved at every step.",
     },
     {
-        question: "How easy is it to edit for beginners?",
+        question: "Do you offer custom software solutions?",
         answer:
-            "We've designed the code structure to be cleaner and modular. Even if you're new to Next.js, you'll find it intuitive to make changes.",
+            "Yes, we specialize in building bespoke software tailored to your unique business challenges. Whether it's an internal tool, a SaaS platform, or a complex enterprise system, we build it from the ground up.",
     },
     {
-        question: "Let me know more about moneyback guarantee?",
+        question: "Can you help migrate our business to the Cloud?",
         answer:
-            "We offer a 30-day money-back guarantee if you're not satisfied with the product, ensuring a risk-free purchase for you.",
+            "Absolutely. Our Cloud Computing experts can help you migrate your infrastructure to AWS, Azure, or Google Cloud, optimizing for security, scalability, and cost-efficiency.",
     },
     {
-        question: "Do I need to know how to code?",
+        question: "What industries do you specialize in?",
         answer:
-            "Basic knowledge of HTML/CSS is helpful, but our pre-built components make it easy to build pages without deep coding expertise.",
+            "We have experience working across various industries including FinTech, Healthcare, E-commerce, Education, and Logistics, adapting our solutions to meet specific industry standards and regulations.",
     },
     {
-        question: "What will I get after purchasing the template?",
+        question: "Do you provide ongoing maintenance and support?",
         answer:
-            "You get the full source code, documentation, free updates, and access to our support team for any technical issues.",
+            "Yes, we build long-term partnerships. We offer various support and maintenance packages to ensure your digital products remain secure, updated, and bug-free after launch.",
     },
 ];
 

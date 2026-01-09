@@ -5,34 +5,34 @@ import { Plus, Minus, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "What do I need to get started?",
+    question: "What is the best way to start a project with you?",
     answer:
-      "To get started, simply choose a plan that suits your needs, sign up, and you'll get instant access to our platform and resources.",
+      "Simply fill out the contact form above or schedule a consultation call. We'll discuss your project requirements, goals, and timeline to propose the best solution.",
   },
   {
-    question: "What kind of customization is available?",
+    question: "How much does a typical project cost?",
     answer:
-      "Our template is highly customizable. You can easily change colors, fonts, layouts, and content to match your brand identity without any coding knowledge.",
+      "Costs vary depending on the scope and complexity of the project. After our initial discovery call, we provide a detailed proposal with transparent pricing options.",
   },
   {
-    question: "How easy is it to edit for beginners?",
+    question: "Can we sign a Non-Disclosure Agreement (NDA)?",
     answer:
-      "It's designed with beginners in mind! We provide a drag-and-drop interface and comprehensive documentation to help you every step of the way.",
+      "Yes, we take intellectual property and confidentiality very seriously. We are happy to sign an NDA before discussing any sensitive details of your project.",
   },
   {
-    question: "Let me know more about moneyback guarantee?",
+    question: "What are your payment terms?",
     answer:
-      "We offer a 30-day money-back guarantee. If you're not satisfied with our product for any reason, simply contact our support team for a full refund.",
+      "Typically, we work with a milestone-based payment structure. This ensures you only pay for completed and approved work stages. We can discuss specific terms during our proposal phase.",
   },
   {
-    question: "Do I need to know how to code?",
+    question: "Do you work with international clients?",
     answer:
-      "No coding skills are required! Our platform is built for non-technical users, allowing you to build and manage your site effortlessly.",
+      "Yes, we work with clients globally. We use tools like Slack, Zoom, and Jira to ensure seamless communication and collaboration regardless of time zones.",
   },
   {
-    question: "What will I get after purchasing the template?",
+    question: "How do you handle project updates and communication?",
     answer:
-      "You'll receive the full source code, documentation, lifetime updates, and access to our premium support team.",
+      "We believe in transparency. You will have a dedicated project manager and regular updates via your preferred communication channels to keep you informed of progress.",
   },
 ];
 

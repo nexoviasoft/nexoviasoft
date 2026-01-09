@@ -5,34 +5,34 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
-    question: "What do I need to get started?",
+    question: "What is your typical process for a case study project?",
     answer:
-      "You'll need a basic understanding of React and Next.js. We provide detailed documentation to guide you through the setup process.",
+      "We follow a structured approach: Discovery, Strategy, Design, Development, and Launch. Each phase is collaborative, ensuring the final product aligns perfectly with your business goals.",
   },
   {
-    question: "What kind of customization is available?",
+    question: "Do you build custom solutions or use templates?",
     answer:
-      "Everything is customizable! You can change colors, fonts, layouts, and components to match your brand identity using Tailwind CSS.",
+      "We primarily build custom solutions tailored to your specific needs. While we can use frameworks to accelerate development, the design and functionality are unique to your brand.",
   },
   {
-    question: "How easy is it to edit for beginners?",
+    question: "How long does it take to complete a project?",
     answer:
-      "We've designed the code structure to be cleaner and modular. Even if you're new to Next.js, you'll find it intuitive to make changes.",
+      "Timelines depend on the project scope. A simple website might take 4-6 weeks, while a complex web application could take 3-6 months. We provide a detailed timeline during the proposal phase.",
   },
   {
-    question: "Let me know more about moneyback guarantee?",
+    question: "What technologies do you use?",
     answer:
-      "We offer a 30-day money-back guarantee if you're not satisfied with the product, ensuring a risk-free purchase for you.",
+      "We use modern, scalable technologies such as React, Next.js, Node.js, Python, and cloud services like AWS and Google Cloud to ensure high performance and future-proofing.",
   },
   {
-    question: "Do I need to know how to code?",
+    question: "Do you offer maintenance after the project is live?",
     answer:
-      "Basic knowledge of HTML/CSS is helpful, but our pre-built components make it easy to build pages without deep coding expertise.",
+      "Yes, we offer ongoing support and maintenance packages to handle updates, security patches, and performance monitoring so you can focus on your business.",
   },
   {
-    question: "What will I get after purchasing the template?",
+    question: "Can you help with rebranding and design?",
     answer:
-      "You get the full source code, documentation, free updates, and access to our support team for any technical issues.",
+      "Absolutely. Our UI/UX design team specializes in creating compelling brand identities and user-friendly interfaces that resonate with your target audience.",
   },
 ];
 
