@@ -1,53 +1,15 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Briefcase, Check } from "lucide-react";
+import { Briefcase, Check, ExternalLink } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
+import { caseStudiesData } from "@/constants/caseStudies";
+import Link from "next/link";
 
 const Portfolio = () => {
   const ref = useRef(null);
 
-  const projects = [
-    {
-      year: "2024",
-      client: "Lemonide Tech",
-      features: [
-        "AI Integration",
-        "Responsive Design",
-        "Custom Layouts",
-        "Fast Loading",
-      ],
-      tags: ["E-Commerce", "Case Studies"],
-      gradient: "from-[#EFFC76]/40 to-[#EFFC76]/40",
-      images: ["/portfolio/watch.png", "/portfolio/phone.png"],
-    },
-    {
-      year: "2025",
-      client: "Viper Studio",
-      features: [
-        "Modern Typography",
-        "User Friendly",
-        "Flexible CMS",
-        "SEO Optimized",
-      ],
-      tags: ["Business", "Agency"],
-      gradient: "from-[#EFFC76]/40 to-[#EFFC76]/40",
-      images: ["/portfolio/cap.png", "/portfolio/woman.png"],
-    },
-    {
-      year: "2025",
-      client: "Million One",
-      features: [
-        "Easy Customization",
-        "Interactive Elements",
-        "Retina Ready",
-        "High Performance",
-      ],
-      tags: ["Case Studies", "Agency"],
-      gradient: "from-[#EFFC76]/40 to-[#EFFC76]/40",
-      images: ["/portfolio/car.png", "/portfolio/bottle.png"],
-    },
-  ];
+  const projects = caseStudiesData;
 
   return (
     <div
@@ -153,6 +115,26 @@ const Portfolio = () => {
                       {tag}
                     </span>
                   ))}
+                </div>
+                
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-white/10">
+                  <Link href={`/main/case-studies/${project.slug}`}>
+                    <SmoothButton>
+                      View Details
+                    </SmoothButton>
+                  </Link>
+                  
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="px-6 py-2.5 rounded-lg border border-white/20 hover:bg-white/10 hover:border-[#EFFC76]/50 transition-all flex items-center gap-2 text-md font-semibold text-gray-300 hover:text-white shadow-2xl"
+                    >
+                      Live Version <ExternalLink size={16} />
+                    </a>
+                  )}
                 </div>
               </motion.div>
 
