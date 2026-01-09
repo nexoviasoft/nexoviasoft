@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const ContactForm = () => {
   return (
@@ -42,15 +43,8 @@ const ContactForm = () => {
           ready to assist you.
         </motion.p>
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25"
-        >
-          Fill The Form Out!
-        </motion.button>
-        
+        <SmoothButton> Fill The Form Out!</SmoothButton>
+
         {/* Background glow for header */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#EFFC76]/20 blur-[100px] pointer-events-none -z-10" />
       </div>
@@ -65,10 +59,10 @@ const ContactForm = () => {
       >
         {/* Glow effect behind form */}
         <div className="absolute inset-0 bg-[#EFFC76]/10 blur-[60px] rounded-[2rem] transform scale-95 translate-y-4 pointer-events-none" />
-        
+
         <div className="relative bg-[#0A0A0A] border border-white/10 rounded-[2rem] p-6 md:p-12 lg:p-16 overflow-hidden">
-             {/* Subtle top gradient inside card */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/4 bg-[#EFFC76]/10 blur-[80px] pointer-events-none" />
+          {/* Subtle top gradient inside card */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/4 bg-[#EFFC76]/10 blur-[80px] pointer-events-none" />
 
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 relative z-10">
             {/* First Name */}
@@ -121,8 +115,20 @@ const ContactForm = () => {
                   <option value="au">Australia</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L6 6.5L11 1.5"
+                      stroke="#666"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
               </div>
@@ -143,8 +149,20 @@ const ContactForm = () => {
                   <option value="other">Other</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L6 6.5L11 1.5"
+                      stroke="#666"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
               </div>

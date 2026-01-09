@@ -6,12 +6,7 @@ import Link from 'next/link';
 
 const PartOfUs = () => {
     return (
-        <section className="relative w-full py-20 px-4 md:px-8 bg-black overflow-hidden flex items-center justify-center min-h-[600px]">
-            {/* Background Glow Effect */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
-                <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[60%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/40 via-black/0 to-transparent blur-3xl opacity-60"></div>
-            </div>
-
+        <section className="relative w-full py-20 px-4 md:px-8 bg-transparent overflow-hidden flex items-center justify-center min-h-[600px]">
             <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
 
                 {/* Badge */}

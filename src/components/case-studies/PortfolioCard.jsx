@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Briefcase, Check } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const PortfolioCard = () => {
   const ref = useRef(null);
@@ -50,15 +51,9 @@ const PortfolioCard = () => {
 
   return (
     <div
-      className="bg-black text-white py-24 relative overflow-hidden"
+      className="bg-transparent text-white py-24 relative overflow-hidden"
       id="portfolio-section"
     >
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-[#EFFC76]/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-[#EFFC76]/10 rounded-full blur-[120px]" />
-      </div>
-
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-20">
@@ -102,9 +97,8 @@ const PortfolioCard = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <button className="bg-[#EFFC76]  hover:from-[#EFFC76]  text-black px-8 py-3 rounded-lg font-medium transition-all duration-300 ">
-              Build Your Product
-            </button>
+            <SmoothButton>Build Your Product </SmoothButton>
+            
           </motion.div>
         </div>
 

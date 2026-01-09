@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
 import Image from "next/image";
-import CosmicBackground from "./CosmicBackground";
-
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -22,20 +20,52 @@ const Banner = () => {
 
   // Partner logos for marquee
   const logoItems = [
-    { id: 1, component: <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span> },
-    { id: 2, component: <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span> },
-    { id: 3, component: <span className="text-2xl font-black italic tracking-tighter">IPSUM</span> },
-    { id: 4, component: <span className="text-2xl font-bold font-sans tracking-widest">LOGO</span> },
-    { id: 5, component: <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">LOGO IPSUM</span> },
+    {
+      id: 1,
+      component: (
+        <span className="text-2xl font-bold font-sans tracking-widest">
+          LOGO
+        </span>
+      ),
+    },
+    {
+      id: 2,
+      component: (
+        <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
+          LOGO IPSUM
+        </span>
+      ),
+    },
+    {
+      id: 3,
+      component: (
+        <span className="text-2xl font-black italic tracking-tighter">
+          IPSUM
+        </span>
+      ),
+    },
+    {
+      id: 4,
+      component: (
+        <span className="text-2xl font-bold font-sans tracking-widest">
+          LOGO
+        </span>
+      ),
+    },
+    {
+      id: 5,
+      component: (
+        <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
+          LOGO IPSUM
+        </span>
+      ),
+    },
   ];
 
   return (
-    <div className="min-h-screen text-white overflow-hidden">
+    <div className="min-h-screen text-white overflow-hidden bg-transparent">
       {/* Banner Component */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
-        {/* Animated Cosmic Background */}
-        <CosmicBackground />
-
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-center flex-grow">
           {/* Badge */}
@@ -48,7 +78,9 @@ const Banner = () => {
             <span className="bg-[#EFFC76] text-black text-xs font-bold px-3 py-1 rounded-full">
               2025
             </span>
-            <span className="text-gray-300 text-sm font-medium">Next-Gen AI Studio</span>
+            <span className="text-gray-300 text-sm font-medium">
+              Next-Gen AI Studio
+            </span>
           </motion.div>
 
           {/* Main Heading */}
@@ -87,16 +119,16 @@ const Banner = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <button className="px-8 py-3.5 bg-gray-100 text-black rounded-full font-medium hover:bg-white transition-all duration-300 hover:scale-105 min-w-[180px]">
+            <button className="px-8 py-3 bg-gray-100 text-black rounded-full font-medium hover:bg-white transition-all duration-300 hover:scale-105 min-w-[180px]">
               Connect With Us
             </button>
-            <button className="px-8 py-3.5 bg-[#EFFC76] text-black rounded-full font-medium border border-[#EFFC76] hover:bg-[#EFFC76]/90 transition-all duration-300 hover:scale-105 min-w-[180px]">
+            <button className="px-8 py-3 bg-[#EFFC76] text-black rounded-full font-medium border border-[#EFFC76] hover:bg-[#EFFC76]/90 transition-all duration-300 hover:scale-105 min-w-[180px]">
               What is SquadLog?
             </button>
           </motion.div>
 
           {/* Partner Logos Marquee */}
-          <motion.div 
+          <motion.div
             className="w-full max-w-4xl overflow-hidden relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
@@ -105,14 +137,14 @@ const Banner = () => {
             {/* Gradient masks for smooth fade edges */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
-            
-            <motion.div 
+
+            <motion.div
               className="flex items-center gap-16 md:gap-24 grayscale w-max"
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ 
-                repeat: Infinity, 
-                ease: "linear", 
-                duration: 20 
+              transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 20,
               }}
             >
               {[...logoItems, ...logoItems].map((item, index) => (

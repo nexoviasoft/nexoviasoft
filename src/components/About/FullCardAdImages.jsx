@@ -35,7 +35,7 @@ const FullCardAdImages = () => {
   return (
     <div className="w-11/12 md:max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-20 items-start relative my-10">
       {/* Left Side - Sticky Image */}
-      <div className="relative fixed  md:top-32 bg-[#111] p-3 rounded-2xl border border-white/5 h-fit self-start">
+      <div className="relative fixed  md:top-32 bg-white/5 p-3 rounded-2xl border border-white/5 h-fit self-start">
         <div className="relative rounded-2xl overflow-hidden aspect-[5/5] w-full">
           <img
             className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"

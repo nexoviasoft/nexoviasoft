@@ -14,6 +14,7 @@ import {
   Github,
   Puzzle,
 } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const Intregration = () => {
   // Icon data mimicking the image sequence
@@ -37,9 +38,9 @@ const Intregration = () => {
   ];
 
   return (
-    <section className="bg-black py-24 px-4 overflow-hidden relative">
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#EFFC76]/20 rounded-full blur-[120px]" />
+    <section className="bg-transparent py-24 px-4 overflow-hidden relative">
+      {/* Background Glows - Removed for global theme */}
+      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#EFFC76]/20 rounded-full blur-[120px]" /> */}
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Pill Label */}
@@ -91,9 +92,7 @@ const Intregration = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-20"
         >
-          <button className="bg-[#EFFC76] hover:bg-[#EFFC76] text-black px-8 py-3 rounded-full font-medium transition-colors shadow-[0_0_20px_rgba(239,252,118,0.5)]">
-            View About Reboot
-          </button>
+          <SmoothButton> View About Reboot </SmoothButton>
         </motion.div>
 
         {/* Icons Row */}

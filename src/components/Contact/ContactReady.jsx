@@ -2,11 +2,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const ContactReady = () => {
   return (
     <div className="w-11/12 md:max-w-[880px] mx-auto py-20">
-      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-black border border-white/10 p-10 md:p-20 text-center">
+      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-transparent border border-white/10 p-10 md:p-20 text-center">
         {/* Top Spotlight Effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-[#EFFC76]/20 blur-[100px] pointer-events-none" />
 
@@ -51,15 +52,7 @@ const ContactReady = () => {
           </motion.p>
 
           {/* Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25 mt-4"
-          >
-            Book an Appointment
-          </motion.button>
+          <SmoothButton>Book an Appointment</SmoothButton>
         </div>
 
         {/* Background Grid Pattern (Optional subtle texture) */}
@@ -68,6 +61,5 @@ const ContactReady = () => {
     </div>
   );
 };
-
 
 export default ContactReady;

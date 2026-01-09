@@ -44,7 +44,7 @@ const Fqa = () => {
     };
 
     return (
-        <section className="py-20 bg-black text-white relative overflow-hidden">
+        <section className="py-20 bg-transparent text-white relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
                     {/* Left Column: Title & Description */}
@@ -118,8 +118,8 @@ const Fqa = () => {
             </div>
 
             {/* Background gradients for aesthetics */}
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-900/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#EFFC76]/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#EFFC76]/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
         </section>
     );
 };

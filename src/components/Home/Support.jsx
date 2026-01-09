@@ -2,12 +2,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Phone, Star, Headset, MessageCircle, CheckCircle2 } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const Support = () => {
     return (
-        <section className="bg-black py-24 px-4 relative overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" />
+        <section className="bg-transparent py-24 px-4 relative overflow-hidden">
+            {/* Background Gradients - Removed for global theme */}
+            {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" /> */}
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
@@ -44,15 +45,8 @@ const Support = () => {
                         your site without friction.
                     </motion.p>
 
-                    <motion.button
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 }}
-                        className="bg-[#EFFC76] hover:bg-[#EFFC76] text-black px-8 py-3 rounded-full text-sm font-medium transition-all shadow-lg shadow-[#EFFC76]/20"
-                    >
-                        View About SquadLog
-                    </motion.button>
+<SmoothButton>View About SquadLog </SmoothButton>
+                  
                 </div>
 
                 {/* Central Visual - Moving Cards */}

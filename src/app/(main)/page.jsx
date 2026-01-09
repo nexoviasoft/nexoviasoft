@@ -8,16 +8,21 @@ import LanuchYourSite from "@/components/Home/LanuchYourSite";
 import OurProccess from "@/components/Home/OurProccess";
 import OurTeam from "@/components/Home/OurTeam";
 import Packed from "@/components/Home/Packed";
-import PartOfUs from "@/components/Home/PartOfus";
+// import PartOfUs from "@/components/Home/PartOfus";
 import Pricing from "@/components/Home/Pricing";
 import Portfolio from "@/components/Home/Portfolio";
 // import Service from "@/components/Home/Service";
 import Support from "@/components/Home/Support";
 import Testimonial from "@/components/Home/Testimonial";
+import CosmicBackground from "@/components/Home/CosmicBackground";
 
 const TestPages = () => {
   return (
-    <div>
+    <div className="">
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <CosmicBackground />
+      </div>
+      <div className="relative z-10">
       <section>
         <Banner />
       </section>
@@ -67,10 +72,11 @@ const TestPages = () => {
         <Fqa />
       </section>
 
-      <section>
+      {/* <section>
         <PartOfUs />
-      </section>
-    </div>
+      </section> */}
+      </div>
+      </div>
   );
 };
 
