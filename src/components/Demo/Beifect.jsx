@@ -1,37 +1,45 @@
+"use client"
 import React from 'react';
 import { Clock, Smartphone, Zap, Shield, FileText, Layout } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Beifect = () => {
     const benefits = [
         {
-            icon: <Clock className="w-6 h-6 text-blue-600" />,
+            icon: <Clock className="w-8 h-8" />,
             title: "Real-Time Tracking",
-            description: "Monitor user activity instantly for smarter decision-making."
+            description: "Monitor user activity instantly for smarter decision-making.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         },
         {
-            icon: <Smartphone className="w-6 h-6 text-blue-600" />, // Using Smartphone as a proxy for "All-in-One" or "Device"
+            icon: <Smartphone className="w-8 h-8" />, // Using Smartphone as a proxy for "All-in-One" or "Device"
             title: "All-in-One View",
-            description: "Keep all your analytics in one place, without jumping between tools."
+            description: "Keep all your analytics in one place, without jumping between tools.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         },
         {
-            icon: <Zap className="w-6 h-6 text-blue-600" />,
+            icon: <Zap className="w-8 h-8" />,
             title: "Actionable Insights",
-            description: "Track the metrics that matter most for sustainable business growth."
+            description: "Track the metrics that matter most for sustainable business growth.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         },
         {
-            icon: <Shield className="w-6 h-6 text-blue-600" />,
+            icon: <Shield className="w-8 h-8" />,
             title: "Secure Data",
-            description: "Keep your analytics safe with advanced security and strong encryption."
+            description: "Keep your analytics safe with advanced security and strong encryption.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         },
         {
-            icon: <FileText className="w-6 h-6 text-blue-600" />,
+            icon: <FileText className="w-8 h-8" />,
             title: "Custom Reports",
-            description: "Create tailored reports that fit your needs and highlight key insights."
+            description: "Create tailored reports that fit your needs and highlight key insights.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         },
         {
-            icon: <Layout className="w-6 h-6 text-blue-600" />,
+            icon: <Layout className="w-8 h-8" />,
             title: "Simple to Use",
-            description: "Navigate easily—no steep learning curve, start making better decisions quickly."
+            description: "Navigate easily—no steep learning curve, start making better decisions quickly.",
+            color: "bg-[#EFFC76]/10 text-[#EFFC76]"
         }
     ];
 
@@ -54,22 +62,33 @@ const Beifect = () => {
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {benefits.map((benefit, index) => (
-                        <div 
+                        <motion.div 
                             key={index} 
-                            className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-                        >
-                            <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                                <div className="group-hover:text-white transition-colors duration-300 text-white">
-                                    {benefit.icon}
-                                </div>
-                            </div>
-                            <h3 className="text-xl font-bold text-gray-900 mb-3">
-                                {benefit.title}
-                            </h3>
-                            <p className="text-gray-500 leading-relaxed">
-                                {benefit.description}
-                            </p>
-                        </div>
+                            initial={{ opacity: 0, y: 30 }} 
+                            whileInView={{ opacity: 1, y: 0 }} 
+                            viewport={{ once: true }} 
+                            transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }} 
+                            className="group relative p-8 rounded-3xl bg-neutral-900/50 border border-white/5 hover:border-[#EFFC76]/50 transition-all duration-300 hover:bg-neutral-900/80" 
+                        > 
+                            {/* Hover Gradient Border Effect */} 
+                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#EFFC76]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" /> 
+                
+                            <div className="relative z-10 flex flex-col items-center text-center"> 
+                                <div 
+                                    className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-[#EFFC76]/20 group-hover:scale-110 transition-transform duration-300 ${benefit.color}`} 
+                                > 
+                                    {benefit.icon} 
+                                </div> 
+                
+                                <h3 className="text-2xl font-semibold text-white mb-4"> 
+                                    {benefit.title} 
+                                </h3> 
+                
+                                <p className="text-gray-400 leading-relaxed"> 
+                                    {benefit.description} 
+                                </p> 
+                            </div> 
+                        </motion.div>
                     ))}
                 </div>
             </div>

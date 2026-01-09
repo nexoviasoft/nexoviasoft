@@ -78,19 +78,17 @@ const PortfolioCard = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-white/10">
                   <Link href={`/main/case-studies/${project.slug}`}>
-                    <SmoothButton>
-                      View Details
-                    </SmoothButton>
+                    <SmoothButton>View Details</SmoothButton>
                   </Link>
-                  
+
                   {project.liveLink && (
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank" 
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="px-6 py-2.5 rounded-lg border border-white/20 hover:bg-white/10 hover:border-[#EFFC76]/50 transition-all flex items-center gap-2 text-md font-semibold text-gray-300 hover:text-white shadow-2xl"
                     >
@@ -122,13 +120,13 @@ const PortfolioCard = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1 + 0.2 }}
-                className="lg:col-span-8 w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden relative border border-white/10 group"
+                className="lg:col-span-8 w-full h-[300px] md:h-[450px] rounded-3xl overflow-hidden relative border border-white/10 group"
               >
                 <div className="absolute inset-0 bg-gray-900/50 -z-10" />
                 <img
                   src={project.images[1]}
                   alt={`${project.client} Work 2`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 "
                 />
               </motion.div>
             </div>

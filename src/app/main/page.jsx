@@ -9,11 +9,11 @@ import OurProccess from "@/components/Home/OurProccess";
 import OurTeam from "@/components/Home/OurTeam";
 // import PartOfUs from "@/components/Home/PartOfus";
 import Pricing from "@/components/Home/Pricing";
-import Portfolio from "@/components/Home/Portfolio";
 // import Service from "@/components/Home/Service";
 import Support from "@/components/Home/Support";
 import Testimonial from "@/components/Home/Testimonial";
 import CosmicBackground from "@/components/Home/CosmicBackground";
+import PortfolioCard from "@/components/case-studies/PortfolioCard";
 
 const TestPages = () => {
   return (
@@ -22,57 +22,57 @@ const TestPages = () => {
         <CosmicBackground />
       </div>
       <div className="relative z-10">
-      <section>
-        <Banner />
-      </section>
+        <section>
+          <Banner />
+        </section>
 
-      <section >
-        <Innovation />
-      </section>
+        <section>
+          <Innovation />
+        </section>
 
-      <section>
-        <Portfolio />
-      </section>
-      <section>
-        <Support />
-      </section>
-      <section>
-        <AboutSquadLog />
-      </section>
-      <section>
-        <Intregration />
-      </section>
+        <section>
+          <PortfolioCard />
+        </section>
+        <section>
+          <Support />
+        </section>
+        <section>
+          <AboutSquadLog />
+        </section>
+        <section>
+          <Intregration />
+        </section>
 
-      <section>
-        <Pricing />
-      </section>
-      <section>
-        <OurProccess />
-      </section>
-      <section>
-        <LanuchYourSite />
-      </section>
+        <section>
+          <Pricing />
+        </section>
+        <section>
+          <OurProccess />
+        </section>
+        <section>
+          <LanuchYourSite />
+        </section>
 
-      <section>
-        <OurTeam />
-      </section>
-      <section>
-        <Comparision />
-      </section>
+        <section>
+          <OurTeam />
+        </section>
+        <section>
+          <Comparision />
+        </section>
 
-      <section>
-        <Testimonial />
-      </section>
+        <section>
+          <Testimonial />
+        </section>
 
-      <section>
-        <Fqa />
-      </section>
+        <section>
+          <Fqa />
+        </section>
 
-      {/* <section>
+        {/* <section>
         <PartOfUs />
       </section> */}
       </div>
-      </div>
+    </div>
   );
 };
 
