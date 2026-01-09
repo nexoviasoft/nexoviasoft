@@ -8,27 +8,20 @@ const LaunchYourSite = () => {
   return (
     <section className="relative py-24 -mt-27 md:-mt-20 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Image/Visual Placeholder */}
-        {/* Based on the design, there is a faint face/image on the bottom left. 
-            We'll use a placeholder or gradient effect if no asset is provided, 
-            or try to mimic the "face" look with a placeholder div if I can't generate an image. 
-            For now, I will use a sophisticated gradient/shape placeholder that implies the visual.
-        */}
-        <div className="relative h-[400px] lg:h-[600px] rounded-3xl overflow-hidden hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-          {/* Placeholder for the person image */}
-          <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-neutral-800 to-transparent opacity-50" />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 0.5, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="absolute bottom-0 left-0 w-full h-full flex items-end justify-center pb-20"
-          >
-            {/* Visual Representation of "Person"/Image */}
-            <div className="w-64 h-64 bg-neutral-800 rounded-full blur-3xl opacity-40"></div>
-          </motion.div>
-          {/* Text Overlay for "Your New Art..." seen in background? Hard to read, leaving clean. */}
-        </div>
+        {/* Left Side - Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative md:block hidden h-[300px] sm:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden w-full"
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+          <img
+            src="https://i.ibb.co.com/j9mhfwk5/image.png"
+            alt="Launch Your Site"
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
 
         {/* Right Side - Content */}
         <div className="flex flex-col items-start">
@@ -55,7 +48,9 @@ const LaunchYourSite = () => {
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
             Launch Your Project with SquadLog <br />
-            <span className="text-gray-500">Efficient, Scalable, and Premium.</span>
+            <span className="text-gray-500">
+              Efficient, Scalable, and Premium.
+            </span>
           </motion.h2>
 
           <motion.p
@@ -65,8 +60,8 @@ const LaunchYourSite = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-400 text-lg mb-10 max-w-lg"
           >
-            Transform your vision into reality effortlessly.
-            Ready to stand out? Partner with us today!
+            Transform your vision into reality effortlessly. Ready to stand out?
+            Partner with us today!
           </motion.p>
 
           <motion.div
@@ -87,7 +82,9 @@ const LaunchYourSite = () => {
                   />
                 ))}
               </div>
-              <span className="text-gray-400 text-sm">Trusted by 50+ Clients</span>
+              <span className="text-gray-400 text-sm">
+                Trusted by 50+ Clients
+              </span>
             </div>
           </motion.div>
         </div>

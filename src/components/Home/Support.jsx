@@ -9,13 +9,32 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+const features = [
+  {
+    icon: MessageCircle,
+    title: "Fast Responses",
+    description: "Get timely answers to your questions.",
+  },
+  {
+    icon: Star,
+    title: "Expert Guidance",
+    description: "Our team understands both design and tech.",
+  },
+  {
+    icon: Headset,
+    title: "Continuous Help",
+    description: "Support doesn't stop after launch.",
+  },
+];
 
 const Support = () => {
   return (
-    <section className="bg-transparent py-24 px-4 relative overflow-hidden">
-      {/* Background Gradients - Removed for global theme */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" /> */}
-
+    <section className=" py-24 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -62,26 +81,47 @@ const Support = () => {
           <CardsDisplay />
         </div>
 
-        {/* Bottom Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <FeatureCard
-            icon={MessageCircle}
-            title="Fast Responses"
-            description="Get timely answers to your questions."
-            delay={0.4}
-          />
-          <FeatureCard
-            icon={Star}
-            title="Expert Guidance"
-            description="Our team understands both design and tech."
-            delay={0.5}
-          />
-          <FeatureCard
-            icon={Headset}
-            title="Continuous Help"
-            description="Support doesn't stop after launch."
-            delay={0.6}
-          />
+        {/* Desktop Grid */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} delay={0.4 + index * 0.1} />
+          ))}
+        </div>
+
+        {/* Mobile Slider */}
+        <div className="lg:hidden -mt-8 max-w-5xl mx-auto">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            className="pb-14 [&_.swiper-pagination-bullet]:bg-gray-500 [&_.swiper-pagination-bullet-active]:bg-[#EFFC76] [&_.swiper-pagination-bullet]:w-3 [&_.swiper-pagination-bullet]:h-3"
+            onClick={(swiper) => {
+              swiper.autoplay.stop();
+            }}
+            onTouchMove={(swiper) => {
+              // Ensure it resumes after manual move (handled by disableOnInteraction: false)
+            }}
+          >
+            {features.map((feature, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <FeatureCard {...feature} delay={0} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

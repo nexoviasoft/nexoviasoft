@@ -44,7 +44,7 @@ const Faq = () => {
     };
 
     return (
-        <section className="py-20 bg-transparent text-white relative overflow-hidden">
+        <section className="py-20  text-white -mt-26 md:-mt-22 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-8 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
                     {/* Left Column: Title & Description */}
@@ -55,7 +55,7 @@ const Faq = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#6A0DAD] text-white text-sm font-medium mb-4 shadow-[0_0_15px_rgba(106,13,173,0.5)]">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#EFFC76] text-black text-sm font-medium mb-4 shadow-[#EFFC76]">
                                 FAQ
                             </span>
                             <h2 className="text-4xl md:text-5xl font-medium leading-tight mb-4">

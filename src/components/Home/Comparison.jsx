@@ -9,7 +9,7 @@ const Comparison = () => {
     <section className="bg-transparent py-20 md:-mt-22 -mt-25 px-4 md:px-8 overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-20">
+        <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,9 +70,9 @@ const Comparison = () => {
         </div>
 
         {/* Comparison Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-12 relative">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-12 relative">
           {/* The Rest */}
-          <div className="bg-[#111] rounded-[32px] border border-white/5 p-8 md:p-10 relative overflow-hidden">
+          <div className="bg-[#111]  rounded-[22px] p-8 md:p-10 relative8overflow-hidden">
             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-red-500/5 to-transparent pointer-events-none opacity-50"></div>
 
             <motion.div
@@ -89,7 +89,7 @@ const Comparison = () => {
                   },
                 },
               }}
-              className="space-y-6 relative z-10 h-full flex flex-col justify-center"
+              className="space-y-3 md:space-y-6 relative z-10 h-full flex flex-col justify-center"
             >
               <ComparisonItem
                 icon={X}
@@ -113,7 +113,7 @@ const Comparison = () => {
                 icon={X}
                 color="text-red-500"
                 bg="bg-red-500/10"
-                text="Hidden Costs"
+                text="Hidden Costs Squadlog"
               />
               <ComparisonItem
                 icon={X}
@@ -130,7 +130,7 @@ const Comparison = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative bg-[#0A0A0A] rounded-[32px] border border-white/10 overflow-hidden group"
+            className="relative bg-[#0A0A0A] rounded-[22px]   overflow-hidden group"
           >
             {/* Glowing Border Effect */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#EFFC76]/20 via-transparent to-transparent opacity-50 pointer-events-none"></div>
@@ -153,7 +153,7 @@ const Comparison = () => {
                   },
                 },
               }}
-              className="relative z-10 space-y-6 p-8 md:p-10 h-full flex flex-col justify-center"
+              className="relative z-10  space-y-3 md:space-y-6  p-8 md:p-10 h-full f8ex flex-col justify-center"
             >
               <ComparisonItem
                 icon={Check}
