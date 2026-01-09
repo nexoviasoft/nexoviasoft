@@ -2,6 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageSquare } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import TestimonialCard from "./TestimonialCard";
 import SmoothButton from "@/Share/SmoothButton";
 
@@ -58,21 +62,27 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <section className="bg-transparent py-20 px-4 md:px-8 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#EFFC76]/30 bg-[#EFFC76]/10 mb-6"
-                    >
-                        <div className="w-5 h-5 rounded-full bg-[#EFFC76] flex items-center justify-center mr-2">
-                            <MessageSquare size={12} className="text-black" fill="currentColor" />
-                        </div>
-                        <span className="text-gray-300 text-sm font-medium">Testimonial</span>
-                    </motion.div>
+    <section className=" -mt-22 py-20 px-4 md:px-8 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#EFFC76]/30 bg-[#EFFC76]/10 mb-6"
+          >
+            <div className="w-5 h-5 rounded-full bg-[#EFFC76] flex items-center justify-center mr-2">
+              <MessageSquare
+                size={12}
+                className="text-black"
+                fill="currentColor"
+              />
+            </div>
+            <span className="text-gray-300 text-sm font-medium">
+              Testimonial
+            </span>
+          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -95,9 +105,10 @@ const Testimonial = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            className="text-gray-400 md:block hidden max-w-2xl mx-auto text-lg md:text-base leading-relaxed"
           >
-            Discover how we've empowered businesses to achieve their digital goals.
+            Discover how we've empowered businesses to achieve their digital
+            goals.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -109,11 +120,47 @@ const Testimonial = () => {
           </motion.div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Testimonials Grid for Desktop */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((item, index) => (
             <TestimonialCard key={index} {...item} delay={0.2 + index * 0.1} />
           ))}
+        </div>
+
+        {/* Testimonials Slider for Mobile/Tablet */}
+        <div className="lg:hidden">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            className="pb-14 [&_.swiper-pagination-bullet]:bg-gray-500 [&_.swiper-pagination-bullet-active]:bg-[#EFFC76] [&_.swiper-pagination-bullet]:w-3 [&_.swiper-pagination-bullet]:h-3"
+            onClick={(swiper) => {
+              swiper.autoplay.stop();
+            }}
+            onTouchMove={(swiper) => {
+              // Ensure it resumes after manual move (handled by disableOnInteraction: false, but explicit start helps if needed)
+            }}
+          >
+            {testimonials.map((item, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <TestimonialCard {...item} delay={0} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         {/* Footer Logos Placeholder (as per design) */}
@@ -122,13 +169,7 @@ const Testimonial = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex justify-center gap-8 mt-20 opacity-30 grayscale"
-        >
-          {/* Replace with actual logo SVGs if available, otherwise placeholders */}
-          <div className="h-8 w-20 bg-white/20 rounded"></div>
-          <div className="h-8 w-20 bg-white/20 rounded"></div>
-          <div className="h-8 w-20 bg-white/20 rounded"></div>
-          <div className="h-8 w-20 bg-white/20 rounded"></div>
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );
