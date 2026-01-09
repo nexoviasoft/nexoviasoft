@@ -7,7 +7,6 @@ import Intregration from "@/components/Home/Intregration";
 import LanuchYourSite from "@/components/Home/LanuchYourSite";
 import OurProccess from "@/components/Home/OurProccess";
 import OurTeam from "@/components/Home/OurTeam";
-import Packed from "@/components/Home/Packed";
 // import PartOfUs from "@/components/Home/PartOfus";
 import Pricing from "@/components/Home/Pricing";
 import Portfolio from "@/components/Home/Portfolio";
@@ -25,9 +24,6 @@ const TestPages = () => {
       <div className="relative z-10">
       <section>
         <Banner />
-      </section>
-      <section>
-        <Packed />
       </section>
 
       <section >

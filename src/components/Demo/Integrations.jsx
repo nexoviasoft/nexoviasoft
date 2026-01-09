@@ -31,18 +31,18 @@ const Integrations = () => {
   ];
 
   return (
-    <section id="integrations" className="py-24 bg-white overflow-hidden">
+    <section id="integrations" className="py-24  overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           {/* Left Content */}
           <div className="w-full lg:w-1/2 text-left">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-blue-600 font-medium text-sm mb-6">
+            <div className="inline-block px-4 py-1.5 rounded-full border  text-blue-600 font-medium text-sm mb-6">
               Integrations
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
               Seamless Integrations
             </h2>
-            <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+            <p className="text-xl text-white mb-10 leading-relaxed">
               Connect Alytics with your favorite tools to streamline workflows
               and keep everything running smoothly.
             </p>
@@ -54,14 +54,14 @@ const Integrations = () => {
           {/* Right Content - Integration Cards */}
           <div className="w-full lg:w-1/2 relative">
             {/* Background Decoration */}
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-purple-50 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute -top-10 -right-10 w-64 h-64 "></div>
+            <div className="absolute -bottom-10 -left-10 w-64 h-64  rounded-full blur-3xl "></div>
 
             <div className="relative space-y-4  border">
               {integrations.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4 hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                  className="bg-white p-4 rounded-2xl border border-gray-100  flex items-center gap-4 hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer"
                   style={{
                     marginLeft: index % 2 === 0 ? "0" : "2rem",
                     opacity: 0,
@@ -79,7 +79,7 @@ const Integrations = () => {
                     <h3 className="font-bold text-gray-900 text-lg">
                       {item.name}
                     </h3>
-                    <div className="h-2 w-32 bg-gray-100 rounded-full mt-2"></div>
+                    <p className="text-gray-500 text-sm mt-1">{item.description}</p>
                   </div>
                 </div>
               ))}

@@ -30,17 +30,17 @@ const SectionsView = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <div className="inline-block px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-blue-600 font-medium text-sm mb-6">
                         Unique Features
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                         Make Your Platform <br /> Work Harder For You
                     </h2>
-                    <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+                    <p className="text-xl text-white max-w-2xl mx-auto">
                         Streamline your business with unified metrics and AI-powered analytics—all in one place.
                     </p>
                 </div>
@@ -60,7 +60,7 @@ const SectionsView = () => {
                             </div>
                             {/* Content */}
                             <div className="px-2">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                <h3 className="text-2xl font-bold text-whitemb-3 group-hover:text-blue-600 transition-colors">
                                     {feature.title}
                                 </h3>
                                 <p className="text-gray-500 leading-relaxed text-lg">

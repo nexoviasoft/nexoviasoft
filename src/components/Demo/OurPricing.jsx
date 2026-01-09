@@ -48,19 +48,19 @@ const OurPricing = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50/50">
+    <section className="py-20 ">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
             Our Pricing
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Choose The Best
             <br />
             Plan That Suites You
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-white text-lg">
             Flexible pricing built for every stage — from
             <br className="hidden md:block" />
             startup to scale, no hidden fees.

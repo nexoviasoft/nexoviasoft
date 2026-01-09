@@ -36,17 +36,17 @@ const Beifect = () => {
     ];
 
     return (
-        <section id="benefits" className="py-24 bg-white">
+        <section id="benefits" className="py-24 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-20">
                     <div className="inline-block px-4 py-1.5 rounded-full border border-blue-100 bg-blue-50 text-blue-600 font-medium text-sm mb-6">
                         Benefits
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                         Benefits That Truly <br /> Matter To You
                     </h2>
-                    <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+                    <p className="text-xl text-white max-w-2xl mx-auto">
                         Monitor metrics as they happen, so you can respond quickly and keep your goals on track.
                     </p>
                 </div>

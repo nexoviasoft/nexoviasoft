@@ -29,14 +29,14 @@ const Faq = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24">
             <div className="container mx-auto px-4 max-w-7xl">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-medium mb-6">
                         FAQ's
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         Common Questions<br />With Clear Answers
                     </h2>
                     <p className="text-gray-500 text-lg">

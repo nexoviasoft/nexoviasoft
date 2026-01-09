@@ -51,10 +51,10 @@ const Testimonials = () => {
                 <div className="inline-block px-4 py-1.5 rounded-full border border-blue-100 bg-white text-blue-600 font-medium text-sm mb-6 shadow-sm">
                     Testimonials
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
                     Hear What Others <br /> Say About Us
                 </h2>
-                <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+                <p className="text-xl text-white max-w-2xl mx-auto">
                     See what top teams say after switching to a smarter product analytics platform.
                 </p>
             </div>

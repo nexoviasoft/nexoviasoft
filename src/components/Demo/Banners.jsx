@@ -3,7 +3,7 @@ import { CreditCard, Activity, BarChart2, PieChart, Hexagon } from 'lucide-react
 
 const Banners = () => {
     return (
-        <section className=" max-w-7xl mx-auto relative bg-white pt-20 pb-32 overflow-hidden">
+        <section className=" max-w-7xl mx-auto relative  text-white pt-20 pb-32 overflow-hidden">
             {/* Floating Icons Background Elements - Positioned absolutely */}
             <div className="hidden lg:block absolute top-20 left-20 animate-bounce duration-[3000ms]">
                 <div className="bg-white p-4 rounded-2xl shadow-xl border border-gray-100 transform -rotate-6">
@@ -42,13 +42,13 @@ const Banners = () => {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-6 max-w-4xl leading-tight">
+                    <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 max-w-4xl leading-tight">
                         Turn Scattered Data Into <br className="hidden md:block" />
                         Smart Decisions
                     </h1>
 
                     {/* Subheadline */}
-                    <p className="text-xl text-gray-500 mb-10 max-w-2xl leading-relaxed">
+                    <p className="text-xl text-white mb-10 max-w-2xl leading-relaxed">
                         One simple dashboard to track your SaaS growth, MRR, churn and user behavior—without the chaos.
                     </p>
 
