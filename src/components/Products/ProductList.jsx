@@ -13,6 +13,13 @@ const ProductList = () => {
       rayCount: 15,
       link: "/products/squadcart",
     },
+    {
+      number: 2,
+      title: "CleverERP",
+      description: "An all-in-one ERP platform to manage operations, finance, inventory, and workflows with clarity and control.",
+      rayCount: 18,
+      link: "/products",
+    },
   ];
 
   return (
