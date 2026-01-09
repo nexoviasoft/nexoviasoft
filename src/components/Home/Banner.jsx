@@ -24,7 +24,7 @@ const Banner = () => {
       id: 1,
       component: (
         <span className="text-2xl font-bold font-sans tracking-widest">
-          LOGO
+          TECHFLOW
         </span>
       ),
     },
@@ -32,7 +32,7 @@ const Banner = () => {
       id: 2,
       component: (
         <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
-          LOGO IPSUM
+          CLOUDSCALE
         </span>
       ),
     },
@@ -40,7 +40,7 @@ const Banner = () => {
       id: 3,
       component: (
         <span className="text-2xl font-black italic tracking-tighter">
-          IPSUM
+          DEVCORP
         </span>
       ),
     },
@@ -48,7 +48,7 @@ const Banner = () => {
       id: 4,
       component: (
         <span className="text-2xl font-bold font-sans tracking-widest">
-          LOGO
+          APPIFY
         </span>
       ),
     },
@@ -56,7 +56,7 @@ const Banner = () => {
       id: 5,
       component: (
         <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
-          LOGO IPSUM
+          NETSECURE
         </span>
       ),
     },
@@ -79,7 +79,7 @@ const Banner = () => {
               2025
             </span>
             <span className="text-gray-300 text-sm font-medium">
-              Next-Gen AI Studio
+              Premium Digital Agency
             </span>
           </motion.div>
 
@@ -91,9 +91,9 @@ const Banner = () => {
             transition={{ duration: 1 }}
           >
             <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium leading-[1.1] tracking-tight text-white">
-              AI-Driven Success
+              Transforming Ideas
               <br />
-              <span className="text-white/90">Redefining the Future.</span>
+              <span className="text-white/90">Into Digital Reality.</span>
             </h1>
           </motion.div>
 

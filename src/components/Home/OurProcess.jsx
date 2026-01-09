@@ -9,26 +9,26 @@ const processSteps = [
     icon: <MessageSquare className="w-8 h-8 text-black" />,
     title: "Discover Insights",
     description:
-      "We analyze your goals, challenges, and vision to craft a tailored AI strategy.",
+      "We analyze your goals, challenges, and vision to craft a tailored digital strategy.",
     color: "bg-[#EFFC76]",
   },
   {
     icon: <Settings className="w-8 h-8 text-black" />,
     title: "Develop Solutions",
     description:
-      "Our experts design and build cutting-edge AI solutions that drive results.",
+      "Our experts design and build cutting-edge solutions that drive results.",
     color: "bg-[#EFFC76]",
   },
   {
     icon: <Layout className="w-8 h-8 text-black" />,
     title: "Deploy Success",
     description:
-      "We implement, optimize, and scale your AI-powered success for long-term impact.",
+      "We implement, optimize, and scale your digital product for long-term impact.",
     color: "bg-[#EFFC76]",
   },
 ];
 
-const OurProccess = () => {
+const OurProcess = () => {
   return (
     <section className="relative py-24 bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
@@ -57,7 +57,7 @@ const OurProccess = () => {
             className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
             Our Proven Process <br />
-            <span className="text-gray-500">for AI-Driven Success</span>
+            <span className="text-gray-500">for Digital Success</span>
           </motion.h2>
 
           <motion.div
@@ -113,4 +113,4 @@ const OurProccess = () => {
   );
 };
 
-export default OurProccess;
+export default OurProcess;

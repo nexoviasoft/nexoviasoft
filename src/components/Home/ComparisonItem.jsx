@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const ComparisionItem = ({ icon: Icon, color, bg, text, iconColor, isPremium = false }) => {
+const ComparisonItem = ({ icon: Icon, color, bg, text, iconColor, isPremium = false }) => {
     const variants = {
         hidden: { opacity: 0, x: isPremium ? 20 : -20 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } }
@@ -21,4 +21,4 @@ const ComparisionItem = ({ icon: Icon, color, bg, text, iconColor, isPremium = f
     );
 };
 
-export default ComparisionItem;
+export default ComparisonItem;

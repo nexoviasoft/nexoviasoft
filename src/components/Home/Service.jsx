@@ -82,7 +82,7 @@ const Service = () => {
             enhance efficiency, and drive innovation.
           </motion.p>
 
-          <SmoothButton>Book a Terminal</SmoothButton>
+          <SmoothButton>Book an Appointment</SmoothButton>
         </div>
 
         {/* Services Grid */}

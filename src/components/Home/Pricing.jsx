@@ -7,56 +7,56 @@ import { Rocket, Bell, Layout } from "lucide-react";
 const pricingPlans = [
     {
         plan: "Starter",
-        price: "99",
-        description: "Perfect for individuals and freelancers starting out.",
+        price: "1,499",
+        description: "Perfect for small businesses establishing a web presence.",
         tag: "Most Pick",
         icon: Rocket,
         stats: {
-            projects: "100",
-            revisions: "75",
+            projects: "2-3",
+            revisions: "Weeks",
         },
         features: [
-            "All templates unlocked",
-            "Unlimited Licenses",
-            "Lifetime Updates",
-            "Email support",
-            "30-Days Money-back Guarantee",
+            "Custom UI/UX Design",
+            "Responsive Development",
+            "SEO Optimization",
+            "1 Month Support",
+            "CMS Integration",
         ],
     },
     {
         plan: "Professional",
-        price: "599",
-        description: "Ideal for growing agencies and small businesses.",
+        price: "3,999",
+        description: "Ideal for growing startups needing robust applications.",
         tag: "Advanced",
         icon: Bell,
         stats: {
-            projects: "150",
-            revisions: "125",
+            projects: "1-2",
+            revisions: "Months",
         },
         features: [
-            "All templates unlocked",
-            "Unlimited Licenses",
-            "Lifetime Updates",
-            "Email support",
-            "30-Days Money-back Guarantee",
+            "Advanced Web Application",
+            "Database Integration",
+            "Performance Optimization",
+            "3 Months Support",
+            "Analytics Dashboard",
         ],
     },
     {
         plan: "Enterprise",
-        price: "2,599",
-        description: "Advanced solutions for large teams and startups.",
+        price: "Custom",
+        description: "Full-scale solutions for large organizations.",
         tag: "Recommended",
         icon: Layout,
         stats: {
-            projects: "180",
-            revisions: "140",
+            projects: "3-6+",
+            revisions: "Months",
         },
         features: [
-            "All templates unlocked",
-            "Unlimited Licenses",
-            "Lifetime Updates",
-            "Email support",
-            "30-Days Money-back Guarantee",
+            "Full-Stack Solution",
+            "Cloud Infrastructure",
+            "Security Audits",
+            "Dedicated Team",
+            "Priority Support",
         ],
     },
 ];
@@ -79,7 +79,7 @@ const Pricing = () => {
                     >
                         <div className="h-px w-8 bg-[#EFFC76]" />
                         <span className="text-[#EFFC76] font-medium tracking-wide uppercase text-sm">
-                            Pricing
+                            Engagement Models
                         </span>
                     </motion.div>
 
@@ -91,7 +91,7 @@ const Pricing = () => {
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         Flexible Plans for Every Need— <br />
-                        <span className="text-gray-400">Perfect for Agencies, and Startups.</span>
+                        <span className="text-gray-400">Perfect for Startups and Enterprises.</span>
                     </motion.h2>
 
                     <motion.p

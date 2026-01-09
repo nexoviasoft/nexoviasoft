@@ -16,9 +16,9 @@ const Innovation = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h1 className="text-3xl md:text-4xl lg:text-4xl max-w-6xl mx-auto font-light leading-tight">
-            Built on creativity, collaboration, and top excellence, SYNC is a
-            dynamic team of industry experts committed to achieving exceptional
-            great results...
+            Built on creativity, collaboration, and technical excellence, SquadLog is a
+            dynamic team of industry experts committed to delivering exceptional
+            digital solutions...
           </motion.h1>
         </motion.div>
 
@@ -34,20 +34,20 @@ const Innovation = () => {
           <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-[#EFFC76]/10 rounded-full blur-[100px]" />
 
           <InnovationCard
-            title="Seamless API Integrations"
-            description="SquadLog supports a wide range of third-party integrations."
+            title="Custom Software Solutions"
+            description="SquadLog builds robust, scalable applications tailored to your business needs."
             type="integrations"
             delay={0}
           />
           <InnovationCard
-            title="Trusted Authentication"
-            description="Quickly integrate with major platforms workflows."
+            title="Secure Cloud Infrastructure"
+            description="Reliable and secure cloud deployment for optimal performance."
             type="authentication"
             delay={0.2}
           />
           <InnovationCard
-            title="AI-Speech Recognition"
-            description="Enable your user to control or navigate your site using speech."
+            title="Advanced AI Integration"
+            description="Leverage the power of AI to automate and enhance your business processes."
             type="speech"
             delay={0.4}
           />
@@ -57,14 +57,14 @@ const Innovation = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-t border-white/10 pt-16">
           <FeatureItem
             icon={Clock}
-            title="Real-Time Data"
-            description="Instant insights for faster decision-making."
+            title="Agile Development"
+            description="Rapid iteration and delivery for faster time-to-market."
             delay={0.5}
           />
           <FeatureItem
             icon={Eye}
-            title="Vision Capabilities"
-            description="AI-powered image and video recognition."
+            title="Strategic Consulting"
+            description="Expert guidance to navigate the digital landscape."
             delay={0.6}
           />
           <FeatureItem
@@ -75,8 +75,8 @@ const Innovation = () => {
           />
           <FeatureItem
             icon={TrendingUp}
-            title="Predictive Analytics"
-            description="Make data-driven decisions with AI insights."
+            title="Scalable Architecture"
+            description="Future-proof solutions built for growth."
             delay={0.8}
           />
         </div>

@@ -48,9 +48,9 @@ const Packed = () => {
               className="text-3xl md:text-4xl lg:text-4xl max-w-6xl mx-auto font-light leading-tight"
               style={{ opacity: textOpacity }}
             >
-              Built on creativity, collaboration, and top excellence, SYNC is a
-              dynamic team of industry experts committed to achieving
-              exceptional great results...
+              Built on creativity, collaboration, and technical excellence, SquadLog is a
+              dynamic team of industry experts committed to delivering
+              exceptional digital solutions...
             </motion.h1>
           </motion.div>
 

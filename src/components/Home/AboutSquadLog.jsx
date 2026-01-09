@@ -42,7 +42,7 @@ const AboutSquadLog = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 mb-12 text-base leading-relaxed max-w-lg"
                     >
-                        SquadLog is a premium AI agency template crafted for teams pushing the boundaries of technology. We blend cutting-edge capabilities with sleek, modern design.
+                        SquadLog is a premium digital agency crafted for teams pushing the boundaries of technology. We blend cutting-edge capabilities with sleek, modern design.
                     </motion.p>
 
                     <div className="space-y-6">
@@ -50,21 +50,21 @@ const AboutSquadLog = () => {
                             delay={0.3}
                             icon={Bot}
                             title="Advanced AI, Streamlined Design"
-                            description="SquadLog blends cutting-edge AI capabilities with sleek, modern design. It's built for agencies that need to showcase sophisticated technology."
+                            description="SquadLog blends technical expertise with creative innovation. We build solutions that showcase sophistication and drive results."
                             tags={["AI Design", "Tech Innovation"]}
                         />
                         <AboutSquadLogCard
                             delay={0.4}
                             icon={Settings}
-                            title="Effortless Customization"
-                            description="The template comes with flexible design options that adapt to your unique vision. With easy-to-use customization tools, fine-tune every detail."
+                            title="Tailored Solutions"
+                            description="We adapt our strategies to your unique vision. From custom development to brand identity, we fine-tune every detail."
                             tags={["Easy Customization", "Brand Identity"]}
                         />
                         <AboutSquadLogCard
                             delay={0.5}
                             icon={Zap}
-                            title="Future-Proof and Scalable"
-                            description="SquadLog is built to grow with your agency. Whether you're adding new services or expanding your team, we scale with you."
+                            title="Strategic Growth Partner"
+                            description="We are built to grow with your business. Whether you're launching new products or expanding markets, we scale with you."
                             hasButton
                         />
                     </div>

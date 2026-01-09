@@ -8,33 +8,33 @@ import SmoothButton from "@/Share/SmoothButton";
 
 const teamMembers = [
   {
-    name: "Arlene McCoy",
-    role: "Co-Founder, CEO",
+    name: "Alexander West",
+    role: "Founder & CEO",
     image: "/about/member-1.jpg",
   },
   {
-    name: "Lena Williams",
-    role: "Co-Founder, CTO",
+    name: "Sophia Chen",
+    role: "CTO & Lead Architect",
     image: "/about/member-2.jpg",
   },
   {
-    name: "Maya Johnson",
-    role: "Senior Developer",
+    name: "Marcus Johnson",
+    role: "Senior Full-Stack Developer",
     image: "/about/member-3.jpg",
   },
   {
-    name: "Zara Patel",
-    role: "Chief Operations Officer",
+    name: "Elena Rodriguez",
+    role: "Head of Product Design",
     image: "/about/member-4.jpg",
   },
   {
-    name: "Emma Davis",
-    role: "Chief Product Officer",
+    name: "David Kim",
+    role: "Cloud Infrastructure Lead",
     image: "/about/member-5.jpg",
   },
   {
-    name: "Chloe Anderson",
-    role: "Senior Product Designer",
+    name: "Olivia Martinez",
+    role: "Digital Marketing Strategist",
     image: "/about/member-6.jpg",
   },
 ];
@@ -113,8 +113,8 @@ const OurTeam = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight max-w-4xl"
           >
-            Meet the Team Making <br />
-            <span className="text-gray-400">Things Happen Every Day</span>
+            Meet the Minds Behind <br />
+            <span className="text-gray-400">Your Success</span>
           </motion.h2>
 
           {/* Description */}
@@ -125,12 +125,11 @@ const OurTeam = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg max-w-2xl mb-8"
           >
-            Our team is made up of passionate professionals who bring their
-            expertise and creativity to every project.
+            Expert developers, designers, and strategists dedicated to delivering excellence.
           </motion.p>
 
           {/* Button */}
-          <SmoothButton> View About Reboot</SmoothButton>
+          <SmoothButton> View About SquadLog</SmoothButton>
         </div>
 
         {/* Team Grid */}

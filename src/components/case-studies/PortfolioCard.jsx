@@ -26,10 +26,10 @@ const PortfolioCard = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="bg-[#EFFC76] text-black text-xs font-bold px-3 py-1 rounded-full">
-              2026
+              2025
             </span>
             <span className="text-gray-300 text-sm font-medium">
-              Case Studio
+              Featured Case Studies
             </span>
           </motion.div>
         </div>

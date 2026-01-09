@@ -128,4 +128,4 @@ const FormFqs = () => {
 };
 
 
-export default FormFqs;
+export default FormFaqs;

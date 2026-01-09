@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Rocket, Star } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
 
-const LanuchYourSite = () => {
+const LaunchYourSite = () => {
   return (
     <section className="relative py-24 bg-transparent overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -54,8 +54,8 @@ const LanuchYourSite = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            Launch Your Site with Nubie <br />
-            <span className="text-gray-500">In a Minutes of Time!</span>
+            Launch Your Project with SquadLog <br />
+            <span className="text-gray-500">Efficient, Scalable, and Premium.</span>
           </motion.h2>
 
           <motion.p
@@ -65,8 +65,8 @@ const LanuchYourSite = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-400 text-lg mb-10 max-w-lg"
           >
-            Build your site effortlessly and showcase your work with confidence.
-            Ready to stand out? Get started today!
+            Transform your vision into reality effortlessly.
+            Ready to stand out? Partner with us today!
           </motion.p>
 
           <motion.div
@@ -87,7 +87,7 @@ const LanuchYourSite = () => {
                   />
                 ))}
               </div>
-              <span className="text-gray-400 text-sm">200+ Agencies Rated</span>
+              <span className="text-gray-400 text-sm">Trusted by 50+ Clients</span>
             </div>
           </motion.div>
         </div>
@@ -96,4 +96,4 @@ const LanuchYourSite = () => {
   );
 };
 
-export default LanuchYourSite;
+export default LaunchYourSite;

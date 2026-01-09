@@ -1,11 +1,11 @@
 import AboutSquadLog from "@/components/Home/AboutSquadLog";
 import Banner from "@/components/Home/Banner";
-import Comparision from "@/components/Home/Comparision";
-import Fqa from "@/components/Home/Fqa";
+import Comparison from "@/components/Home/Comparison";
+import Faq from "@/components/Home/Faq";
 import Innovation from "@/components/Home/Innovation";
-import Intregration from "@/components/Home/Intregration";
-import LanuchYourSite from "@/components/Home/LanuchYourSite";
-import OurProccess from "@/components/Home/OurProccess";
+import Integration from "@/components/Home/Integration";
+import LaunchYourSite from "@/components/Home/LaunchYourSite";
+import OurProcess from "@/components/Home/OurProcess";
 import OurTeam from "@/components/Home/OurTeam";
 // import PartOfUs from "@/components/Home/PartOfus";
 import Pricing from "@/components/Home/Pricing";
@@ -40,24 +40,24 @@ const TestPages = () => {
           <AboutSquadLog />
         </section>
         <section>
-          <Intregration />
+          <Integration />
         </section>
 
         <section>
           <Pricing />
         </section>
         <section>
-          <OurProccess />
+          <OurProcess />
         </section>
         <section>
-          <LanuchYourSite />
+          <LaunchYourSite />
         </section>
 
         <section>
           <OurTeam />
         </section>
         <section>
-          <Comparision />
+          <Comparison />
         </section>
 
         <section>
@@ -65,7 +65,7 @@ const TestPages = () => {
         </section>
 
         <section>
-          <Fqa />
+          <Faq />
         </section>
 
         {/* <section>

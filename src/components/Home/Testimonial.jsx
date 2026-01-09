@@ -7,51 +7,51 @@ import SmoothButton from "@/Share/SmoothButton";
 
 const testimonials = [
   {
-    name: "John Smith",
-    role: "CEO",
-    company: "Innovate Solutions",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=John",
-    text: "They not only delivered a top-notch website but also provided strategic insights that helped us improve our overall digital presence.",
+    name: "Michael Chen",
+    role: "CTO",
+    company: "FinTech Innovations",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael",
+    text: "SquadLog transformed our legacy infrastructure into a scalable cloud-native system. Their expertise in AWS and DevOps is unmatched.",
     rating: 5,
   },
   {
-    name: "Emily Davis",
+    name: "Sarah Jenkins",
+    role: "Founder",
+    company: "EcoStyle E-commerce",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+    text: "The custom Shopify solution they built increased our conversion rates by 40%. The UI/UX design is beautiful and highly functional.",
+    rating: 5,
+  },
+  {
+    name: "David Rodriguez",
     role: "Product Manager",
-    company: "Nexus Digital",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emily",
-    text: "The team understood our complex requirements and provided a user-friendly, high-performing website that stands out in the market.",
-    rating: 5,
-  },
-  {
-    name: "David Lee",
-    role: "Founder",
-    company: "GreenLeaf Enterprises",
+    company: "HealthPlus App",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David",
-    text: "Their innovative solutions helped streamline our operations, and the website design and development is both functional and visually stunning.",
+    text: "We needed a complex mobile app for patient monitoring. SquadLog delivered a secure, HIPAA-compliant app ahead of schedule.",
     rating: 5,
   },
   {
-    name: "Mark Thompson",
+    name: "Emma Wilson",
+    role: "Marketing Director",
+    company: "GrowthGuru",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
+    text: "Their digital marketing strategy was a game-changer. We saw a significant ROI within the first three months of engagement.",
+    rating: 5,
+  },
+  {
+    name: "James Thompson",
+    role: "CEO",
+    company: "LogisticsPro",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=James",
+    text: "The custom ERP software SquadLog developed has streamlined our entire supply chain. Their understanding of business logic is impressive.",
+    rating: 5,
+  },
+  {
+    name: "Lisa Wong",
     role: "Creative Director",
-    company: "PixelWorks Studio",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mark",
-    text: "We were blown away by the creative approach and attention to detail. The team took our ideas and turned them into a stunning website.",
-    rating: 5,
-  },
-  {
-    name: "Brian Clark",
-    role: "Team Lead",
-    company: "Mandro Designs",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Brian",
-    text: "They delivered a customized solution that addressed all of our business needs. The website is sleek, functional, and improved our customer experience.",
-    rating: 5,
-  },
-  {
-    name: "Daniel Carter",
-    role: "Founder",
-    company: "Fusion Studios",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Daniel",
-    text: "The team's dedication and attention to detail are unmatched. They delivered a beautifully designed website that perfectly reflects our brand.",
+    company: "Artistry Studios",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa",
+    text: "As a design agency, we have high standards. SquadLog's frontend development brought our designs to life with pixel-perfect precision.",
     rating: 5,
   },
 ];
@@ -88,7 +88,7 @@ const Testimonial = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl md:text-5xl font-medium text-gray-500 mb-6 tracking-tight"
           >
-            About Reboot's Excellence
+            About SquadLog's Excellence
           </motion.h3>
 
           <motion.p
@@ -97,8 +97,7 @@ const Testimonial = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
           >
-            Hear from our happy clients! See how we've helped them achieve their
-            goals and create lasting impact.
+            Discover how we've empowered businesses to achieve their digital goals.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

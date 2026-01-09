@@ -15,7 +15,7 @@ const Portfoliopage = () => {
           <PortfolioCard />
         </section>
         <section>
-          <PortfolioFqs />
+          <PortfolioFaqs />
         </section>
         <section>
           <PortfolioReady />

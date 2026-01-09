@@ -36,7 +36,7 @@ const faqs = [
   },
 ];
 
-const PortfolioFqs = () => {
+const PortfolioFaqs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
@@ -128,6 +128,4 @@ const PortfolioFqs = () => {
   );
 };
 
-// export default Fqa;
-
-export default PortfolioFqs;
+export default PortfolioFaqs;

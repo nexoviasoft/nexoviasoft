@@ -2,9 +2,9 @@
 import React from "react";
 import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
-import ComparisionItem from "./ComparisionItem";
+import ComparisonItem from "./ComparisonItem";
 
-const Comparision = () => {
+const Comparison = () => {
     return (
         <section className="bg-transparent py-20 px-4 md:px-8 overflow-hidden">
             <div className="max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ const Comparision = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-4xl md:text-6xl font-medium text-white mb-4 relative z-10 tracking-tight"
                         >
-                            SquadLog vs. The Rest
+                            SquadLog Advantage
                         </motion.h2>
                         <motion.h3
                             initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,7 @@ const Comparision = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="text-gray-400 max-w-xl mx-auto text-lg leading-relaxed"
                     >
-                        Reboot is designed to set your agency and case studies apart with a
-                        premium, clutter-free layout that enhances your work.
+                        SquadLog is designed to set your business apart with premium solutions that drive growth and engagement.
                     </motion.p>
                 </div>
 
@@ -90,11 +89,11 @@ const Comparision = () => {
                             }}
                             className="space-y-6 relative z-10 h-full flex flex-col justify-center"
                         >
-                            <ComparisionItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Generic, Overused Layouts" />
-                            <ComparisionItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Cluttered & Outdated UI" />
-                            <ComparisionItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Slow & Unoptimized" />
-                            <ComparisionItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Limited Customization" />
-                            <ComparisionItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Short-Term Relevance" />
+                            <ComparisonItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Generic Solutions" />
+                            <ComparisonItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Cookie-cutter Designs" />
+                            <ComparisonItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Lack of Support" />
+                            <ComparisonItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Hidden Costs" />
+                            <ComparisonItem icon={X} color="text-red-500" bg="bg-red-500/10" text="Short-Term Relevance" />
                         </motion.div>
                     </div>
 
@@ -129,11 +128,11 @@ const Comparision = () => {
                             }}
                             className="relative z-10 space-y-6 p-8 md:p-10 h-full flex flex-col justify-center"
                         >
-                            <ComparisionItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="AI-Driven Design" isPremium />
-                            <ComparisionItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Premium, Minimal Aesthetic" isPremium />
-                            <ComparisionItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Performance Optimized" isPremium />
-                            <ComparisionItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Future-Proof Technology" isPremium />
-                            <ComparisionItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Unmatched Flexibility" isPremium />
+                            <ComparisonItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="AI-Driven Design" isPremium />
+                            <ComparisonItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Premium, Minimal Aesthetic" isPremium />
+                            <ComparisonItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Performance Optimized" isPremium />
+                            <ComparisonItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Future-Proof Technology" isPremium />
+                            <ComparisonItem icon={Check} color="text-white" iconColor="text-black" bg="bg-[#EFFC76]" text="Unmatched Flexibility" isPremium />
                         </motion.div>
                     </motion.div>
                 </div>
@@ -142,4 +141,4 @@ const Comparision = () => {
     );
 };
 
-export default Comparision;
+export default Comparison;

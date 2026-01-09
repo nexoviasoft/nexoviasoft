@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import CosmicBackground from "@/components/Home/CosmicBackground";
-import Fqa from "@/components/Home/Fqa";
+import Faq from "@/components/Home/Faq";
 import { motion } from "framer-motion";
 
 const FaqPage = () => {
@@ -27,7 +27,7 @@ const FaqPage = () => {
           </motion.div>
         </div>
         
-        <Fqa />
+        <Faq />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ const Contactpage = () => {
           <ContactForm />
         </section>
         <section>
-          <FormFqs />
+          <FormFaqs />
         </section>
         <section>
           <ContactReady />

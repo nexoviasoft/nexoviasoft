@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
 
-const Intregration = () => {
+const Integration = () => {
   // Icon data mimicking the image sequence
   // Using Lucide icons to approximate the brands
   const integrationIcons = [
@@ -67,7 +67,7 @@ const Intregration = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
         >
-          Seamless Integrations for
+          Technology Stack for
           <br />
           <span className="text-gray-400">Maximum Efficiency.</span>
         </motion.h2>
@@ -80,8 +80,8 @@ const Intregration = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-gray-400 text-base md:text-lg mb-10 max-w-xl mx-auto"
         >
-          SquadLog seamlessly integrates with leading tools and platforms,
-          ensuring a smooth and efficient workflow.
+          SquadLog leverages leading technologies and platforms,
+          ensuring robust and scalable solutions.
         </motion.p>
 
         {/* CTA Button */}
@@ -92,7 +92,7 @@ const Intregration = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-20"
         >
-          <SmoothButton> View About Reboot </SmoothButton>
+          <SmoothButton> View About SquadLog </SmoothButton>
         </motion.div>
 
         {/* Icons Row */}
@@ -148,4 +148,4 @@ const Intregration = () => {
   );
 };
 
-export default Intregration;
+export default Integration;

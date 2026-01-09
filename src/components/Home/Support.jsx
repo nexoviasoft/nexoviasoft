@@ -50,8 +50,8 @@ const Support = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-400 max-w-xl mx-auto mb-10 text-base"
           >
-            SquadLog comes with dedicated support to help you launch and
-            maintain your site without friction.
+            Partner with SquadLog for dedicated support that ensures your
+            digital products evolve and scale seamlessly.
           </motion.p>
 
           <SmoothButton>View About SquadLog </SmoothButton>
