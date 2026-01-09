@@ -13,6 +13,7 @@ const AboutSquadLogCard = ({
   isMobile = false,
 }) => {
   // Mobile version with image
+  // Mobile version with image (Image top, Text split left & right)
   if (isMobile && imageUrl) {
     return (
       <motion.div
@@ -20,11 +21,11 @@ const AboutSquadLogCard = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay }}
-        className="rounded-xl bg-zinc-900/40 border border-white/5 hover:border-[#EFFC76]/30 transition-all duration-300 group hover:bg-zinc-900/60 overflow-hidden"
+        className="bg-zinc-900/40 border border-white/5 hover:border-[#EFFC76]/30 transition-all duration-300 hover:bg-zinc-900/60 overflow-hidden"
       >
         {/* Image Section */}
         <div className="relative h-40 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <img
             src={imageUrl}
             alt={title}
@@ -33,32 +34,31 @@ const AboutSquadLogCard = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-4">
-          <div className="flex items-start gap-3 mb-3">
-            {/* <div className="p-2 rounded-lg bg-white/5 text-[#EFFC76] group-hover:bg-[#EFFC76]/10 transition-colors shrink-0">
-              <Icon size={18} />
-            </div> */}
-            <h3 className="text-white font-semibold text-base leading-tight">
-              {title}
-            </h3>
+        <div className="grid grid-cols-2 gap-3 p-4">
+          {/* Left Side */}
+          <h3 className="text-white font-semibold text-sm leading-tight">
+            {title}
+          </h3>
+
+          {/* Right Side */}
+          <div>
+            <p className="text-gray-400 text-xs leading-relaxed mb-2">
+              {description}
+            </p>
+
+            {tags && (
+              <div className="flex flex-wrap gap-1">
+                {tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-[#EFFC76]/10 text-[#EFFC76] border border-[#EFFC76]/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
-
-          <p className="text-gray-400 text-xs leading-relaxed mb-3">
-            {description}
-          </p>
-
-          {tags && (
-            <div className="flex flex-wrap gap-1.5">
-              {tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="px-2.5 py-1 rounded-full text-xs font-medium bg-[#EFFC76]/10 text-[#EFFC76] border border-[#EFFC76]/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
       </motion.div>
     );

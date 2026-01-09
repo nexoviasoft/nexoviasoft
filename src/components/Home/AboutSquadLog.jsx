@@ -56,7 +56,7 @@ const AboutSquadLog = () => {
               <AboutSquadLogCard
                 delay={0.4}
                 icon={Settings}
-                title="Tailored Solutions"
+                title="Tailored Solutions & Smart Strategies"
                 description="We adapt our strategies to your unique vision. From custom development to brand identity, we fine-tune every detail."
                 tags={["Easy Customization", "Brand Identity"]}
               />
@@ -117,30 +117,60 @@ const AboutSquadLog = () => {
             <span className="text-gray-400">Purpose Into Ideas!</span>
           </motion.h2>
 
-          {/* Cards Grid - 2 columns */}
-          <div className="grid grid-cols-2 gap-3 mb-3">
-            {/* Card 1 with Image */}
-            <AboutSquadLogCard
-              delay={0.2}
-              icon={Bot}
-              title="Advanced AI, Streamlined Design"
-              description="SquadLog blends technical expertise with creative innovation."
-              tags={["AI Design"]}
-              imageUrl="https://i.ibb.co.com/q38fff6X/image.png"
-              isMobile={true}
-            />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="mb-6 rounded-xl bg-[#0A0A0A] border border-white/10 overflow-hidden group hover:border-[#EFFC76]/30 transition-colors duration-500"
+          >
+            <div className="relative h-48 w-full overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10" />
+              <img
+                src="https://i.ibb.co.com/q38fff6X/image.png"
+                alt="About SquadLog"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
 
-            {/* Card 2 with Image */}
-            <AboutSquadLogCard
-              delay={0.3}
-              icon={Settings}
-              title="Tailored Solutions"
-              description="We adapt our strategies to your unique vision and brand identity."
-              tags={["Customization"]}
-              imageUrl="https://i.ibb.co.com/9kd6gtfh/image.png"
-              isMobile={true}
-            />
-          </div>
+            <div className="p-5 flex gap-4 relative z-20 bg-[#0A0A0A]">
+              <div className="flex-1 flex flex-col justify-between">
+                <div className="space-y-2 mb-3">
+                  <h3 className="text-white font-semibold text-sm leading-snug">
+                    Advanced AI, Streamlined Design
+                  </h3>
+                  <p className="text-gray-400 text-[11px] leading-relaxed">
+                    SquadLog blends technical expertise with creative
+                    innovation.
+                  </p>
+                </div>
+                <div className="pt-1">
+                  <span className="px-2 py-1 rounded-md text-[10px] font-medium bg-[#EFFC76]/10 text-[#EFFC76] border border-[#EFFC76]/20">
+                    AI Design
+                  </span>
+                </div>
+              </div>
+
+              <div className="w-[1px] bg-white/10"></div>
+
+              <div className="flex-1 flex flex-col justify-between">
+                <div className="space-y-2 mb-3">
+                  <h3 className="text-white font-semibold text-sm leading-snug">
+                    Tailored Solutions & Smart Strategies
+                  </h3>
+                  <p className="text-gray-400 text-[11px] leading-relaxed">
+                    We adapt our strategies to your unique vision. From custom
+                    development to brand identity, we fine-tune every detail.
+                  </p>
+                </div>
+                <div className="pt-1">
+                  <span className="px-2 py-1 rounded-md text-[10px] font-medium bg-[#EFFC76]/10 text-[#EFFC76] border border-[#EFFC76]/20">
+                    Easy Customization
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Full Width Card */}
           <AboutSquadLogCard
@@ -158,3 +188,24 @@ const AboutSquadLog = () => {
 };
 
 export default AboutSquadLog;
+// {/* Card 1 with Image */}
+//           <AboutSquadLogCard
+//             delay={0.2}
+//             icon={Bot}
+//             title=""
+//             description="SquadLog blends technical expertise with creative innovation."
+//             tags={["AI Design"]}
+//             imageUrl="https://i.ibb.co.com/q38fff6X/image.png"
+//             isMobile={true}
+//           />
+
+//           {/* Card 2 with Image */}
+//           <AboutSquadLogCard
+//             delay={0.3}
+//             icon={Settings}
+//             title="Tailored Solutions & Smart Strategies"
+//             description="We adapt our strategies to your unique vision and brand identity."
+//             tags={["Customization"]}
+//             imageUrl="https://i.ibb.co.com/9kd6gtfh/image.png"
+//             isMobile={true}
+//           />
