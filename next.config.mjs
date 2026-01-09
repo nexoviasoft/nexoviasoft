@@ -53,6 +53,7 @@ const nextConfig = {
       { source: "/terms-and-conditions", destination: "/main/terms-and-conditions" },
       { source: "/privacy-policy", destination: "/main/privacy-policy" },
       { source: "/refund-policy", destination: "/main/refund-policy" },
+      { source: "/faq", destination: "/main/faq" },
     ];
   },
   reactCompiler: false,
