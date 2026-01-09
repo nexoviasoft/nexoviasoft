@@ -30,7 +30,8 @@ const TestPages = () => {
           <Innovation />
         </section>
 
-        <section>
+{/* grid-cols-1 lg:grid-cols-12 gap-6 */}
+        <section>  
           <PortfolioCard />
         </section>
         <section>
