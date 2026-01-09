@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import PricingCard from "./PricingCard";
 import { Rocket, Bell, Layout } from "lucide-react";
 
@@ -63,7 +67,7 @@ const pricingPlans = [
 
 const Pricing = () => {
   return (
-    <section className="py-24 bg-transparent relative overflow-hidden">
+    <section className="py-24 -mt-2 md:-mt-18 relative overflow-hidden">
       {/* Background Gradients - Removed for global theme */}
       {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#EFFC76]/10 blur-[100px] rounded-full pointer-events-none" /> */}
 
@@ -109,11 +113,46 @@ const Pricing = () => {
           </motion.p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Pricing Cards Grid (Desktop) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <PricingCard key={index} {...plan} delay={0.3 + index * 0.1} />
           ))}
+        </div>
+
+        {/* Pricing Cards Slider (Mobile) */}
+        <div className="md:hidden">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            loop={true}
+            className="pb-12"
+            style={{
+              "--swiper-pagination-color": "#EFFC76",
+              "--swiper-pagination-bullet-inactive-color": "#666",
+              "--swiper-pagination-bullet-inactive-opacity": "0.5",
+              "--swiper-pagination-bullet-size": "10px",
+              "--swiper-pagination-bullet-horizontal-gap": "6px",
+            }}
+          >
+            {pricingPlans.map((plan, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <div className="h-full px-1">
+                  <PricingCard {...plan} delay={0} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
