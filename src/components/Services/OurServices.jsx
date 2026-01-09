@@ -108,12 +108,17 @@ const OurServices = () => {
 
 // Custom Rays Component
 const Rays = ({ count }) => {
+    const seeded = (seed) => {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+    };
+
     // Generate rays
     const rays = Array.from({ length: count }).map((_, i) => {
         // Calculate angle: distribute across -70 to 70 degrees
         const angle = -70 + (140 / (count - 1 || 1)) * i;
         // Randomize length slightly
-        const height = 60 + Math.random() * 40; 
+        const height = 60 + seeded(count * 100 + i) * 40; 
         
         return (
             <motion.div
@@ -123,7 +128,7 @@ const Rays = ({ count }) => {
                 viewport={{ once: true }}
                 transition={{ 
                     duration: 1, 
-                    delay: 0.5 + Math.random() * 0.5,
+                    delay: 0.5 + seeded(count * 200 + i) * 0.5,
                     type: "spring"
                 }}
                 style={{

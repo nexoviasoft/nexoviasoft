@@ -1,14 +1,13 @@
 "use client";
 
 import SmoothButton from "@/Share/SmoothButton";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
@@ -57,33 +56,12 @@ const Navbar = () => {
             Services
           </Link>
           
-          {/* Products Dropdown */}
-          <div 
-            className="relative"
-            onMouseEnter={() => setIsProductsOpen(true)}
-            onMouseLeave={() => setIsProductsOpen(false)}
+          <Link
+            href="/products"
+            className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
           >
-            <button 
-              className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium focus:outline-none"
-            >
-              Products
-              <ChevronDown size={14} className={`transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} />
-            </button>
-            
-            {/* Dropdown Content */}
-            {isProductsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
-                <div className="bg-[#0A0A0A] border border-white/10 rounded-xl p-2 w-48 shadow-xl">
-                  <Link
-                    href="/products/squadcart"
-                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg text-sm transition-colors"
-                  >
-                    SquadCart
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
+            Products
+          </Link>
         </div>
 
         <div className="hidden md:block">
@@ -132,17 +110,20 @@ const Navbar = () => {
               Contact
             </Link>
             
-            {/* Mobile Products Menu */}
-            <div className="space-y-2">
-              <p className="text-gray-500 text-sm font-medium px-2">Products</p>
-              <Link
-                href="/products/squadcart"
-                className="block text-gray-300 hover:text-white text-lg pl-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                SquadCart
-              </Link>
-            </div>
+            <Link
+              href="/products"
+              className="block text-gray-300 hover:text-white text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <Link
+              href="/products/squadcart"
+              className="block text-gray-300 hover:text-white text-lg pl-4"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              SquadCart
+            </Link>
 
             <Link
               href="/faq"

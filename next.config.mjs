@@ -42,6 +42,19 @@ const nextConfig = {
       { source: "/squadcart", destination: "/products/squadcart", permanent: true },
     ];
   },
+  async rewrites() {
+    return [
+      { source: "/", destination: "/main" },
+      { source: "/about", destination: "/main/about" },
+      { source: "/case-studies", destination: "/main/case-studies" },
+      { source: "/contact", destination: "/main/contact" },
+      { source: "/services", destination: "/main/services" },
+      { source: "/products", destination: "/main/products" },
+      { source: "/terms-and-conditions", destination: "/main/terms-and-conditions" },
+      { source: "/privacy-policy", destination: "/main/privacy-policy" },
+      { source: "/refund-policy", destination: "/main/refund-policy" },
+    ];
+  },
   reactCompiler: false,
 };
 // hhhhh
