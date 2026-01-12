@@ -109,7 +109,7 @@ const Banner = () => {
                   Failed to load partners
                 </span>
               ) : (
-                data?.map((item, index) => (
+                data?.data?.map((item, index) => (
                   <div
                     key={item.id || index}
                     className="relative w-32 h-12 grayscale opacity-70 hover:opacity-100 transition-opacity"

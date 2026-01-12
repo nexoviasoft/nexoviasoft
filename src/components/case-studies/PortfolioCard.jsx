@@ -5,11 +5,15 @@ import { Briefcase, Check, ExternalLink } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
 import { caseStudiesData } from "@/constants/caseStudies";
 import Link from "next/link";
+import { useQuery } from "@/hooks/useApi";
 
 const PortfolioCard = () => {
   const ref = useRef(null);
 
-  const projects = caseStudiesData;
+  // const projects = caseStudiesData;
+
+  const { data, isLoading, isError } = useQuery("/case-studies");
+  console.log("case-studies", data?.data);
 
   return (
     <div
@@ -36,7 +40,7 @@ const PortfolioCard = () => {
 
         {/* Portfolio Grid */}
         <div className="space-y-8">
-          {projects.map((project, index) => (
+          {data?.data?.map((project, index) => (
             <div
               key={index}
               className="grid grid-cols-2 lg:grid-cols-12  md:gap-6"
@@ -46,21 +50,24 @@ const PortfolioCard = () => {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className={`lg:col-span-4  rounded-l-xl md:rounded-3xl p-5 md:p-8 bg-gradient-to-br ${project.gradient} border border-white/10 relative group overflow-hidden`}
+                className="lg:col-span-4 rounded-l-xl md:rounded-3xl p-5 md:p-8 bg-[#111] border border-white/10 relative group overflow-hidden hover:border-[#EFFC76]/50 transition-colors duration-500"
               >
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#EFFC76]/5 to-[#EFFC76]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-sm -z-10" />
 
                 <div className="flex  items-center gap-3 md:gap-4 mb-4 md:mb-8">
                   <span className="px-2 md:block hidden py-0.5 md:px-3 md:py-1 rounded-lg bg-black/40 border border-white/10 text-[10px] md:text-xs font-semibold text-gray-400">
-                    {project.year}
+                    2025
                   </span>
                   <h3 className="text-lg md:text-2xl font-bold">
-                    {project.client}
+                    {project.title}
                   </h3>
                 </div>
 
                 <div className="space-y-2 md:block hidden  md:space-y-4 mb-6 md:mb-12">
-                  {project.features.map((feature, i) => (
+                  {project.features?.map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 md:gap-3">
                       <div className="bg-[#EFFC76] rounded-full md:block hidden p-[3px] md:p-1 shrink-0">
                         <Check
@@ -76,27 +83,27 @@ const PortfolioCard = () => {
                 </div>
 
                 <div className="md:block hidden grid grid-cols-2 gap-4 mt-auto">
-                  {project.tags.map((tag, i) => (
+                  {project.categories?.map((cat, i) => (
                     <span
                       key={i}
                       className="px-5 ml-2 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 hover:bg-white/10 transition-colors cursor-default"
                     >
-                      {tag}
+                      {cat.name}
                     </span>
                   ))}
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex  flex-wrap gap-2 md:gap-4 md:mt-8 pt-4 md:pt-6 md:border-t md:border-white/10">
-                  <Link href={`/main/case-studies/${project.slug}`}>
+                  <Link href={`/main/case-studies/${project.id}`}>
                     <SmoothButton className=" text-[13px]  md:text-md">
                       View Details
                     </SmoothButton>
                   </Link>
 
-                  {project.liveLink && (
+                  {project.liveUrl && (
                     <a
-                      href={project.liveLink}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className=" text-[13px]  md:text-md px-4 py-2 md:px-6 md:py-2.5 rounded-lg border border-white/20 hover:bg-white/10 hover:border-[#EFFC76]/50 transition-all flex items-center gap-2 text-sm md:text-md font-semibold text-gray-300 hover:text-white shadow-2xl"
@@ -118,8 +125,8 @@ const PortfolioCard = () => {
               >
                 <div className="absolute inset-0 bg-gray-900/50 -z-10" />
                 <img
-                  src={project.images[1]}
-                  alt={`${project.client} Work 2`}
+                  src={project.imageUrl}
+                  alt={`${project.title} Work`}
                   className="w-full h-full object-cover transition-transform duration-700 "
                 />
               </motion.div>
