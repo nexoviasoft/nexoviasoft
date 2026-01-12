@@ -2,25 +2,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import SmoothButton from "@/Share/SmoothButton";
 
 const ContactForm = () => {
   return (
     <div className="w-11/12 md:max-w-[1280px] mx-auto py-30">
       {/* Header Section */}
-      <div className="flex flex-col items-center justify-center text-center gap-6 mb-16 relative">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 w-fit"
-        >
-          <div className="p-1 rounded-full bg-[#EFFC76] flex items-center justify-center">
-            <MessageCircle size={14} className="text-black" />
-          </div>
-          <span className="text-gray-300 text-sm font-medium">
-            24/7 Collaborate With Us
-          </span>
-        </motion.div>
+      <div className="flex flex-col mt-9 items-center justify-center text-center gap-6 mb-16 relative">
+        <div className="flex justify-center items-center  mb-10">
+          <motion.div
+            className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-1.5 py-1.5 pr-4 rounded-full mb-10"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="bg-[#EFFC76] text-black text-xs font-bold px-3 py-1 rounded-full">
+              <MessageCircle size={15} className="text-black" />
+            </span>
+            <span className="text-gray-300 text-sm font-medium">
+              24/7 Collaborate With Us
+            </span>
+          </motion.div>
+        </div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -42,15 +45,8 @@ const ContactForm = () => {
           ready to assist you.
         </motion.p>
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25"
-        >
-          Fill The Form Out!
-        </motion.button>
-        
+        <SmoothButton> Fill The Form Out!</SmoothButton>
+
         {/* Background glow for header */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#EFFC76]/20 blur-[100px] pointer-events-none -z-10" />
       </div>
@@ -65,10 +61,10 @@ const ContactForm = () => {
       >
         {/* Glow effect behind form */}
         <div className="absolute inset-0 bg-[#EFFC76]/10 blur-[60px] rounded-[2rem] transform scale-95 translate-y-4 pointer-events-none" />
-        
+
         <div className="relative bg-[#0A0A0A] border border-white/10 rounded-[2rem] p-6 md:p-12 lg:p-16 overflow-hidden">
-             {/* Subtle top gradient inside card */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/4 bg-[#EFFC76]/10 blur-[80px] pointer-events-none" />
+          {/* Subtle top gradient inside card */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/4 bg-[#EFFC76]/10 blur-[80px] pointer-events-none" />
 
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 relative z-10">
             {/* First Name */}
@@ -121,8 +117,20 @@ const ContactForm = () => {
                   <option value="au">Australia</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L6 6.5L11 1.5"
+                      stroke="#666"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
               </div>
@@ -143,8 +151,20 @@ const ContactForm = () => {
                   <option value="other">Other</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="#666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 1.5L6 6.5L11 1.5"
+                      stroke="#666"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
               </div>

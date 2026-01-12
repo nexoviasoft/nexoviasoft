@@ -88,7 +88,7 @@ const PolicyConditions = () => {
       title: "6. Third-Party Links",
       content: (
         <p className="text-gray-400 text-sm leading-relaxed">
-          Fluctus may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these external sites.
+          SquadLog may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these external sites.
         </p>
       ),
     },
@@ -96,7 +96,7 @@ const PolicyConditions = () => {
       title: "7. Children's Privacy",
       content: (
         <p className="text-gray-400 text-sm leading-relaxed">
-          Fluctus is not intended for use by individuals under the age of 13. We do not knowingly collect personal data neither from children. If we learn that we have collected data from a child without parental consent, we will take steps to delete that information.
+          SquadLog is not intended for use by individuals under the age of 13. We do not knowingly collect personal data neither from children. If we learn that we have collected data from a child without parental consent, we will take steps to delete that information.
         </p>
       ),
     },

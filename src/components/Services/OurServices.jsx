@@ -26,7 +26,7 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="bg-black py-24 px-4 md:px-8 relative overflow-hidden">
+    <section className="bg-transparent py-24 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-20">
@@ -92,7 +92,7 @@ const OurServices = () => {
                 </div>
 
                 {/* Dark Body */}
-                <div className="bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 pt-12 -mt-6 relative z-10 h-full min-h-[180px] flex flex-col justify-center group-hover:border-[#EFFC76]/30 transition-colors duration-300">
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 pt-12 -mt-6 relative z-10 h-full min-h-[180px] flex flex-col justify-center group-hover:border-[#EFFC76]/30 transition-colors duration-300">
                     <p className="text-gray-400 leading-relaxed text-sm md:text-base">
                         {step.description}
                     </p>
@@ -108,12 +108,20 @@ const OurServices = () => {
 
 // Custom Rays Component
 const Rays = ({ count }) => {
+    const rand01 = (seed) => {
+        let a = seed | 0;
+        a = (a + 0x6d2b79f5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+
     // Generate rays
     const rays = Array.from({ length: count }).map((_, i) => {
         // Calculate angle: distribute across -70 to 70 degrees
         const angle = -70 + (140 / (count - 1 || 1)) * i;
         // Randomize length slightly
-        const height = 60 + Math.random() * 40; 
+        const height = 60 + rand01(count * 100 + i) * 40; 
         
         return (
             <motion.div
@@ -123,7 +131,7 @@ const Rays = ({ count }) => {
                 viewport={{ once: true }}
                 transition={{ 
                     duration: 1, 
-                    delay: 0.5 + Math.random() * 0.5,
+                    delay: 0.5 + rand01(count * 200 + i) * 0.5,
                     type: "spring"
                 }}
                 style={{

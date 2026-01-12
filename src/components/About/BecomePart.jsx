@@ -6,7 +6,7 @@ import { Sparkles } from "lucide-react";
 const BecomePart = () => {
   return (
     <div className="w-11/12 md:max-w-[880px] mx-auto py-20">
-      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-black border border-white/10 p-10 md:p-20 text-center">
+      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#EFFC76] via-[#EFFC76]/20 to-transparent border border-white/10 p-10 md:p-20 text-center">
         {/* Top Spotlight Effect */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-[#EFFC76]/20 blur-[100px] pointer-events-none" />
 
@@ -22,7 +22,7 @@ const BecomePart = () => {
               <Sparkles size={14} className="text-black" />
             </div>
             <span className="text-gray-300 text-sm font-medium">
-              Become a Part of Us
+              Partner With Us
             </span>
           </motion.div>
 
@@ -34,8 +34,8 @@ const BecomePart = () => {
             transition={{ delay: 0.1 }}
             className="text-2xl md:text-3xl lg:text-5xl  font-medium text-white leading-tight"
           >
-            Ready to Elevate Your Brand <br className="hidden md:block" />
-            <span className="text-gray-400">with Next-Gen Innovation?</span>
+            Ready to Build Something <br className="hidden md:block" />
+            <span className="text-gray-400">Extraordinary?</span>
           </motion.h2>
 
           {/* Description */}
@@ -46,8 +46,8 @@ const BecomePart = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-md  max-w-2xl leading-relaxed"
           >
-            Ready to take the next step? Join us now and start transforming your
-            vision into reality with expert support.
+            Don't settle for average. Let's collaborate to create digital experiences 
+            that define your industry and drive real results.
           </motion.p>
 
           {/* Button */}
@@ -58,7 +58,7 @@ const BecomePart = () => {
             transition={{ delay: 0.3 }}
             className="px-8 py-4 rounded-xl bg-[#EFFC76] hover:bg-[#EFFC76] text-black font-medium transition-all shadow-lg shadow-[#EFFC76]/25 mt-4"
           >
-            Book an Appointment
+            Start Your Project
           </motion.button>
         </div>
 

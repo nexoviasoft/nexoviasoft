@@ -1,98 +1,114 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
 import Image from "next/image";
+<<<<<<< HEAD
 import { useQuery } from "@/hooks/useApi";
 
+=======
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
-
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
-
-  const springConfig = { damping: 25, stiffness: 150 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
-    const handleMouseMove = (e) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [cursorX, cursorY]);
+  }, []);
 
   // Partner logos for marquee
+<<<<<<< HEAD
   const { data, isLoading, isError } = useQuery("/hero-crasol");
+=======
+  const logoItems = [
+    {
+      id: 1,
+      component: (
+        <span className="text-2xl font-bold font-sans tracking-widest">
+          TECHFLOW
+        </span>
+      ),
+    },
+    {
+      id: 2,
+      component: (
+        <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
+          CLOUDSCALE
+        </span>
+      ),
+    },
+    {
+      id: 3,
+      component: (
+        <span className="text-2xl font-black italic tracking-tighter">
+          DEVCORP
+        </span>
+      ),
+    },
+    {
+      id: 4,
+      component: (
+        <span className="text-2xl font-bold font-sans tracking-widest">
+          APPIFY
+        </span>
+      ),
+    },
+    {
+      id: 5,
+      component: (
+        <span className="text-xl font-bold font-mono border-2 border-current p-1 px-2">
+          NETSECURE
+        </span>
+      ),
+    },
+  ];
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
 
   return (
-    <div className="min-h-screen  bg-black text-white overflow-hidden cursor-none">
-      {/* Custom Cursor */}
-      <motion.div
-        className="fixed w-8 h-8 border-2 border-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
-        style={{
-          left: cursorXSpring,
-          top: cursorYSpring,
-        }}
-      />
-
+    <div className="min-h-screen text-white  -mt-15 md:-mt-8  overflow-hidden bg-transparent">
       {/* Banner Component */}
       <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
-        {/* Static Background Image */}
-        <div className="absolute inset-0  w-full h-full z-0">
-          <Image
-            src="/banerImages.png"
-            alt="Background"
-            fill
-            className="object-cover object-bottom opacity-60"
-            priority
-          />
-        </div>
-
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-center flex-grow">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-1.5 py-1.5 pr-4 rounded-full mb-10"
+            className="inline-flex -mt-15 items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-1.5 py-1.5 pr-4 rounded-full mb-10"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <span className="bg-[#EFFC76] text-black text-xs font-bold px-3 py-1 rounded-full">
-              2025
+              Premium
             </span>
-            <span className="text-gray-300 text-sm font-medium">Next-Gen AI Studio</span>
+            <span className="text-gray-300 text-sm font-medium">
+              Software Solutions
+            </span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.div
-            className="mb-8"
+            className=" mb-5 md:mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-medium leading-[1.1] tracking-tight text-white">
-              AI-Driven Success
+            <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] font-medium leading-[1.1] tracking-tight text-white">
+              Transforming Ideas
               <br />
-              <span className="text-white/90">Redefining the Future.</span>
+              <span className="text-white/90">Into Digital Reality.</span>
             </h1>
           </motion.div>
 
           {/* Description */}
           <motion.div
-            className="space-y-2 mb-12"
+            className=" md:space-y-2  mb-6 md:mb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
@@ -100,23 +116,23 @@ const Banner = () => {
             <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide">
               Creating latest solutions that redefine innovation.
             </p>
-            <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide">
+            <p className=" hidden md:block text-gray-400 text-lg md:text-xl font-light tracking-wide">
               Stay ahead with AI-powered technology for the future.
             </p>
           </motion.div>
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24"
+            className=" grid grid-cols-2 items-center justify-center  gap-2 md:gap-15 mb-15 md:mb-24"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <button className="px-8 py-3.5 bg-gray-100 text-black rounded-full font-medium hover:bg-white transition-all duration-300 hover:scale-105 cursor-none min-w-[180px]">
+            <button className=" px-3 md:px-8  py-2.5 md:py-3 bg-gray-100 text-black rounded-full text-[14px] md:text-lg font-medium hover:bg-white transition-all duration-300 hover:scale-105 ">
               Connect With Us
             </button>
-            <button className="px-8 py-3.5 bg-[#EFFC76]/20 backdrop-blur-sm text-white rounded-full font-medium border border-[#EFFC76]/30 hover:bg-[#EFFC76]/30 transition-all duration-300 hover:scale-105 cursor-none min-w-[180px]">
-              What is Nubien?
+            <button className=" px-3 md:px-8  py-2.5 md:py-3 bg-[#EFFC76] text-black rounded-full text-[14px] md:text-lg  font-medium border border-[#EFFC76] hover:bg-[#EFFC76]/90 transition-all duration-300 hover:scale-105 ">
+              What is SquadLog?
             </button>
           </motion.div>
 
@@ -131,6 +147,7 @@ const Banner = () => {
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
 
+<<<<<<< HEAD
             <div className="flex items-center justify-center gap-16 md:gap-24 grayscale">
               {isLoading ? (
                 <span className="text-gray-500 animate-pulse">Loading partners...</span>
@@ -149,6 +166,23 @@ const Banner = () => {
                 ))
               )}
             </div>
+=======
+            <motion.div
+              className="flex items-center gap-16 md:gap-24 grayscale w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                repeat: Infinity,
+                ease: "linear",
+                duration: 20,
+              }}
+            >
+              {[...logoItems, ...logoItems].map((item, index) => (
+                <div key={index} className="flex-shrink-0">
+                  {item.component}
+                </div>
+              ))}
+            </motion.div>
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
           </motion.div>
         </div>
       </section>

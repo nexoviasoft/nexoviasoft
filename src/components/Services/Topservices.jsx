@@ -49,14 +49,14 @@ const Topservices = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg max-w-2xl leading-relaxed"
           >
-            Fluctus is a flexible and user-friendly template for AI startups to showcase their solutions and drive business growth.
+            SquadLog is a premium digital agency delivering cutting-edge solutions for your business growth. We transform ideas into digital reality.
           </motion.p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
           
-          {/* Card 1: Generative AI (Tall - Left) */}
+          {/* Card 1: Custom Development (Tall - Left) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,11 +65,11 @@ const Topservices = () => {
             className="md:row-span-2 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col relative overflow-hidden group hover:border-[#EFFC76]/30 transition-all duration-300"
           >
             <div className="mb-8 relative z-10">
-              <h3 className="text-2xl font-medium text-white mb-4">Generative AI</h3>
+              <h3 className="text-2xl font-medium text-white mb-4">Custom Development</h3>
               <ul className="space-y-2 text-gray-400">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> images and videos</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> code generation</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> text content creation</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Web Applications</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Mobile Solutions</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Enterprise Systems</li>
               </ul>
             </div>
             
@@ -106,7 +106,7 @@ const Topservices = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#EFFC76]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           </motion.div>
 
-          {/* Card 2: Predictive Analytics (Wide - Top Right) */}
+          {/* Card 2: Cloud Solutions (Wide - Top Right) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,11 +116,11 @@ const Topservices = () => {
           >
              <div className="flex flex-col md:flex-row justify-between relative z-10">
                 <div className="mb-8 md:mb-0">
-                  <h3 className="text-2xl font-medium text-white mb-4">Predictive Analytics</h3>
+                  <h3 className="text-2xl font-medium text-white mb-4">Cloud Solutions</h3>
                   <ul className="space-y-2 text-gray-400">
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> demand forecasting</li>
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> risk assessment</li>
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> time series forecasting</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Infrastructure Migration</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Security Optimization</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> DevOps & CI/CD</li>
                   </ul>
                 </div>
                 
@@ -153,16 +153,16 @@ const Topservices = () => {
                         <circle cx="300" cy="10" r="4" fill="#111" stroke="#EFFC76" strokeWidth="2" />
                         
                         {/* Labels */}
-                        <text x="210" y="20" fill="white" fontSize="10" opacity="0.8">Fluctus</text>
+                        <text x="210" y="20" fill="white" fontSize="10" opacity="0.8">SquadLog</text>
                         <circle cx="205" cy="17" r="2" fill="#EFFC76" />
-                        <text x="210" y="35" fill="gray" fontSize="10">competitors</text>
+                        <text x="210" y="35" fill="gray" fontSize="10">Competitors</text>
                         <circle cx="205" cy="32" r="2" fill="gray" />
                     </svg>
                 </div>
              </div>
           </motion.div>
 
-          {/* Card 3: AI Consulting (Small - Bottom Center/Left) */}
+          {/* Card 3: UI/UX Design (Small - Bottom Center/Left) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -171,11 +171,11 @@ const Topservices = () => {
             className="bg-[#EFFC76] rounded-3xl p-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
           >
             <div className="relative z-10">
-              <h3 className="text-2xl font-medium text-black mb-4">AI Consulting</h3>
+              <h3 className="text-2xl font-medium text-black mb-4">UI/UX Design</h3>
               <ul className="space-y-2 text-black/70 font-medium">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> AI strategy</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> AI readiness</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> ROI analysis</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> Brand Identity</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> User Research</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-black rounded-full" /> Interactive Prototypes</li>
               </ul>
             </div>
             
@@ -189,7 +189,7 @@ const Topservices = () => {
             </div>
           </motion.div>
 
-          {/* Card 4: NLP (Wide - Bottom Right) */}
+          {/* Card 4: Digital Marketing (Wide - Bottom Right) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -199,23 +199,23 @@ const Topservices = () => {
           >
              <div className="flex flex-col md:flex-row gap-8 relative z-10 h-full">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-medium text-white mb-4">Natural Language Processing</h3>
+                  <h3 className="text-2xl font-medium text-white mb-4">Digital Marketing</h3>
                   <ul className="space-y-2 text-gray-400">
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> chatbot development</li>
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> text summarization</li>
-                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> machine translation</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> SEO & SEM</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Content Strategy</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 bg-gray-500 rounded-full" /> Social Media Growth</li>
                   </ul>
                   
                   {/* Floating Tags */}
                   <div className="mt-8 relative h-20 overflow-hidden">
                       <div className="absolute top-0 left-0 bg-[#1A1A1A] border border-white/10 px-3 py-1.5 rounded-lg text-gray-400 text-xs transform -rotate-6">
-                          Como estás?
+                          SEO Ranking
                       </div>
                       <div className="absolute top-8 left-8 bg-[#1A1A1A] border border-white/10 px-3 py-1.5 rounded-lg text-gray-400 text-xs transform rotate-3 opacity-50">
-                          #d+G$xs;?00L.K#yt11
+                          Conversion Rate
                       </div>
                        <div className="absolute top-12 left-20 bg-[#EFFC76]/10 border border-[#EFFC76]/20 px-3 py-1.5 rounded-lg text-[#EFFC76] text-xs transform -rotate-3">
-                          How are you?
+                          ROI +150%
                       </div>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ const Topservices = () => {
                         <div className="bg-[#EFFC76] p-3 flex justify-between items-center">
                             <div className="flex items-center gap-2">
                                 <Bot className="w-4 h-4 text-black" />
-                                <span className="text-black font-medium text-sm">Your AI Assistant</span>
+                                <span className="text-black font-medium text-sm">Marketing Bot</span>
                             </div>
                             <X className="w-4 h-4 text-black opacity-50" />
                         </div>
@@ -242,7 +242,7 @@ const Topservices = () => {
                                     <Bot className="w-3 h-3 text-gray-400" />
                                 </div>
                                 <div className="bg-white/5 p-2 rounded-lg rounded-tl-none text-xs text-gray-300">
-                                    Welcome to our website! What brought you to us today?
+                                    Ready to scale your business?
                                 </div>
                             </div>
                             
@@ -251,7 +251,7 @@ const Topservices = () => {
                                     <User className="w-3 h-3 text-black" />
                                 </div>
                                 <div className="bg-white p-2 rounded-lg rounded-tr-none text-xs text-black">
-                                    I'd like to get some information about your products
+                                    We need more organic traffic.
                                 </div>
                             </div>
 
@@ -260,12 +260,12 @@ const Topservices = () => {
                                     <Bot className="w-3 h-3 text-gray-400" />
                                 </div>
                                 <div className="bg-white/5 p-2 rounded-lg rounded-tl-none text-xs text-gray-300">
-                                    Certainly! Here are some of our most popular products:
+                                    Our SEO strategy can help you rank #1.
                                 </div>
                             </div>
                             
                             <div className="ml-8 bg-[#111] border border-white/10 rounded-lg p-2 flex items-center justify-between group cursor-pointer hover:border-[#EFFC76]/50">
-                                <span className="text-[#EFFC76] text-xs">Product List</span>
+                                <span className="text-[#EFFC76] text-xs">Growth Plan</span>
                                 <TrendingUp className="w-3 h-3 text-[#EFFC76]" />
                             </div>
                         </div>

@@ -1,21 +1,13 @@
-import { Bai_Jamjuree, Geist, Geist_Mono } from "next/font/google";
+import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import BackToTop from "@/Share/BackToTop";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const baiJamjuree = Bai_Jamjuree({
+  variable: "--font-bai-jamjuree",
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// const baijamjuree = Bai_Jamjuree({
-
-// })
 
 export const metadata = {
   title: "Squadlog",
@@ -26,17 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${baiJamjuree.variable} antialiased`}
       >
-        <nav>
-          <Navbar />
-        </nav>
-
-
         {children}
-        <footer>
-          <Footer />
-        </footer>
+        <BackToTop />
       </body>
     </html>
   );

@@ -16,7 +16,7 @@ import {
 const InnovationCard = ({ title, description, type, delay = 0 }) => {
     return (
         <motion.div
-            className="relative p-8 rounded-3xl bg-[#0A0A0A] border border-white/10 overflow-hidden group hover:border-[#EFFC76]/50 transition-colors duration-500"
+            className="relative p-8 rounded-3xl bg-[#0A0A0A] border border-white/10 overflow-hidden group hover:border-[#EFFC76]/50 transition-colors duration-500 h-[400px] flex flex-col"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -26,22 +26,22 @@ const InnovationCard = ({ title, description, type, delay = 0 }) => {
             <div className="absolute inset-0 bg-gradient-to-br from-[#EFFC76]/5 to-[#EFFC76]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             {/* Icon/Header Icon */}
-            <div className="flex justify-center mb-6 relative z-10">
+            <div className="flex justify-center mb-6 relative z-10 shrink-0">
                 <div className="w-12 h-12 rounded-full bg-[#EFFC76]/20 flex items-center justify-center border border-[#EFFC76]/30">
                     <Zap className="w-6 h-6 text-[#EFFC76]" fill="currentColor" />
                 </div>
             </div>
 
             {/* Content */}
-            <div className="text-center relative z-10 mb-8">
+            <div className="text-center relative z-10 mb-8 shrink-0">
                 <h3 className="text-2xl font-semibold text-white mb-3">{title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed max-w-[80%] mx-auto">
+                <p className="text-gray-400 text-sm leading-relaxed max-w-[90%] mx-auto line-clamp-3">
                     {description}
                 </p>
             </div>
 
             {/* Dynamic Visual Content */}
-            <div className="relative z-10 mt-auto min-h-[160px] flex items-center justify-center bg-[#111] rounded-2xl border border-white/5 p-4 overflow-hidden">
+            <div className="relative z-10 mt-auto flex-1 min-h-[160px] flex items-center justify-center bg-[#111] rounded-2xl border border-white/5 p-4 overflow-hidden w-full">
                 {type === "integrations" && <IntegrationsVisual />}
                 {type === "authentication" && <AuthenticationVisual />}
                 {type === "speech" && <SpeechVisual />}

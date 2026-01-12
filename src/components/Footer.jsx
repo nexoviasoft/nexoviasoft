@@ -42,7 +42,7 @@ const Footer = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+      <div className="relative z-10 max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
         {/* Brand Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <Image
-              src={"/squadlog-logo.png"}
+              src={"/fxiedLogo.png"}
               height={160}
               width={160}
               alt="Logo"
@@ -82,14 +82,40 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="space-y-6"
         >
-          <h3 className="text-lg font-medium text-white">Template Pages</h3>
+          <h3 className="text-lg font-medium text-white">Our Company</h3>
           <ul className="space-y-3">
             {[
               { name: "Home", href: "/" },
-              { name: "About", href: "/pages/about" },
-              { name: "Portfolio", href: "/pages/portfolio" },
-              { name: "Contact", href: "/pages/contact" },
-              { name: "FAQ", href: "/pages/faq" },
+              { name: "About", href: "/about" },
+              { name: "Case Studies", href: "/case-studies" },
+              { name: "Contact", href: "/contact" },
+              { name: "FAQ", href: "/faq" },
+            ].map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="text-gray-400 hover:text-[#EFFC76] transition-colors text-sm"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-6"
+        >
+          <h3 className="text-lg font-medium text-white">Legal</h3>
+          <ul className="space-y-3">
+            {[
+              { name: "Terms & Conditions", href: "/terms-and-conditions" },
+              { name: "Privacy Policy", href: "/privacy-policy" },
+              { name: "Refund Policy", href: "/refund-policy" },
             ].map((link) => (
               <li key={link.name}>
                 <Link
@@ -108,7 +134,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="space-y-6"
         >
           <h3 className="text-lg font-medium text-white">Social</h3>
@@ -137,7 +163,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="space-y-6"
         >
           <h3 className="text-lg font-medium text-white">Subscribe Form</h3>
@@ -162,19 +188,25 @@ const Footer = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="relative z-10 max-w-[1400px] mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500"
       >
-        <p>© 2024 Mandro Design</p>
+        <p>© 2024 SquadLog. All rights reserved.</p>
         <div className="flex items-center gap-8">
           <Link
-            href="/terms"
+            href="/terms-and-conditions"
             className="hover:text-[#EFFC76] transition-colors"
           >
             Terms & Conditions
           </Link>
           <Link
-            href="/privacy"
+            href="/privacy-policy"
             className="hover:text-[#EFFC76] transition-colors"
           >
             Privacy Policy
+          </Link>
+          <Link
+            href="/refund-policy"
+            className="hover:text-[#EFFC76] transition-colors"
+          >
+            Refund Policy
           </Link>
         </div>
       </motion.div>
