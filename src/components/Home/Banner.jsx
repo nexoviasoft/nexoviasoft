@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
 import Image from "next/image";
+<<<<<<< HEAD
+import { useQuery } from "@/hooks/useApi";
+
+=======
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -19,6 +24,9 @@ const Banner = () => {
   }, []);
 
   // Partner logos for marquee
+<<<<<<< HEAD
+  const { data, isLoading, isError } = useQuery("/hero-crasol");
+=======
   const logoItems = [
     {
       id: 1,
@@ -61,6 +69,7 @@ const Banner = () => {
       ),
     },
   ];
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
 
   return (
     <div className="min-h-screen text-white  mt-2 md:-mt-8  overflow-hidden bg-transparent">
@@ -138,6 +147,26 @@ const Banner = () => {
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
 
+<<<<<<< HEAD
+            <div className="flex items-center justify-center gap-16 md:gap-24 grayscale">
+              {isLoading ? (
+                <span className="text-gray-500 animate-pulse">Loading partners...</span>
+              ) : isError ? (
+                <span className="text-red-500 text-sm">Failed to load partners</span>
+              ) : (
+                data?.map((item, index) => (
+                  <div key={item.id || index} className="relative w-32 h-12 grayscale opacity-70 hover:opacity-100 transition-opacity">
+                    <Image
+                      src={item.logoUrl}
+                      alt="Partner Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))
+              )}
+            </div>
+=======
             <motion.div
               className="flex items-center gap-16 md:gap-24 grayscale w-max"
               animate={{ x: ["0%", "-50%"] }}
@@ -153,6 +182,7 @@ const Banner = () => {
                 </div>
               ))}
             </motion.div>
+>>>>>>> 8c2cea7ffbbba4864f4fad6886dc5e3dd705a066
           </motion.div>
         </div>
       </section>
