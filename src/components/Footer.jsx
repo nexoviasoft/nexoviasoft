@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import {
   Twitter,
@@ -8,164 +8,212 @@ import {
   Youtube,
   Linkedin,
   ArrowRight,
-  Send,
+  ArrowUpRight,
   Heart,
   Globe,
+  Mail,
+  MapPin
 } from "lucide-react";
 
 /**
- * Modern Footer Design
+ * Premium "Glass" Footer V2
  * Features:
- * - Massive "SQUADLOG" background text
- * - Clean grid layout
- * - Neon accents (#EFFC76)
- * - Interactive hover states
+ * - Bento-grid layout with glassmorphism
+ * - Atmospheric cosmic glows
+ * - Massive masked background text
+ * - "Start Project" CTA
+ * - Magnetic interactions
  */
+
+const SocialLink = ({ href, icon: Icon, label }) => {
+    return (
+        <motion.a 
+            href={href}
+            target="_blank"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-[#EFFC76] hover:bg-[#EFFC76]/10 hover:border-[#EFFC76]/30 transition-all duration-300 group relative overflow-hidden"
+        >
+            <div className="absolute inset-0 bg-[#EFFC76]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <Icon size={20} className="relative z-10" />
+            <span className="sr-only">{label}</span>
+        </motion.a>
+    );
+};
+
+const FooterLink = ({ href, children }) => (
+    <Link href={href} className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors py-1">
+        <ArrowUpRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#EFFC76]" />
+        <span className="group-hover:translate-x-1 transition-transform duration-300">{children}</span>
+    </Link>
+);
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <footer className="relative bg-[#050505] text-white pt-24 pb-8 overflow-hidden border-t border-white/5">
-      {/* Absolute Background Elements */}
-      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        {/* Massive Background Text */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center leading-none">
-          <h1 className="text-[15vw] md:text-[18vw] font-bold text-white/[0.03] tracking-tight font-sans whitespace-nowrap">
-            SQUADLOG
-          </h1>
-        </div>
+    <footer ref={containerRef} className="relative bg-[#050505] pt-24 pb-8 overflow-hidden">
         
-        {/* Glow Effects */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EFFC76]/5 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+      {/* 1. Atmospheric Glows & Background */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+         <div className="absolute bottom-0 left-0 w-full h-[800px] bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10"/>
+
+         {/* Moving Orbs */}
+         <motion.div 
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#EFFC76]/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" 
+         />
+         <motion.div 
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3" 
+         />
+
+          {/* Massive Text Mark */}
+          <motion.div style={{ y, opacity }} className="absolute bottom-10 left-0 w-full z-0 pointer-events-none">
+             <h1 className="text-[18vw] font-bold text-center leading-none text-white/[0.02] tracking-tighter mix-blend-overlay">
+                SQUADLOG
+             </h1>
+          </motion.div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         
-        {/* Top Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
-          
-          {/* Brand Column (Span 4) */}
-          <div className="lg:col-span-4 space-y-8">
-            <Link href="/" className="inline-block">
-               {/* Replace with your actual Logo image if preferred, 
-                   using text for now to match modern minimalist vibe */}
-              <span className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                 <div className="w-8 h-8 bg-[#EFFC76] rounded-lg flex items-center justify-center">
-                    <span className="text-black text-xl font-bold">S</span>
-                 </div>
-                 SquadLog.
-              </span>
-            </Link>
-            <p className="text-gray-400 leading-relaxed max-w-sm">
-              Empowering businesses with cutting-edge digital solutions. 
-              We craft experiences that merge aesthetic perfection with robust functionality.
-            </p>
-            
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {[Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#EFFC76] hover:border-[#EFFC76]/50 hover:bg-[#EFFC76]/5 transition-all duration-300 group"
+        {/* 2. Top CTA Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
+            <div className="text-center md:text-left">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-4xl md:text-5xl font-medium text-white mb-4"
                 >
-                  <Icon size={18} className="group-hover:scale-110 transition-transform" />
-                </a>
-              ))}
+                    Ready to scale?
+                </motion.h2>
+                <p className="text-gray-400 text-lg max-w-md">Let&apos;s build something extraordinary together.</p>
             </div>
-          </div>
-
-          {/* Links Group: Company & Services (Span 4) */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
-            {/* Company */}
-            <div className="space-y-6">
-              <h4 className="text-lg font-medium text-white">Company</h4>
-              <ul className="space-y-4">
-                {['About Us', 'Careers', 'Our Team', 'Blog', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-400 hover:text-[#EFFC76] transition-colors text-sm flex items-center gap-2 group">
-                      <span className="w-0 group-hover:w-2 h-px bg-[#EFFC76] transition-all duration-300"></span>
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div className="space-y-6">
-              <h4 className="text-lg font-medium text-white">Services</h4>
-              <ul className="space-y-4">
-                {['Web Development', 'Mobile Apps', 'Cloud Solutions', 'UI/UX Design', 'Consulting'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-gray-400 hover:text-[#EFFC76] transition-colors text-sm flex items-center gap-2 group">
-                      <span className="w-0 group-hover:w-2 h-px bg-[#EFFC76] transition-all duration-300"></span>
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          
-           {/* Links Column 3: Legal (Span 2) */}
-           <div className="lg:col-span-2 space-y-6">
-            <h4 className="text-lg font-medium text-white">Legal</h4>
-            <ul className="space-y-4">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Refund Policy'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-[#EFFC76] transition-colors text-sm flex items-center gap-2 group">
-                     <span className="w-0 group-hover:w-2 h-px bg-[#EFFC76] transition-all duration-300"></span>
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+            
+            <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 bg-[#EFFC76] rounded-full overflow-hidden"
+            >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <span className="relative flex items-center gap-2 text-black font-semibold text-lg">
+                    Start a Project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </span>
+            </motion.button>
         </div>
 
-        {/* Newsletter Section - Full Width Strip */}
-        <div className="border-y border-white/10 py-12 mb-12 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[#EFFC76]/0 group-hover:bg-[#EFFC76]/[0.02] transition-colors duration-500"></div>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-                <div className="text-center md:text-left">
-                    <h3 className="text-2xl font-medium text-white mb-2">Stay in the loop</h3>
-                    <p className="text-gray-400 text-sm">Join our newsletter for the latest tech trends and updates.</p>
+
+        {/* 3. Main Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 mb-24">
+            
+            {/* Card 1: Brand Info (Span 4) */}
+            <div className="lg:col-span-5 bg-white/[0.02] border border-white/5 backdrop-blur-sm rounded-3xl p-8 flex flex-col justify-between h-full min-h-[300px]">
+                <div>
+                     <Link href="/" className="inline-block mb-6">
+                        <span className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                            <div className="w-10 h-10 bg-[#EFFC76] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(239,252,118,0.3)]">
+                                <span className="text-black text-xl font-bold">S</span>
+                            </div>
+                            SquadLog.
+                        </span>
+                    </Link>
+                    <p className="text-gray-400 leading-relaxed mb-8">
+                        We are a digital product agency that builds ambitious products for ambitious brands. From strategy to design and development.
+                    </p>
                 </div>
                 
-                <div className="w-full max-w-md relative">
-                    <input 
-                        type="email" 
-                        placeholder="Enter your email address" 
-                        className="w-full bg-[#111] border border-white/10 rounded-full py-4 pl-6 pr-16 text-white placeholder-gray-500 focus:outline-none focus:border-[#EFFC76]/50 focus:ring-1 focus:ring-[#EFFC76]/50 transition-all"
-                    />
-                    <button className="absolute right-2 top-2 bottom-2 w-10 h-10 bg-[#EFFC76] rounded-full flex items-center justify-center text-black hover:scale-105 transition-transform">
-                        <ArrowRight size={18} />
-                    </button>
+                <div className="flex gap-4">
+                    <SocialLink href="#" icon={Twitter} label="Twitter" />
+                    <SocialLink href="#" icon={Instagram} label="Instagram" />
+                    <SocialLink href="#" icon={Linkedin} label="LinkedIn" />
+                    <SocialLink href="#" icon={Youtube} label="YouTube" />
                 </div>
+            </div>
+
+            {/* Card 2: Combined Navigation (Span 4) */}
+            <div className="lg:col-span-4 bg-white/[0.02] border border-white/5 backdrop-blur-sm rounded-3xl p-8">
+                 <div className="grid grid-cols-2 gap-8 h-full">
+                    {/* Company */}
+                    <div>
+                        <h4 className="text-white font-medium mb-6 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#EFFC76]" /> Company
+                        </h4>
+                        <div className="flex flex-col gap-3">
+                            {['About', 'Work', 'Services', 'Agency', 'Contact'].map(item => (
+                                <FooterLink key={item} href="#">{item}</FooterLink>
+                            ))}
+                        </div>
+                    </div>
+
+                     {/* Services */}
+                     <div>
+                        <h4 className="text-white font-medium mb-6 flex items-center gap-2">
+                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Services
+                        </h4>
+                        <div className="flex flex-col gap-3">
+                            {['Web Dev', 'Mobile', 'SaaS', 'Design', 'Marketing'].map(item => (
+                                <FooterLink key={item} href="#">{item}</FooterLink>
+                            ))}
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            {/* Card 3: Newsletter (Span 3) */}
+            <div className="lg:col-span-3 bg-gradient-to-br from-white/[0.05] to-white/[0.01] border border-white/10 backdrop-blur-sm rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-[#EFFC76]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                 
+                 <div className="relative z-10">
+                    <h4 className="text-xl font-medium text-white mb-2">Subscribe</h4>
+                    <p className="text-gray-400 text-sm mb-6">Latest news and articles sent to your inbox.</p>
+                    
+                    <div className="space-y-4">
+                        <input 
+                            type="email" 
+                            placeholder="Email address" 
+                            className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-[#EFFC76]/50 transition-colors"
+                        />
+                        <button className="w-full bg-white text-black font-medium py-3 rounded-xl hover:bg-[#EFFC76] transition-colors duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                 </div>
             </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-4">
-            <p className="text-gray-500 text-sm">
-                &copy; {currentYear} SquadLog. Made with <Heart size={12} className="inline text-[#EFFC76] fill-[#EFFC76] mx-1" /> remotely.
-            </p>
-            
-            <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    All Systems Operational
+
+        {/* 4. Bottom Info */}
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+             <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-2 text-sm text-gray-500">
+                <span>&copy; {currentYear} SquadLog Inc.</span>
+                <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
+                <Link href="#" className="hover:text-white transition-colors">Sitemap</Link>
+             </div>
+
+             <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                    <MapPin size={14} className="text-[#EFFC76]" />
+                    <span className="text-sm text-gray-400">New York, NY</span>
                 </div>
-                <button 
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className="text-gray-500 hover:text-white text-sm transition-colors"
-                >
-                    Back to Top
-                </button>
-            </div>
+                <div className="flex items-center gap-2">
+                    <Mail size={14} className="text-[#EFFC76]" />
+                     <span className="text-sm text-gray-400">hello@squadlog.com</span>
+                </div>
+             </div>
         </div>
 
       </div>
