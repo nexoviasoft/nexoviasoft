@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
 import WebDevelopmentWorkflow from "@/components/Home/WebDevelopmentWorkflow";
+import CloudComputingWorkflow from "@/components/Home/CloudComputingWorkflow";
 
 const ServiceDetail = () => {
   const params = useParams();
@@ -149,7 +150,13 @@ const ServiceDetail = () => {
 
         {/* Workflow Section for All Services */}
         <div className="mb-24 -mx-4 md:-mx-8">
-             {slug === 'web-development' ? <WebDevelopmentWorkflow /> : <DevOpsWorkflow />}
+             {slug === 'web-development' ? (
+                <WebDevelopmentWorkflow />
+             ) : slug === 'cloud-computing' ? (
+                <CloudComputingWorkflow />
+             ) : (
+                <DevOpsWorkflow />
+             )}
         </div>
 
         {/* Next Service Navigation */}
