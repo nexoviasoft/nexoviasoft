@@ -29,6 +29,19 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const lineVariants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: { 
+    pathLength: 1, 
+    opacity: 0.3, // matches strokeOpacity="0.1" roughly but slightly more visible for animation
+    transition: { 
+      duration: 1.5, 
+      ease: "easeInOut",
+      delay: 0.5 // Wait for cards to start appearing
+    } 
+  }
+};
+
 // --- Mini UI Components for Cards ---
 
 const MockupTerminal = () => (
@@ -191,34 +204,88 @@ const DevOpsWorkflow = () => {
 
         {/* Diagram Layout */}
         <div className="relative flex flex-col items-center">
-            
-            {/* Desktop SVG Lines (Absolute) */}
+                       {/* Desktop SVG Lines (Absolute) */}
              <div className="absolute inset-0 hidden xl:block pointer-events-none z-0">
                 <svg className="w-full h-full" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
                     {/* Center Point approx: 700 450 */}
+                    
                     {/* Top Left Connection */}
-                    <path d="M 700 450 C 700 350, 250 550, 250 380" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                    <circle cx="250" cy="380" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 350, 250 550, 250 380" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                    <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="250" cy="380" r="4" fill="#EFFC76" />
                     
                     {/* Top Center Connection */}
-                    <path d="M 700 450 C 700 350, 700 400, 700 380" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                    <circle cx="700" cy="380" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 350, 700 400, 700 380" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                    <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="700" cy="380" r="4" fill="#EFFC76" />
 
                     {/* Top Right Connection */}
-                    <path d="M 700 450 C 700 350, 1150 550, 1150 380" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                    <circle cx="1150" cy="380" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 350, 1150 550, 1150 380" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                    <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="1150" cy="380" r="4" fill="#EFFC76" />
 
                     {/* Bottom Left Connection */}
-                    <path d="M 700 450 C 700 550, 250 350, 250 520" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                    <circle cx="250" cy="520" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 550, 250 350, 250 520" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                    <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="250" cy="520" r="4" fill="#EFFC76" />
 
                     {/* Bottom Center Connection */}
-                    <path d="M 700 450 C 700 550, 700 500, 700 520" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                     <circle cx="700" cy="520" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 550, 700 500, 700 520" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                     <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="700" cy="520" r="4" fill="#EFFC76" />
 
                     {/* Bottom Right Connection */}
-                    <path d="M 700 450 C 700 550, 1150 350, 1150 520" stroke="#EFFC76" strokeOpacity="0.1" strokeWidth="2" strokeDasharray="4 4" />
-                    <circle cx="1150" cy="520" r="4" fill="#EFFC76" />
+                    <motion.path 
+                        variants={lineVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        d="M 700 450 C 700 550, 1150 350, 1150 520" 
+                        stroke="#EFFC76" 
+                        strokeWidth="2" 
+                        strokeDasharray="4 4" 
+                    />
+                    <motion.circle initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 1.5 }} cx="1150" cy="520" r="4" fill="#EFFC76" />
                 </svg>
             </div>
 
