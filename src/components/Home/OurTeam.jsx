@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import { Search, Percent } from "lucide-react";
 import Image from "next/image";
 import SmoothButton from "@/Share/SmoothButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const teamMembers = [
   {
@@ -39,23 +43,12 @@ const teamMembers = [
   },
 ];
 
-const TeamCard = ({ member, index }) => {
+const TeamCard = ({ member }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-[#0A0A0A] border border-white/5 rounded-3xl p-3 flex items-center gap-4 hover:border-[#EFFC76]/50 transition-colors duration-300"
-    >
+    <div className="group relative bg-[#0A0A0A] border border-white/5 rounded-3xl p-3 flex items-center gap-4 hover:border-[#EFFC76]/50 transition-colors duration-300 h-full">
       {/* Image */}
       <div className="relative w-20 h-20 rounded-2xl overflow-hidden bg-gray-800 shrink-0">
-        {/* Placeholder for image if not found, or actual image */}
         <div className="absolute inset-0 bg-gray-700 animate-pulse" />
-        {/* Note: Using a placeholder div. In a real app, use next/image with the src. 
-              Since I don't have the exact image paths yet, I'll assume they might exist or use placeholders.
-              The design shows specific images. I'll use a placeholder style if image load fails or just generic paths.
-           */}
         <Image
           src={member.image}
           alt={member.name}
@@ -78,20 +71,14 @@ const TeamCard = ({ member, index }) => {
       {/* Button */}
       <div className="rounded-xl bg-[#EFFC76] p-2.5 flex items-center justify-center shrink-0 group-hover:bg-[#EFFC76] transition-colors cursor-pointer">
         <Percent className="w-5 h-5 text-black" />
-        {/* The icon in the image looks like a % or similar abstract shape. 
-            Using Percent as a placeholder or close match from lucide. 
-            Actually, looking closer it might be a specific logo or different icon. 
-            I'll use Percent for now as it looks somewhat similar in the blurry image (a circle with a slash/dots). 
-            Wait, looking at the Uploaded Image again, it looks like a percentage sign inside a box. 
-        */}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const OurTeam = () => {
   return (
-    <section className="py-24 bg-transparent relative overflow-hidden">
+    <section className="py-24 -mt-30 md:-mt-22 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center mb-16">
           {/* Badge */}
@@ -125,18 +112,69 @@ const OurTeam = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg max-w-2xl mb-8"
           >
-            Expert developers, designers, and strategists dedicated to delivering excellence.
+            Expert developers, designers, and strategists dedicated to
+            delivering excellence.
           </motion.p>
 
           {/* Button */}
           <SmoothButton> View About SquadLog</SmoothButton>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {/* Desktop Team Grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
-            <TeamCard key={index} member={member} index={index} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <TeamCard member={member} />
+            </motion.div>
           ))}
+        </div>
+
+        {/* Mobile Slider */}
+        <div className="md:hidden mt-8">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            loop={true}
+            className="pb-12"
+          >
+            {teamMembers.map((member, index) => (
+              <SwiperSlide key={index}>
+                <TeamCard member={member} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          {/* Custom Styles for Swiper Pagination */}
+          <style jsx global>{`
+            .swiper-pagination-bullet {
+              background: rgba(255, 255, 255, 0.2) !important;
+              opacity: 1 !important;
+              width: 10px !important;
+              height: 10px !important;
+              transition: all 0.3s ease;
+            }
+            .swiper-pagination-bullet-active {
+              background: #EFFC76 !important;
+              width: 24px !important;
+              border-radius: 5px !important;
+            }
+          `}</style>
         </div>
       </div>
     </section>

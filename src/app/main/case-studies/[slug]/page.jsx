@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { useParams, notFound } from "next/navigation";
 import { caseStudiesData } from "@/constants/caseStudies";
@@ -20,7 +19,7 @@ import {
   Flag,
 } from "lucide-react";
 import Image from "next/image";
-
+// Just Detlices APis Call Now
 const CaseStudyDetail = () => {
   const params = useParams();
   const slug = params.slug;

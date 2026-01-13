@@ -8,21 +8,7 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   /* config options here */
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-      },
-      {
-        protocol: "https",
-        hostname: "i.ibb.co.com",
-      },
-      {
-        protocol: "https",
-        hostname: "ibb.co",
-      },
-    ],
-    // bbbsdsdsds
+    domains: ["example.com"],
   },
   async redirects() {
     return [
@@ -34,12 +20,28 @@ const nextConfig = {
       },
       { source: "/pages/contact", destination: "/contact", permanent: true },
       { source: "/pages/services", destination: "/services", permanent: true },
-      { source: "/pages/policy", destination: "/privacy-policy", permanent: true },
-      { source: "/pages/terms", destination: "/terms-and-conditions", permanent: true },
-      { source: "/terms", destination: "/terms-and-conditions", permanent: true },
+      {
+        source: "/pages/policy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/pages/terms",
+        destination: "/terms-and-conditions",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/terms-and-conditions",
+        permanent: true,
+      },
       { source: "/policy", destination: "/privacy-policy", permanent: true },
       { source: "/privacy", destination: "/privacy-policy", permanent: true },
-      { source: "/squadcart", destination: "/products/squadcart", permanent: true },
+      {
+        source: "/squadcart",
+        destination: "/products/squadcart",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
@@ -50,7 +52,10 @@ const nextConfig = {
       { source: "/contact", destination: "/main/contact" },
       { source: "/services", destination: "/main/services" },
       { source: "/products", destination: "/main/products" },
-      { source: "/terms-and-conditions", destination: "/main/terms-and-conditions" },
+      {
+        source: "/terms-and-conditions",
+        destination: "/main/terms-and-conditions",
+      },
       { source: "/privacy-policy", destination: "/main/privacy-policy" },
       { source: "/refund-policy", destination: "/main/refund-policy" },
       { source: "/faq", destination: "/main/faq" },

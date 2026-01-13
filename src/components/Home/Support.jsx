@@ -9,13 +9,32 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
+const features = [
+  {
+    icon: MessageCircle,
+    title: "Fast Responses",
+    description: "Get timely answers to your questions.",
+  },
+  {
+    icon: Star,
+    title: "Expert Guidance",
+    description: "Our team understands both design and tech.",
+  },
+  {
+    icon: Headset,
+    title: "Continuous Help",
+    description: "Support doesn't stop after launch.",
+  },
+];
 
 const Support = () => {
   return (
-    <section className="bg-transparent py-24 px-4 relative overflow-hidden">
-      {/* Background Gradients - Removed for global theme */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-gradient-to-b from-[#EFFC76]/20 to-transparent blur-[120px] pointer-events-none" /> */}
-
+    <section className=" py-24 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
@@ -62,26 +81,47 @@ const Support = () => {
           <CardsDisplay />
         </div>
 
-        {/* Bottom Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <FeatureCard
-            icon={MessageCircle}
-            title="Fast Responses"
-            description="Get timely answers to your questions."
-            delay={0.4}
-          />
-          <FeatureCard
-            icon={Star}
-            title="Expert Guidance"
-            description="Our team understands both design and tech."
-            delay={0.5}
-          />
-          <FeatureCard
-            icon={Headset}
-            title="Continuous Help"
-            description="Support doesn't stop after launch."
-            delay={0.6}
-          />
+        {/* Desktop Grid */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} delay={0.4 + index * 0.1} />
+          ))}
+        </div>
+
+        {/* Mobile Slider */}
+        <div className="lg:hidden -mt-8 max-w-5xl mx-auto">
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            className="pb-14 [&_.swiper-pagination-bullet]:bg-gray-500 [&_.swiper-pagination-bullet-active]:bg-[#EFFC76] [&_.swiper-pagination-bullet]:w-3 [&_.swiper-pagination-bullet]:h-3"
+            onClick={(swiper) => {
+              swiper.autoplay.stop();
+            }}
+            onTouchMove={(swiper) => {
+              // Ensure it resumes after manual move (handled by disableOnInteraction: false)
+            }}
+          >
+            {features.map((feature, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <FeatureCard {...feature} delay={0} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
@@ -89,33 +129,84 @@ const Support = () => {
 };
 
 const CardsDisplay = () => {
-  // Simulated cards with colors/gradients since we don't have the exact images
+  // 7 Cards for a fuller fan effect
   const cards = [
-    { color: "bg-zinc-800", rotate: -15, x: -280, scale: 0.8, z: 0 },
-    { color: "bg-zinc-700", rotate: -8, x: -150, scale: 0.9, z: 10 },
-    { color: "bg-zinc-600", rotate: 0, x: 0, scale: 1.1, z: 20, active: true },
-    { color: "bg-zinc-700", rotate: 8, x: 150, scale: 0.9, z: 10 },
-    { color: "bg-zinc-800", rotate: 15, x: 280, scale: 0.8, z: 0 },
+    {
+      rotate: -25,
+      x: -320,
+      y: 40,
+      scale: 0.85,
+      z: 0,
+      img: "1524504388940-b1c1722653e1", // Bag
+    },
+    {
+      rotate: -15,
+      x: -220,
+      y: 20,
+      scale: 0.9,
+      z: 10,
+      img: "1494976388531-d377034f0d38", // Car
+    },
+    {
+      rotate: -7,
+      x: -115,
+      y: 5,
+      scale: 0.95,
+      z: 20,
+      img: "1546069901-ba9599a7e63c", // Food
+    },
+    {
+      rotate: 0,
+      x: 0,
+      y: 0,
+      scale: 1.05,
+      z: 30,
+      active: true,
+      img: "1618005182384-a83a8bd57fbe", // Main
+    },
+    {
+      rotate: 7,
+      x: 115,
+      y: 5,
+      scale: 0.95,
+      z: 20,
+      img: "1515886657613-9f3515b0c78f", // Fashion
+    },
+    {
+      rotate: 15,
+      x: 220,
+      y: 20,
+      scale: 0.9,
+      z: 10,
+      img: "1534528741775-53994a69daeb", // Art/Abstract
+    },
+    {
+      rotate: 25,
+      x: 320,
+      y: 40,
+      scale: 0.85,
+      z: 0,
+      img: "1542291026-7eec264c27ff", // Product
+    },
   ];
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      {/* Floating Chat Bubbles */}
+    <div className="relative w-full h-[500px] flex items-center justify-center translate-y-10">
+      {/* Floating Chat Bubbles - Updated Position */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="absolute top-10 left-[15%] md:left-[25%] z-30 bg-[#EFFC76] text-black px-4 py-2 rounded-2xl rounded-bl-sm text-sm font-medium shadow-lg"
+        initial={{ opacity: 0, scale: 0.5, y: 20 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="absolute -top-12 left-[10%] md:left-[20%] z-40 bg-[#3B82F6] text-white px-5 py-2.5 rounded-2xl rounded-bl-none text-sm font-semibold shadow-xl shadow-blue-900/20"
       >
-        Hi! How can we help?
+        Hey, it&apos;s me!
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20, x: 50 }}
-        whileInView={{ opacity: 1, y: 0, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-        className="absolute top-16 right-[15%] md:right-[25%] z-30 bg-[#EFFC76] text-black px-4 py-2 rounded-2xl rounded-br-sm text-sm font-medium shadow-lg"
+        initial={{ opacity: 0, scale: 0.5, y: 20 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="absolute -top-8 right-[10%] md:right-[20%] z-40 bg-[#8B5CF6] text-white px-5 py-2.5 rounded-2xl rounded-br-none text-sm font-semibold shadow-xl shadow-purple-900/20"
       >
         Problem Solved
       </motion.div>
@@ -124,42 +215,46 @@ const CardsDisplay = () => {
       {cards.map((card, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, scale: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, scale: card.scale, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 + index * 0.1, duration: 0.8 }}
-          className={`absolute w-48 h-64  rounded-2xl ${card.color} shadow-2xl border border-white/10 overflow-hidden group`}
-          style={{
+          initial={{ opacity: 0, scale: 0.5, y: 200, rotate: 0 }}
+          whileInView={{
+            opacity: 1,
+            scale: card.scale,
+            y: card.y,
             rotate: card.rotate,
             x: card.x,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            delay: 0.2 + index * 0.1,
+          }}
+          className={`absolute w-52 h-72 md:w-60 md:h-80 rounded-[32px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
+          style={{
             zIndex: card.z,
           }}
         >
-          {/* Placeholder Content for Images */}
-          <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/0 relative">
-            {/* active card overlay controls */}
-            {card.active && (
-              <div className="absolute inset-0 border-2 border-[#EFFC76]/50 rounded-2xl pointer-events-none">
-                <div className="absolute -top-1 -left-1 w-3 h-3 bg-white rounded-full border-2 border-[#EFFC76] shadow-sm" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full border-2 border-[#EFFC76] shadow-sm" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-white rounded-full border-2 border-[#EFFC76] shadow-sm" />
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-white rounded-full border-2 border-[#EFFC76] shadow-sm" />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-dashed border-white/30" />
-              </div>
-            )}
+          {/* Card Border & Glow */}
+          <div className="absolute inset-0 rounded-[32px] border border-white/10 z-10" />
 
-            {/* Gradient/Image Placeholder */}
+          {/* Image */}
+          <div
+            className={`w-full h-full bg-neutral-900 relative`}
+          >
             <div
-              className={`w-full h-full opacity-60 mix-blend-overlay bg-[url('https://images.unsplash.com/photo-${
-                [
-                  "1524504388940-b1c1722653e1", // Bag
-                  "1494976388531-d377034f0d38", // Car
-                  "1546069901-ba9599a7e63c", // Food/Lemonish
-                  "1618005182384-a83a8bd57fbe", // Abstract
-                  "1515886657613-9f3515b0c78f", // Fashion
-                ][index]
-              }?auto=format&fit=crop&w=400&q=80')] bg-cover bg-center`}
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-${card.img}?auto=format&fit=crop&w=600&q=80')`,
+              }}
             />
+            {/* Overlay Gradient for depth */}
+            <div className="absolute inset-0 bg-black/20" />
+            
+             {/* Active Highlight */}
+            {card.active && (
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-white/5 to-white/10 opacity-50 pointer-events-none" />
+            )}
           </div>
         </motion.div>
       ))}

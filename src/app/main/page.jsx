@@ -69,9 +69,7 @@ const TestPages = () => {
           <Faq />
         </section>
 
-        {/* <section>
-        <PartOfUs />
-      </section> */}
+       
       </div>
     </div>
   );
