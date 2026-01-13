@@ -187,8 +187,14 @@ const Navbar = () => {
           {/* Floating Central Button */}
           <div className="relative -top-6 flex flex-col items-center">
             <Link href="/contact">
-              <div className="bg-[#EFFC76] p-3.5 rounded-full border-[6px] border-black text-black shadow-[0_0_20px_rgba(239,252,118,0.4)] transform transition-transform hover:scale-110 flex items-center justify-center">
-                <MessageCircle size={24} fill="currentColor" className="text-black" />
+              <div className="bg-[#EFFC76] p-3 rounded-full border-[6px] border-black text-black shadow-[0_0_20px_rgba(239,252,118,0.4)] transform transition-transform hover:scale-110 flex items-center justify-center">
+                 <Image 
+                    src="/customIcon.png" 
+                    alt="Center Icon" 
+                    width={28} 
+                    height={28} 
+                    className="object-contain" // removed text-black/fill as Image doesn't take fill
+                 />
               </div>
             </Link>
              <span className="text-[10px] font-medium tracking-wide text-gray-400 mt-1">Contact</span>
