@@ -7,6 +7,10 @@ import {
   Headset,
   MessageCircle,
   CheckCircle2,
+  Search,
+  User,
+  UserSquare,
+  UsersRound,
 } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,9 +48,9 @@ const Support = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#EFFC76]/20 mb-8"
           >
-            <Headset size={14} className="text-[#EFFC76]" />
+             <UsersRound className="w-4 h-4 text-[#EFFC76]" />
             <span className="text-gray-300 text-sm font-medium">
-              24/7 Support
+             OurTeam
             </span>
           </motion.div>
 

@@ -15,6 +15,12 @@ import {
   MessageSquare,
   Check,
 } from "lucide-react";
+import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
+import WebDevelopmentWorkflow from "@/components/Home/WebDevelopmentWorkflow";
+import CloudComputingWorkflow from "@/components/Home/CloudComputingWorkflow";
+import MobileAppWorkflow from "@/components/Home/MobileAppWorkflow";
+import UiUxDesignWorkflow from "@/components/Home/UiUxDesignWorkflow";
+import DigitalMarketingWorkflow from "@/components/Home/DigitalMarketingWorkflow";
 
 const ServiceDetail = () => {
   const params = useParams();
@@ -143,6 +149,23 @@ const ServiceDetail = () => {
                     </Link>
                 </div>
             </div>
+        </div>
+
+        {/* Workflow Section for All Services */}
+        <div className="mb-24 -mx-4 md:-mx-8">
+             {slug === 'web-development' ? (
+                <WebDevelopmentWorkflow />
+             ) : slug === 'cloud-computing' ? (
+                <CloudComputingWorkflow />
+             ) : slug === 'mobile-app-development' ? (
+                <MobileAppWorkflow />
+             ) : slug === 'ui-ux-design' ? (
+                <UiUxDesignWorkflow />
+             ) : slug === 'digital-marketing' ? (
+                <DigitalMarketingWorkflow />
+             ) : (
+                <DevOpsWorkflow />
+             )}
         </div>
 
         {/* Next Service Navigation */}

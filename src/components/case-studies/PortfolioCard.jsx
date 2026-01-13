@@ -17,7 +17,7 @@ const PortfolioCard = () => {
 
   return (
     <div
-      className="bg-transparent text-white   relative overflow-hidden"
+      className=" text-white   relative overflow-hidden"
       id="portfolio-section"
     >
       <div className="max-w-[1400px] mx-auto  mt-18 px-4 md:px-8 relative z-10">
@@ -50,7 +50,7 @@ const PortfolioCard = () => {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="lg:col-span-4 rounded-l-xl md:rounded-3xl p-5 md:p-8 bg-[#111] border border-white/10 relative group overflow-hidden hover:border-[#EFFC76]/50 transition-colors duration-500"
+                className=" lg:col-span-4 rounded-l-xl md:rounded-3xl p-5 md:p-8  border-white/10 relative group overflow-hidden hover:border-[#EFFC76]/50 transition-colors duration-500"
               >
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#EFFC76]/5 to-[#EFFC76]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -94,9 +94,12 @@ const PortfolioCard = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex  flex-wrap gap-2 md:gap-4 md:mt-8 pt-4 md:pt-6 md:border-t md:border-white/10">
-                  <Link href={`/main/case-studies/${project._id}`}>
-                    <SmoothButton className=" text-[13px]  md:text-md">
+                <div className="flex   flex-wrap gap-2 md:gap-4 md:mt-8 pt-4 md:pt-6 md:border-t md:border-white/10">
+                  <Link
+                    className="z-20"
+                    href={`/main/case-studies/${project.id}`}
+                  >
+                    <SmoothButton className=" text-[13px]  md:text-md ">
                       View Details
                     </SmoothButton>
                   </Link>
@@ -106,7 +109,7 @@ const PortfolioCard = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" text-[13px]  md:text-md px-4 py-2 md:px-6 md:py-2.5 rounded-lg border border-white/20 hover:bg-white/10 hover:border-[#EFFC76]/50 transition-all flex items-center gap-2 text-sm md:text-md font-semibold text-gray-300 hover:text-white shadow-2xl"
+                      className=" text-[13px] z-20  md:text-md px-4 py-2 md:px-6 md:py-2.5 rounded-lg border border-white/20 hover:bg-white/10 hover:border-[#EFFC76]/50 transition-all flex items-center gap-2 text-sm md:text-md font-semibold text-gray-300 hover:text-white shadow-2xl"
                     >
                       Live Version{" "}
                       <ExternalLink size={14} className="md:w-4 md:h-4" />
