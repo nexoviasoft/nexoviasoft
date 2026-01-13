@@ -48,10 +48,8 @@ const Support = () => {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#EFFC76]/20 mb-8"
           >
-             <UsersRound className="w-4 h-4 text-[#EFFC76]" />
-            <span className="text-gray-300 text-sm font-medium">
-             OurTeam
-            </span>
+            <UsersRound className="w-4 h-4 text-[#EFFC76]" />
+            <span className="text-gray-300 text-sm font-medium">OurTeam</span>
           </motion.div>
 
           <motion.h2
@@ -293,32 +291,32 @@ const CardsDisplay = () => {
       {/* Desktop Fanned Stack */}
       <div className="hidden md:flex items-center justify-center w-full h-full">
         {cards.map((card, index) => {
-            const isActive = activeIndex === index;
-            return (
-                <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5, y: 200, rotate: 0 }}
-                animate={{
-                    opacity: 1,
-                    scale: isActive ? 1.15 : card.scale,
-                    y: card.y,
-                    rotate: isActive ? 0 : card.rotate,
-                    x: card.x,
-                    zIndex: isActive ? 100 : card.z,
-                }}
-                viewport={{ once: true }}
-                transition={{
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 20,
-                    delay: 0, 
-                }}
-                onMouseEnter={() => setActiveIndex(index)}
-                onMouseLeave={() => setActiveIndex(null)}
-                className={`absolute w-52 h-72 rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom cursor-pointer`}
-                >
-                {/* Card Border & Glow */}
-                <div className="absolute inset-0 rounded-[24px] border border-white/10 z-10" />
+          const isActive = activeIndex === index;
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.5, y: 200, rotate: 0 }}
+              animate={{
+                opacity: 1,
+                scale: isActive ? 1.15 : card.scale,
+                y: card.y,
+                rotate: isActive ? 0 : card.rotate,
+                x: card.x,
+                zIndex: isActive ? 100 : card.z,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                delay: 0,
+              }}
+              onMouseEnter={() => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(null)}
+              className={`absolute w-52 h-72 rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom cursor-pointer`}
+            >
+              {/* Card Border & Glow */}
+              <div className="absolute inset-0 rounded-[24px] border border-white/10 z-10" />
 
                 <div className={`w-full h-full bg-neutral-900 relative`}>
                     <div

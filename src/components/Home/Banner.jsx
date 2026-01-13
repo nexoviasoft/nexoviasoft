@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import TextColorLetters from "@/Share/TextColorLetters";
 import Image from "next/image";
 import { useQuery } from "@/hooks/useApi";
+import Link from "next/link";
 const Banner = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -25,8 +26,21 @@ const Banner = () => {
 
   return (
     <div className="min-h-screen text-white  mt-2 md:-mt-8  overflow-hidden bg-transparent">
+      {/* Mobile Top Bar */}
+      <div className="md:hidden  top-0 left-0 right-0 p-6 flex justify-center z-20   pointer-events-none bg-gradient-to-b from-black/80 to-transparent">
+        <Link href="/" className="pointer-events-auto">
+          <Image
+            src="/fxiedLogo.png"
+            alt="SquadLogo"
+            width={120}
+            height={40}
+            className="h-15 w-auto "
+          />
+        </Link>
+      </div>
+
       {/* Banner Component */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
+      <section className="relative -mt-25 md:mt-0 min-h-screen flex flex-col items-center justify-center pt-20">
         {/* Content */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 text-center flex flex-col items-center justify-center flex-grow">
           {/* Badge */}

@@ -176,18 +176,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Top Bar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 p-6 flex justify-center z-20   pointer-events-none bg-gradient-to-b from-black/80 to-transparent">
-        <Link href="/" className="pointer-events-auto">
-          <Image
-            src="/fxiedLogo.png"
-            alt="SquadLogo"
-            width={120}
-            height={40}
-            className="h-15 w-auto "
-          />
-        </Link>
-      </div>
 
       {/* Mobile Bottom Dock */}
       <div className="md:hidden fixed bottom-8 left-4 right-4 z-50">
