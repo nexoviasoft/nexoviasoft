@@ -123,11 +123,23 @@ const Footer = () => {
                             ))}
                         </div>
                     </div>
-                    <div>
+                     <div>
                         <h4 className="text-white font-medium mb-6">Services</h4>
                         <div className="flex flex-col gap-3">
                             {['Web Dev', 'Mobile', 'SaaS', 'Design'].map(item => (
                                 <FooterLink key={item} href="#">{item}</FooterLink>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <h4 className="text-white font-medium mb-6">Legal</h4>
+                        <div className="flex flex-col gap-3">
+                            {[
+                                { name: 'Privacy Policy', href: '/privacy-policy' },
+                                { name: 'Terms & Conditions', href: '/terms-conditions' },
+                                { name: 'Refund Policy', href: '/refund-policy' }
+                            ].map(item => (
+                                <FooterLink key={item.name} href={item.href}>{item.name}</FooterLink>
                             ))}
                         </div>
                     </div>
@@ -164,8 +176,6 @@ const Footer = () => {
 
              <div className="flex gap-6 text-sm text-gray-600">
                 <span>&copy; {currentYear} SquadLog</span>
-                <Link href="#" className="hover:text-gray-400 transition-colors">Privacy</Link>
-                <Link href="#" className="hover:text-gray-400 transition-colors">Terms</Link>
              </div>
              
              {/* Giant Faded Anchor Text behind everything */}
