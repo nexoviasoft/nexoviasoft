@@ -170,9 +170,9 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-[#050505]/98 backdrop-blur-3xl z-40 flex flex-col pt-32 px-6 md:hidden"
+              className="fixed inset-0 bg-black z-[60] flex flex-col pt-32 px-8 md:hidden overflow-y-auto"
             >
-              <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-8 pb-10">
                 {[
                   { name: "Home", href: "/" },
                   { name: "About", href: "/about" },
@@ -192,8 +192,10 @@ const Navbar = () => {
                     <Link
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block text-3xl font-bold tracking-tight hover:text-[#EFFC76] transition-colors ${
-                        item.sub ? "text-xl text-gray-400 pl-4 font-medium" : "text-white"
+                      className={`block transition-all duration-300 ${
+                        item.sub 
+                        ? "text-xl text-gray-500 pl-6 font-medium hover:text-[#EFFC76]" 
+                        : "text-4xl md:text-5xl font-medium text-white hover:text-[#EFFC76] tracking-tight"
                       }`}
                     >
                       {item.name}
@@ -204,11 +206,11 @@ const Navbar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.6 }}
                   className="pt-8"
                 >
                   <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="block">
-                    <button className="w-full bg-[#EFFC76] text-black font-bold text-lg py-4 rounded-full hover:bg-white transition-colors">
+                    <button className="w-full bg-[#EFFC76] text-black font-bold text-xl py-5 rounded-full hover:bg-white transition-colors">
                       Get In Touch
                     </button>
                   </Link>
