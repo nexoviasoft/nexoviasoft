@@ -3,6 +3,7 @@
 import SmoothButton from "@/Share/SmoothButton";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -170,9 +171,28 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black z-[60] flex flex-col pt-32 px-8 md:hidden overflow-y-auto"
+              className="fixed inset-0 bg-black z-[60] flex flex-col px-8 md:hidden overflow-y-auto"
             >
-              <div className="flex flex-col space-y-8 pb-10">
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between py-6">
+                <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                  <Image
+                    src="/fxiedLogo.png"
+                    alt="Squadlogo"
+                    width={100}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
+                </Link>
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="flex flex-col space-y-8 mt-8 pb-10 flex-grow">
                 {[
                   { name: "Home", href: "/" },
                   { name: "About", href: "/about" },
@@ -194,7 +214,7 @@ const Navbar = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className={`block transition-all duration-300 ${
                         item.sub 
-                        ? "text-xl text-gray-500 pl-6 font-medium hover:text-[#EFFC76]" 
+                        ? "text-lg text-gray-500 pl-6 font-medium hover:text-[#EFFC76]" 
                         : "text-4xl md:text-5xl font-medium text-white hover:text-[#EFFC76] tracking-tight"
                       }`}
                     >
@@ -206,14 +226,29 @@ const Navbar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  className="pt-8"
+                  transition={{ delay: 0.5 }}
+                  className="pt-4"
                 >
                   <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="block">
-                    <button className="w-full bg-[#EFFC76] text-black font-bold text-xl py-5 rounded-full hover:bg-white transition-colors">
-                      Get In Touch
+                    <button className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-4 rounded-full hover:bg-[#EFFC76] hover:text-black hover:border-[#EFFC76] transition-all group">
+                      <span className="font-semibold text-lg">Free Consultation</span>
+                      <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </button>
                   </Link>
+                </motion.div>
+
+                {/* Social Icons */}
+                <motion.div 
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   transition={{ delay: 0.7 }}
+                   className="flex items-center gap-6 mt-auto pt-8 pb-8"
+                >
+                    {[FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn, FaYoutube].map((Icon, index) => (
+                        <a key={index} href="#" className="text-gray-400 hover:text-[#EFFC76] transition-colors p-2 -ml-2">
+                            <Icon size={22} />
+                        </a>
+                    ))}
                 </motion.div>
               </div>
             </motion.div>
