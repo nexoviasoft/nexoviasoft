@@ -13,6 +13,7 @@ import Pricing from "@/components/Home/Pricing";
 import Support from "@/components/Home/Support";
 import Testimonial from "@/components/Home/Testimonial";
 import CosmicBackground from "@/components/Home/CosmicBackground";
+import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
 import PortfolioCard from "@/components/case-studies/PortfolioCard";
 
 const TestPages = () => {
@@ -56,6 +57,9 @@ const TestPages = () => {
 
         <section>
           <OurTeam />
+        </section>
+        <section>
+          <DevOpsWorkflow />
         </section>
         <section>
           <Comparison />
