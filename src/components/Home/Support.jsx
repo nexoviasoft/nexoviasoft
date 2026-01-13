@@ -133,23 +133,23 @@ const CardsDisplay = () => {
   const cards = [
     {
       rotate: -25,
-      x: -320,
-      y: 40,
+      x: -280,
+      y: 35,
       scale: 0.85,
       z: 0,
       img: "1524504388940-b1c1722653e1", // Bag
     },
     {
       rotate: -15,
-      x: -220,
-      y: 20,
+      x: -190,
+      y: 18,
       scale: 0.9,
       z: 10,
       img: "1494976388531-d377034f0d38", // Car
     },
     {
       rotate: -7,
-      x: -115,
+      x: -100,
       y: 5,
       scale: 0.95,
       z: 20,
@@ -166,7 +166,7 @@ const CardsDisplay = () => {
     },
     {
       rotate: 7,
-      x: 115,
+      x: 100,
       y: 5,
       scale: 0.95,
       z: 20,
@@ -174,16 +174,16 @@ const CardsDisplay = () => {
     },
     {
       rotate: 15,
-      x: 220,
-      y: 20,
+      x: 190,
+      y: 18,
       scale: 0.9,
       z: 10,
       img: "1534528741775-53994a69daeb", // Art/Abstract
     },
     {
       rotate: 25,
-      x: 320,
-      y: 40,
+      x: 280,
+      y: 35,
       scale: 0.85,
       z: 0,
       img: "1542291026-7eec264c27ff", // Product
@@ -191,13 +191,13 @@ const CardsDisplay = () => {
   ];
 
   return (
-    <div className="relative w-full h-[500px] flex items-center justify-center translate-y-10">
+    <div className="relative w-full h-[450px] flex items-center justify-center translate-y-8">
       {/* Floating Chat Bubbles - Updated Position */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, y: 20 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="absolute -top-12 left-[10%] md:left-[20%] z-40 bg-[#3B82F6] text-white px-5 py-2.5 rounded-2xl rounded-bl-none text-sm font-semibold shadow-xl shadow-blue-900/20"
+        className="absolute -top-12 left-[10%] md:left-[25%] z-40 bg-[#3B82F6] text-white px-5 py-2.5 rounded-2xl rounded-bl-none text-sm font-semibold shadow-xl shadow-blue-900/20"
       >
         Hey, it&apos;s me!
       </motion.div>
@@ -206,7 +206,7 @@ const CardsDisplay = () => {
         initial={{ opacity: 0, scale: 0.5, y: 20 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
-        className="absolute -top-8 right-[10%] md:right-[20%] z-40 bg-[#8B5CF6] text-white px-5 py-2.5 rounded-2xl rounded-br-none text-sm font-semibold shadow-xl shadow-purple-900/20"
+        className="absolute -top-8 right-[10%] md:right-[25%] z-40 bg-[#8B5CF6] text-white px-5 py-2.5 rounded-2xl rounded-br-none text-sm font-semibold shadow-xl shadow-purple-900/20"
       >
         Problem Solved
       </motion.div>
@@ -230,13 +230,13 @@ const CardsDisplay = () => {
             damping: 20,
             delay: 0.2 + index * 0.1,
           }}
-          className={`absolute w-52 h-72 md:w-60 md:h-80 rounded-[32px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
+          className={`absolute w-44 h-64 md:w-52 md:h-72 rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
           style={{
             zIndex: card.z,
           }}
         >
           {/* Card Border & Glow */}
-          <div className="absolute inset-0 rounded-[32px] border border-white/10 z-10" />
+          <div className="absolute inset-0 rounded-[24px] border border-white/10 z-10" />
 
           {/* Image */}
           <div
