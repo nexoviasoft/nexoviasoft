@@ -14,7 +14,6 @@ import Testimonial from "@/components/Home/Testimonial";
 import CosmicBackground from "@/components/Home/CosmicBackground";
 import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
 import PortfolioCard from "@/components/case-studies/PortfolioCard";
-import FavoriteTools from "@/components/Home/FavoriteTools";
 
 const TestPages = () => {
   return (
@@ -69,10 +68,6 @@ const TestPages = () => {
 
         <section>
           <Faq />
-        </section>
-
-        <section>
-          <FavoriteTools />
         </section>
 
        
