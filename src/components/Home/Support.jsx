@@ -129,33 +129,46 @@ const Support = () => {
 };
 
 const CardsDisplay = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Check on mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // 7 Cards for a fuller fan effect
   const cards = [
     {
-      rotate: -25,
-      x: -280,
-      y: 35,
+      // Card 1 (Left Outer)
+      rotate: isMobile ? -15 : -25,
+      x: isMobile ? -100 : -280,
+      y: isMobile ? 25 : 35,
       scale: 0.85,
       z: 0,
       img: "1524504388940-b1c1722653e1", // Bag
     },
     {
-      rotate: -15,
-      x: -190,
-      y: 18,
+      // Card 2
+      rotate: isMobile ? -10 : -15,
+      x: isMobile ? -65 : -190,
+      y: isMobile ? 15 : 18,
       scale: 0.9,
       z: 10,
       img: "1494976388531-d377034f0d38", // Car
     },
     {
-      rotate: -7,
-      x: -100,
-      y: 5,
+      // Card 3
+      rotate: isMobile ? -5 : -7,
+      x: isMobile ? -35 : -100,
+      y: isMobile ? 5 : 5,
       scale: 0.95,
       z: 20,
       img: "1546069901-ba9599a7e63c", // Food
     },
     {
+      // Center
       rotate: 0,
       x: 0,
       y: 0,
@@ -165,25 +178,28 @@ const CardsDisplay = () => {
       img: "1618005182384-a83a8bd57fbe", // Main
     },
     {
-      rotate: 7,
-      x: 100,
-      y: 5,
+      // Card 5
+      rotate: isMobile ? 5 : 7,
+      x: isMobile ? 35 : 100,
+      y: isMobile ? 5 : 5,
       scale: 0.95,
       z: 20,
       img: "1515886657613-9f3515b0c78f", // Fashion
     },
     {
-      rotate: 15,
-      x: 190,
-      y: 18,
+      // Card 6
+      rotate: isMobile ? 10 : 15,
+      x: isMobile ? 65 : 190,
+      y: isMobile ? 15 : 18,
       scale: 0.9,
       z: 10,
       img: "1534528741775-53994a69daeb", // Art/Abstract
     },
     {
-      rotate: 25,
-      x: 280,
-      y: 35,
+      // Card 7 (Right Outer)
+      rotate: isMobile ? 15 : 25,
+      x: isMobile ? 100 : 280,
+      y: isMobile ? 25 : 35,
       scale: 0.85,
       z: 0,
       img: "1542291026-7eec264c27ff", // Product
@@ -191,13 +207,13 @@ const CardsDisplay = () => {
   ];
 
   return (
-    <div className="relative w-full h-[450px] flex items-center justify-center translate-y-8">
+    <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center translate-y-8">
       {/* Floating Chat Bubbles - Updated Position */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, y: 20 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="absolute -top-12 left-[10%] md:left-[25%] z-40 bg-[#3B82F6] text-white px-5 py-2.5 rounded-2xl rounded-bl-none text-sm font-semibold shadow-xl shadow-blue-900/20"
+        className="absolute -top-12 left-[5%] md:left-[25%] z-40 bg-[#3B82F6] text-white px-5 py-2.5 rounded-2xl rounded-bl-none text-sm font-semibold shadow-xl shadow-blue-900/20"
       >
         Hey, it&apos;s me!
       </motion.div>
@@ -206,7 +222,7 @@ const CardsDisplay = () => {
         initial={{ opacity: 0, scale: 0.5, y: 20 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
-        className="absolute -top-8 right-[10%] md:right-[25%] z-40 bg-[#8B5CF6] text-white px-5 py-2.5 rounded-2xl rounded-br-none text-sm font-semibold shadow-xl shadow-purple-900/20"
+        className="absolute -top-8 right-[5%] md:right-[25%] z-40 bg-[#8B5CF6] text-white px-5 py-2.5 rounded-2xl rounded-br-none text-sm font-semibold shadow-xl shadow-purple-900/20"
       >
         Problem Solved
       </motion.div>
@@ -230,13 +246,13 @@ const CardsDisplay = () => {
             damping: 20,
             delay: 0.2 + index * 0.1,
           }}
-          className={`absolute w-44 h-64 md:w-52 md:h-72 rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
+          className={`absolute w-32 h-44 sm:w-44 sm:h-64 md:w-52 md:h-72 rounded-[16px] md:rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
           style={{
             zIndex: card.z,
           }}
         >
           {/* Card Border & Glow */}
-          <div className="absolute inset-0 rounded-[24px] border border-white/10 z-10" />
+          <div className="absolute inset-0 rounded-[16px] md:rounded-[24px] border border-white/10 z-10" />
 
           {/* Image */}
           <div
