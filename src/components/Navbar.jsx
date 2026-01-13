@@ -174,18 +174,22 @@ const Navbar = () => {
 
       {/* Mobile Bottom Dock */}
       <div className="md:hidden fixed bottom-8 left-4 right-4 z-50">
-        <div className="bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/10 rounded-2xl flex items-end justify-between px-6 py-3 shadow-2xl relative">
-          <Link href="/" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
-            <Home size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-            <span className="text-[10px] font-medium tracking-wide">Home</span>
-          </Link>
-          <Link href="/products" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
-            <Layers size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-             <span className="text-[10px] font-medium tracking-wide">Products</span>
-          </Link>
+        <div className="bg-[#0A0A0A]/90 backdrop-blur-xl border border-white/10 rounded-2xl grid grid-cols-5 items-end px-2 py-3 shadow-2xl relative">
+          <div className="flex justify-center w-full">
+            <Link href="/" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
+              <Home size={20} className="group-hover:-translate-y-0.5 transition-transform" />
+              <span className="text-[10px] font-medium tracking-wide">Home</span>
+            </Link>
+          </div>
+          <div className="flex justify-center w-full">
+            <Link href="/products" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
+              <Layers size={20} className="group-hover:-translate-y-0.5 transition-transform" />
+               <span className="text-[10px] font-medium tracking-wide">Products</span>
+            </Link>
+          </div>
           
           {/* Floating Central Button */}
-          <div className="relative -top-6 flex flex-col items-center">
+          <div className="relative -top-6 flex flex-col items-center justify-end w-full">
             <Link href="/contact">
               <div className="bg-white/10 backdrop-blur-lg p-3 rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)] transform transition-transform hover:scale-110 flex items-center justify-center">
                  <Image 
@@ -200,17 +204,21 @@ const Navbar = () => {
              <span className="text-[10px] font-medium tracking-wide text-gray-400 mt-1">Contact</span>
           </div>
 
-          <Link href="/services" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
-            <Zap size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-             <span className="text-[10px] font-medium tracking-wide">Services</span>
-          </Link>
-          <button 
-            onClick={() => setIsMenuOpen(true)}
-            className={`text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group ${isMenuOpen ? "text-[#EFFC76]" : ""}`}
-          >
-            <Menu size={20} className="group-hover:-translate-y-0.5 transition-transform" />
-             <span className="text-[10px] font-medium tracking-wide">More</span>
-          </button>
+          <div className="flex justify-center w-full">
+            <Link href="/services" className="text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group">
+              <Zap size={20} className="group-hover:-translate-y-0.5 transition-transform" />
+               <span className="text-[10px] font-medium tracking-wide">Services</span>
+            </Link>
+          </div>
+          <div className="flex justify-center w-full">
+            <button 
+              onClick={() => setIsMenuOpen(true)}
+              className={`text-gray-400 hover:text-[#EFFC76] transition-colors flex flex-col items-center gap-1 group ${isMenuOpen ? "text-[#EFFC76]" : ""}`}
+            >
+              <Menu size={20} className="group-hover:-translate-y-0.5 transition-transform" />
+               <span className="text-[10px] font-medium tracking-wide">More</span>
+            </button>
+          </div>
         </div>
       </div>
 
