@@ -95,7 +95,7 @@ const PortfolioCard = () => {
 
                 {/* Action Buttons */}
                 <div className="flex  flex-wrap gap-2 md:gap-4 md:mt-8 pt-4 md:pt-6 md:border-t md:border-white/10">
-                  <Link href={`/main/case-studies/${project.id}`}>
+                  <Link href={`/main/case-studies/${project._id}`}>
                     <SmoothButton className=" text-[13px]  md:text-md">
                       View Details
                     </SmoothButton>

@@ -171,9 +171,9 @@ const FeatureCard = ({ title, subtitle, italicTitle, icon: Icon, children, class
 
 const DevOpsWorkflow = () => {
   return (
-    <section className="py-32 relative bg-black overflow-hidden">
+    <section className="py-32 relative -mt-22 overflow-hidden">
       
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-350 mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-24 relative z-20">

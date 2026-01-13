@@ -6,7 +6,6 @@ import Innovation from "@/components/Home/Innovation";
 import Integration from "@/components/Home/Integration";
 import LaunchYourSite from "@/components/Home/LaunchYourSite";
 import OurProcess from "@/components/Home/OurProcess";
-import OurTeam from "@/components/Home/OurTeam";
 // import PartOfUs from "@/components/Home/PartOfus";
 import Pricing from "@/components/Home/Pricing";
 // import Service from "@/components/Home/Service";
@@ -55,9 +54,7 @@ const TestPages = () => {
           <LaunchYourSite />
         </section>
 
-        <section>
-          <OurTeam />
-        </section>
+      
         <section>
           <DevOpsWorkflow />
         </section>
