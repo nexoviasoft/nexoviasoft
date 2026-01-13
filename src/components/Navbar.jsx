@@ -225,10 +225,16 @@ const Navbar = () => {
           <div className="relative -top-6 flex flex-col items-center justify-end w-full">
             <Link href="/contact">
               <div className="bg-white/10 backdrop-blur-lg p-3 rounded-xl  border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)] transform transition-transform hover:scale-110 flex items-center justify-center">
-                <MessageCircle size={28} className="text-[#EFFC76]" />
+                <Image
+                  src="/customIcon.png"
+                  alt="Center Icon"
+                  width={28}
+                  height={28}
+                  className="object-contain"
+                />
               </div>
             </Link>
-            <span className="text-[10px] font-medium tracking-wide text-gray-400 mt-2">
+            <span className="text-[10px] font-medium tracking-wide text-gray-400 mt-1">
               Contact
             </span>
           </div>
