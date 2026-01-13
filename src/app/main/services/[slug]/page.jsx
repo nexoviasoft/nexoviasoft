@@ -19,6 +19,7 @@ import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
 import WebDevelopmentWorkflow from "@/components/Home/WebDevelopmentWorkflow";
 import CloudComputingWorkflow from "@/components/Home/CloudComputingWorkflow";
 import MobileAppWorkflow from "@/components/Home/MobileAppWorkflow";
+import UiUxDesignWorkflow from "@/components/Home/UiUxDesignWorkflow";
 
 const ServiceDetail = () => {
   const params = useParams();
@@ -157,6 +158,8 @@ const ServiceDetail = () => {
                 <CloudComputingWorkflow />
              ) : slug === 'mobile-app-development' ? (
                 <MobileAppWorkflow />
+             ) : slug === 'ui-ux-design' ? (
+                <UiUxDesignWorkflow />
              ) : (
                 <DevOpsWorkflow />
              )}
