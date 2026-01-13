@@ -21,6 +21,9 @@ import CloudComputingWorkflow from "@/components/Home/CloudComputingWorkflow";
 import MobileAppWorkflow from "@/components/Home/MobileAppWorkflow";
 import UiUxDesignWorkflow from "@/components/Home/UiUxDesignWorkflow";
 import DigitalMarketingWorkflow from "@/components/Home/DigitalMarketingWorkflow";
+import GraphicDesignWorkflow from "@/components/Home/GraphicDesignWorkflow";
+import WordPressWorkflow from "@/components/Home/WordPressWorkflow";
+import CustomSoftwareWorkflow from "@/components/Home/CustomSoftwareWorkflow";
 
 const ServiceDetail = () => {
   const params = useParams();
@@ -163,6 +166,12 @@ const ServiceDetail = () => {
                 <UiUxDesignWorkflow />
              ) : slug === 'digital-marketing' ? (
                 <DigitalMarketingWorkflow />
+             ) : slug === 'graphic-design' ? (
+                <GraphicDesignWorkflow />
+             ) : slug === 'wordpress-development' ? (
+                <WordPressWorkflow />
+             ) : slug === 'custom-software-development' ? (
+                <CustomSoftwareWorkflow />
              ) : (
                 <DevOpsWorkflow />
              )}

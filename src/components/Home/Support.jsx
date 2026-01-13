@@ -142,6 +142,8 @@ const CardsDisplay = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
   // 7 Cards for a fuller fan effect
   const cards = [
     {
@@ -212,7 +214,7 @@ const CardsDisplay = () => {
 
   return (
     <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center translate-y-8">
-      {/* Floating Chat Bubbles - Updated Position */}
+      {/* Floating Chat Bubbles */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5, y: 20 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -231,53 +233,90 @@ const CardsDisplay = () => {
         Problem Solved
       </motion.div>
 
-      {/* Cards */}
-      {cards.map((card, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.5, y: 200, rotate: 0 }}
-          whileInView={{
-            opacity: 1,
-            scale: card.scale,
-            y: card.y,
-            rotate: card.rotate,
-            x: card.x,
+      {/* Mobile Carousel (Swiper) */}
+      <div className="md:hidden w-full h-full absolute inset-0 flex items-center">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          spaceBetween={-40}
+          slidesPerView={1.6}
+          centeredSlides={true}
+          initialSlide={3}
+          pagination={{ clickable: true }}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
           }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            delay: 0.2 + index * 0.1,
-          }}
-          className={`absolute w-32 h-44 sm:w-44 sm:h-64 md:w-52 md:h-72 rounded-[16px] md:rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom`}
-          style={{
-            zIndex: card.z,
-          }}
+          className="w-full h-[80%] !overflow-visible"
         >
-          {/* Card Border & Glow */}
-          <div className="absolute inset-0 rounded-[16px] md:rounded-[24px] border border-white/10 z-10" />
+          {cards.map((card, index) => (
+            <SwiperSlide key={index} className="flex items-center justify-center transition-all duration-300">
+                {({ isActive }) => (
+                  <div 
+                    className={`relative w-44 h-64 rounded-[20px] bg-neutral-800 shadow-2xl overflow-hidden border border-white/10 transition-all duration-300 ${isActive ? 'scale-110 z-20 ring-2 ring-[#EFFC76]/50' : 'scale-90 z-10 opacity-70 blur-[1px]'}`}
+                  >
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                            backgroundImage: `url('https://images.unsplash.com/photo-${card.img}?auto=format&fit=crop&w=600&q=80')`,
+                        }}
+                    />
+                    {/* Dark overlay for inactive slides */}
+                    <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
+                  </div>
+                )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-          {/* Image */}
-          <div
-            className={`w-full h-full bg-neutral-900 relative`}
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-${card.img}?auto=format&fit=crop&w=600&q=80')`,
-              }}
-            />
-            {/* Overlay Gradient for depth */}
-            <div className="absolute inset-0 bg-black/20" />
-            
-             {/* Active Highlight */}
-            {card.active && (
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-white/5 to-white/10 opacity-50 pointer-events-none" />
-            )}
-          </div>
-        </motion.div>
-      ))}
+      {/* Desktop Fanned Stack */}
+      <div className="hidden md:flex items-center justify-center w-full h-full">
+        {cards.map((card, index) => {
+            const isActive = activeIndex === index;
+            return (
+                <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.5, y: 200, rotate: 0 }}
+                animate={{
+                    opacity: 1,
+                    scale: isActive ? 1.15 : card.scale,
+                    y: card.y,
+                    rotate: isActive ? 0 : card.rotate,
+                    x: card.x,
+                    zIndex: isActive ? 100 : card.z,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 20,
+                    delay: 0, 
+                }}
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(null)}
+                className={`absolute w-52 h-72 rounded-[24px] bg-neutral-800 shadow-2xl overflow-hidden group origin-bottom cursor-pointer`}
+                >
+                {/* Card Border & Glow */}
+                <div className="absolute inset-0 rounded-[24px] border border-white/10 z-10" />
+
+                <div className={`w-full h-full bg-neutral-900 relative`}>
+                    <div
+                    className={`absolute inset-0 bg-cover bg-center transition-transform duration-700 ${isActive ? 'scale-110' : ''}`}
+                    style={{
+                        backgroundImage: `url('https://images.unsplash.com/photo-${card.img}?auto=format&fit=crop&w=600&q=80')`,
+                    }}
+                    />
+                    <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`} />
+                    
+                    {card.active && (
+                        <div className={`absolute inset-0 bg-gradient-to-t from-black/0 via-white/5 to-white/10 opacity-50 pointer-events-none transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-50'}`} />
+                    )}
+                </div>
+                </motion.div>
+            );
+        })}
+      </div>
     </div>
   );
 };
