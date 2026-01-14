@@ -8,7 +8,12 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   /* config options here */
   images: {
-    domains: ["example.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "example.com",
+      },
+    ],
   },
   async redirects() {
     return [
