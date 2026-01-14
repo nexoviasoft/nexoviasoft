@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 
-const BASE_URL = "http://localhost:5001";
+const BASE_URL = "https://squadlog-backend.up.railway.app";
 
 const getFullUrl = (url) => {
   if (url.startsWith("/")) {
@@ -24,7 +24,7 @@ export const useQuery = (url, { skip = false, deps = [] } = {}) => {
   const [isLoading, setIsLoading] = useState(!skip);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
-
+j
   const fetchData = useCallback(async () => {
     if (skip) return;
 
