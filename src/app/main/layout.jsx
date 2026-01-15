@@ -9,7 +9,7 @@ export default function MainLayout({ children }) {
       </nav>
       {children}
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </>
   );

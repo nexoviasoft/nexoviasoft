@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useQuery } from "@/hooks/useApi";
 
 const PortfolioCard = () => {
-  const ref = useRef(null);
 
   // const projects = caseStudiesData;
 

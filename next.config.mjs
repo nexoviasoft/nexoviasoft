@@ -9,6 +9,7 @@ const nextConfig = {
   /* config options here */
   images: {
     domains: ["example.com"],
+    // domains: ["https://cdn.nextbyteitinstitute.com"],
   },
   async redirects() {
     return [
