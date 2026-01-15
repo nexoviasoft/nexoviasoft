@@ -17,6 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useQuery } from "@/hooks/useApi";
 
 const features = [
   {
@@ -84,14 +85,14 @@ const Support = () => {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden lg:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className=" grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} delay={0.4 + index * 0.1} />
           ))}
         </div>
 
         {/* Mobile Slider */}
-        <div className="lg:hidden -mt-8 max-w-5xl mx-auto">
+        {/* <div className="lg:hidden -mt-8 max-w-5xl mx-auto">
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={24}
@@ -126,7 +127,7 @@ const Support = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -137,94 +138,76 @@ const CardsDisplay = () => {
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile(); // Check on mount
+    checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const [activeIndex, setActiveIndex] = React.useState(null);
 
-  // 7 Cards for a fuller fan effect
-  const cards = [
+  const { data } = useQuery("/our-team/public");
+  const team = Array.isArray(data?.data) ? data.data : [];
+  console.log("This is Team Data", data);
+
+  const layout = [
     {
-      // Card 1 (Left Outer)
       rotate: isMobile ? -15 : -25,
       x: isMobile ? -100 : -280,
       y: isMobile ? 25 : 35,
       scale: 0.85,
       z: 0,
-      img: "1524504388940-b1c1722653e1", // Bag
-      name: "Sarah Jenkins",
-      role: "Support Agent",
     },
     {
-      // Card 2
       rotate: isMobile ? -10 : -15,
       x: isMobile ? -65 : -190,
       y: isMobile ? 15 : 18,
       scale: 0.9,
       z: 10,
-      img: "1494976388531-d377034f0d38", // Car
-      name: "David Kim",
-      role: "Tech Lead",
     },
     {
-      // Card 3
       rotate: isMobile ? -5 : -7,
       x: isMobile ? -35 : -100,
       y: isMobile ? 5 : 5,
       scale: 0.95,
       z: 20,
-      img: "1546069901-ba9599a7e63c", // Food
-      name: "Emily Chen",
-      role: "Product Manager",
     },
     {
-      // Center
       rotate: 0,
       x: 0,
       y: 0,
       scale: 1.05,
       z: 30,
       active: true,
-      img: "1618005182384-a83a8bd57fbe", // Main
-      name: "Alex Morgan",
-      role: "Senior Developer",
     },
     {
-      // Card 5
       rotate: isMobile ? 5 : 7,
       x: isMobile ? 35 : 100,
       y: isMobile ? 5 : 5,
       scale: 0.95,
       z: 20,
-      img: "1515886657613-9f3515b0c78f", // Fashion
-      name: "Jessica Wu",
-      role: "UI/UX Designer",
     },
     {
-      // Card 6
       rotate: isMobile ? 10 : 15,
       x: isMobile ? 65 : 190,
       y: isMobile ? 15 : 18,
       scale: 0.9,
       z: 10,
-      img: "1534528741775-53994a69daeb", // Art/Abstract
-      name: "Ryan Park",
-      role: "Frontend Engineer",
     },
     {
-      // Card 7 (Right Outer)
       rotate: isMobile ? 15 : 25,
       x: isMobile ? 100 : 280,
       y: isMobile ? 25 : 35,
       scale: 0.85,
       z: 0,
-      img: "1542291026-7eec264c27ff", // Product
-      name: "Lisa Thompson",
-      role: "QA Specialist",
     },
   ];
+
+  const cards = team.slice(0, layout.length).map((member, index) => ({
+    ...layout[index],
+    image: member.image,
+    name: member.name,
+    designation: member.designation,
+  }));
 
   return (
     <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center translate-y-8">
@@ -279,7 +262,9 @@ const CardsDisplay = () => {
                   <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('https://images.unsplash.com/photo-${card.img}?auto=format&fit=crop&w=600&q=80')`,
+                      backgroundImage: card.image
+                        ? `url('${card.image}')`
+                        : "none",
                     }}
                   />
                   {/* Dark overlay for inactive slides */}
@@ -295,7 +280,7 @@ const CardsDisplay = () => {
                       {card.name}
                     </span>
                     <span className="text-white/60 text-[10px]">
-                      {card.role}
+                      {card.designation}
                     </span>
                   </div>
                 </div>
@@ -305,7 +290,6 @@ const CardsDisplay = () => {
         </Swiper>
       </div>
 
-      {/* Desktop Fanned Stack */}
       <div className="hidden md:flex items-center justify-center w-full h-full">
         {cards.map((card, index) => {
           const isActive = activeIndex === index;
@@ -369,7 +353,9 @@ const CardsDisplay = () => {
                   <span className="text-white text-sm font-semibold">
                     {card.name}
                   </span>
-                  <span className="text-white/60 text-xs">{card.role}</span>
+                  <span className="text-white/60 text-xs">
+                    {card.designation}
+                  </span>
                 </div>
               </div>
             </motion.div>
