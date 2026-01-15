@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://squadlog-backend.up.railway.app";
 
 const getFullUrl = (url) => {
   if (url.startsWith("/")) {

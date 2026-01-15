@@ -13,7 +13,7 @@ const PortfolioCard = () => {
   // const projects = caseStudiesData;
 
   const { data, isLoading, isError } = useQuery("/case-studies");
-  console.log("case-studies", data?.data);
+  console.log("case-studies", data);
 
   return (
     <div
