@@ -97,7 +97,7 @@ const PricingCard = ({ items, delay = 0 }) => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => setIsModalOpen(true)}
-        className="relative z-50 w-full py-3 md:py-4 rounded-xl font-medium text-sm md:text-base text-black bg-gradient-to-r from-[#EFFC76] to-[#EFFC76] hover:from-[#EFFC76] hover:to-[#EFFC76] transition-all duration-300 shadow-lg shadow-[#EFFC76]/20"
+        className="relative z-70 w-full py-3 md:py-4 rounded-xl font-medium text-sm md:text-base text-black bg-gradient-to-r from-[#EFFC76] to-[#EFFC76] hover:from-[#EFFC76] hover:to-[#EFFC76] transition-all duration-300 shadow-lg shadow-[#EFFC76]/20"
       >
         Book an Appointment
       </motion.button>

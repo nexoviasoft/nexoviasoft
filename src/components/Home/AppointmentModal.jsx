@@ -24,6 +24,8 @@ const AppointmentModal = ({ isOpen, onClose, pricePackageId, serviceType = "Web 
       [name]: value,
     }));
   };
+  console.log(formData);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -138,7 +140,7 @@ const AppointmentModal = ({ isOpen, onClose, pricePackageId, serviceType = "Web 
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-80 flex items-center justify-center p-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
