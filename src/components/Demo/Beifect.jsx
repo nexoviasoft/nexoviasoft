@@ -1,6 +1,14 @@
 "use client";
 import React from "react";
-import { Clock, Smartphone, Zap, Shield, FileText, Layout, MessageCircle } from "lucide-react";
+import {
+  Clock,
+  Smartphone,
+  Zap,
+  Shield,
+  FileText,
+  Layout,
+  MessageCircle,
+} from "lucide-react";
 
 import { motion } from "framer-motion";
 
@@ -51,7 +59,7 @@ const Beifect = () => {
   ];
 
   return (
-    <section id="benefits" className="py-24 ">
+    <section id="benefits" className="py-24 -mt-30 md:-mt-25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-20">
@@ -68,7 +76,6 @@ const Beifect = () => {
               24/7 Collaborate With Us
             </span>
           </motion.div>
-          
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Benefits That Truly <br /> Matter To You

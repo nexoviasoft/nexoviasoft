@@ -12,45 +12,27 @@ const SectionsView = () => {
   const features = [
     {
       title: "Unified Metrics",
-      description:
-        "See your MRR and active users in one clean, unified view — no more switching tabs.",
       image: "/cover1.jpg",
-      alt: "Unified Metrics Dashboard",
     },
     {
       title: "AI Growth Insights",
-      description:
-        "Actionable suggestions from your data, without digging into spreadsheets or dashboards.",
       image: "/cover2.jpg",
-      alt: "AI Insights",
     },
     {
       title: "Product Usage Tracking",
-      description:
-        "Track how users engage with your app live to uncover patterns and optimize features.",
       image: "/cover3.jpg",
-      alt: "Integration List",
     },
     {
       title: "Feature Impact Analysis",
-      description:
-        "Know exactly which features drive long-term retention—and which ones don't contribute.",
       image: "/bigbanner.jpg",
-      alt: "Feature Impact Graph",
     },
     {
       title: "Feature Impact Analysis",
-      description:
-        "Know exactly which features drive long-term retention—and which ones don't contribute.",
       image: "/bigbanner.jpg",
-      alt: "Feature Impact Graph",
     },
     {
       title: "Feature Impact Analysis",
-      description:
-        "Know exactly which features drive long-term retention—and which ones don't contribute.",
       image: "/bigbanner.jpg",
-      alt: "Feature Impact Graph",
     },
   ];
 
@@ -117,21 +99,21 @@ const SectionsView = () => {
                 </div>
                 {/* Content */}
                 <div className="px-4 pb-5 pt-1">
-                  <div className="flex items-center justify-between mb-3">
+                  {/* <div className="flex items-center justify-between mb-3">
                     <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-gray-200/90">
                       Application insight
                     </span>
                     <span className="text-[11px] font-medium text-gray-400">
                       App 0{index + 1}
                     </span>
-                  </div>
+                  </div> */}
                   <h3 className="text-[22px] md:text-2xl font-semibold text-white mb-2 group-hover:text-[#EFFC76] tracking-tight">
                     {feature.title}
                   </h3>
                   <p className="text-gray-300/95 leading-relaxed text-[15px] md:text-base">
                     {feature.description}
                   </p>
-                  <div className="mt-4 flex items-center justify-between text-[11px] text-gray-400">
+                  {/* <div className="mt-4 flex items-center justify-between text-[11px] text-gray-400">
                     <span className="flex items-center gap-1.5">
                       <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#EFFC76]" />
                       Ready for live applications
@@ -139,7 +121,7 @@ const SectionsView = () => {
                     <span className="uppercase tracking-[0.18em] text-gray-500">
                       Premium UI
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
@@ -200,21 +182,21 @@ const SectionsView = () => {
                     </div>
                     {/* Content */}
                     <div className="px-4 pb-5 pt-1">
-                      <div className="flex items-center justify-between mb-3">
+                      {/* <div className="flex items-center justify-between mb-3">
                         <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-gray-200/90">
                           Application insight
                         </span>
                         <span className="text-[11px] font-medium text-gray-400">
                           App 0{index + 1}
                         </span>
-                      </div>
+                      </div> */}
                       <h3 className="text-[20px] font-semibold text-white mb-2 group-hover:text-[#EFFC76] tracking-tight">
                         {feature.title}
                       </h3>
                       <p className="text-gray-300/95 leading-relaxed text-[15px]">
                         {feature.description}
                       </p>
-                      <div className="mt-4 flex items-center justify-between text-[11px] text-gray-400">
+                      {/* <div className="mt-4 flex items-center justify-between text-[11px] text-gray-400">
                         <span className="flex items-center gap-1.5">
                           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#EFFC76]" />
                           Ready for live applications
@@ -222,7 +204,7 @@ const SectionsView = () => {
                         <span className="uppercase tracking-[0.18em] text-gray-500">
                           Premium UI
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </motion.div>

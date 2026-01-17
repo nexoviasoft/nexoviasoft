@@ -30,7 +30,7 @@ const CoverImages = () => {
               className="w-full h-auto rounded-[24px] object-cover transform transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
               priority
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 via-black/40 to-transparent md:from-black md:via-black/80" />
+            <div className=" " />
           </div>
         </div>
       </div>

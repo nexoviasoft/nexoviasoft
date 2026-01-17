@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { Share2, BarChart3, Mail, Zap, Layout, Settings } from "lucide-react";
 import { motion } from "framer-motion";
