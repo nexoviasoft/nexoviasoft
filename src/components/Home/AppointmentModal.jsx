@@ -136,7 +136,7 @@ const AppointmentModal = ({ isOpen, onClose, pricePackageId, serviceType = "Web 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9998]"
           />
 
           {/* Modal */}
@@ -144,10 +144,10 @@ const AppointmentModal = ({ isOpen, onClose, pricePackageId, serviceType = "Web 
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="fixed inset-0 z-80 flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl w-full max-w-2xl h-[85vh] sm:h-[650px] max-h-[90vh] overflow-y-auto">
+            <div className="relative bg-[#0A0A0A] border border-white/10 rounded-2xl w-full max-w-2xl h-[90vh] overflow-y-auto">
               {/* Close Button */}
               <button
                 onClick={onClose}
