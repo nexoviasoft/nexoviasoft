@@ -179,7 +179,7 @@ const CardsDisplay = () => {
       z: 20,
       img: "1546069901-ba9599a7e63c", // Food
       name: "Emily Chen",
-      role: "Product Manager",
+
     },
     {
       rotate: 0,
@@ -190,7 +190,7 @@ const CardsDisplay = () => {
       active: true,
       img: "1618005182384-a83a8bd57fbe", // Main
       name: "Alex Morgan",
-      role: "Senior Developer",
+
     },
     {
       rotate: isMobile ? 5 : 7,
@@ -200,7 +200,7 @@ const CardsDisplay = () => {
       z: 20,
       img: "1515886657613-9f3515b0c78f", // Fashion
       name: "Jessica Wu",
-      role: "UI/UX Designer",
+
     },
     {
       rotate: isMobile ? 10 : 15,
@@ -210,7 +210,7 @@ const CardsDisplay = () => {
       z: 10,
       img: "1534528741775-53994a69daeb", // Art/Abstract
       name: "Ryan Park",
-      role: "Frontend Engineer",
+
     },
     {
       rotate: isMobile ? 15 : 25,
@@ -220,7 +220,7 @@ const CardsDisplay = () => {
       z: 0,
       img: "1542291026-7eec264c27ff", // Product
       name: "Lisa Thompson",
-      role: "QA Specialist",
+
     },
   ];
 
@@ -276,8 +276,8 @@ const CardsDisplay = () => {
               {({ isActive }) => (
                 <div
                   className={`relative w-44 h-64 rounded-[20px] bg-neutral-800 shadow-2xl overflow-hidden border border-white/10 transition-all duration-300 ${isActive
-                      ? "scale-110 z-20 ring-2 ring-[#d946ef]/50"
-                      : "scale-90 z-10 opacity-70 blur-[1px]"
+                    ? "scale-110 z-20 ring-2 ring-[#d946ef]/50"
+                    : "scale-90 z-10 opacity-70 blur-[1px]"
                     }`}
                 >
                   <div
@@ -364,8 +364,8 @@ const CardsDisplay = () => {
                 {/* Glassy Name Overlay - Visible on Hover/Active */}
                 <div
                   className={`absolute bottom-4 left-4 right-4 bg-black/30 backdrop-blur-md border border-white/10 rounded-xl p-3 flex flex-col text-center transition-all duration-300 ${isActive
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                     }`}
                 >
                   <span className="text-white text-sm font-semibold">
