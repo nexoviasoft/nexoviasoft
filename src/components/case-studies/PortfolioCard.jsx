@@ -14,6 +14,8 @@ const PortfolioCard = () => {
   const { data, isLoading, isError } = useQuery("/case-studies");
   console.log("case-studies", data);
 
+  // gfgggg
+
   return (
     <div
       className=" text-white   relative overflow-hidden"
