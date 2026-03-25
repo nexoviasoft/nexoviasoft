@@ -147,7 +147,6 @@ const CardsDisplay = () => {
 
   const { data } = useQuery("/our-team/public");
   const team = Array.isArray(data?.data) ? data.data : [];
-  console.log("This is Team Data", data);
 
 
   const layout = [
@@ -223,10 +222,65 @@ const CardsDisplay = () => {
 
     },
 
+
+  {
+    rotate: isMobile ? -20 : -30,
+    x: isMobile ? -130 : -360,
+    y: isMobile ? 35 : 45,
+    scale: 0.8,
+    z: -5,
+    img: "1500530855697-b586d89ba3ee",
+    name: "Michael Scott",
+  },
+  {
+    rotate: isMobile ? -25 : -35,
+    x: isMobile ? -160 : -450,
+    y: isMobile ? 45 : 55,
+    scale: 0.75,
+    z: -10,
+    img: "1529626455594-4ff0802cfb7e",
+    name: "Sophia Lee",
+  },
+
+  {
+    rotate: isMobile ? 20 : 30,
+    x: isMobile ? 130 : 360,
+    y: isMobile ? 35 : 45,
+    scale: 0.8,
+    z: -5,
+    img: "1500648767791-00dcc994a43e",
+    name: "Daniel Garcia",
+  },
+  {
+    rotate: isMobile ? 25 : 35,
+    x: isMobile ? 160 : 450,
+    y: isMobile ? 45 : 55,
+    scale: 0.75,
+    z: -10,
+    img: "1544005313-94ddf0286df2",
+    name: "Olivia Brown",
+  },
     
   ];
 
-  const cards = team.slice(0, layout.length).map((member, index) => ({
+  const centerIndex = layout.findIndex((item) => item.x === 0 && item.y === 0);
+  const orderedTeam = [...team];
+  const ceoIndex = orderedTeam.findIndex((member) => {
+    const title = `${member?.designation || member?.role || member?.title || ""}`;
+    return title.toLowerCase().includes("ceo");
+  });
+
+  if (
+    ceoIndex !== -1 &&
+    centerIndex !== -1 &&
+    centerIndex < orderedTeam.length &&
+    ceoIndex !== centerIndex
+  ) {
+    const [ceoMember] = orderedTeam.splice(ceoIndex, 1);
+    orderedTeam.splice(centerIndex, 0, ceoMember);
+  }
+
+  const cards = orderedTeam.slice(0, layout.length).map((member, index) => ({
     ...layout[index],
     image: member.image,
     name: member.name,
@@ -261,7 +315,7 @@ const CardsDisplay = () => {
           spaceBetween={-40}
           slidesPerView={1.6}
           centeredSlides={true}
-          initialSlide={3}
+          initialSlide={centerIndex >= 0 ? centerIndex : 3}
           pagination={{ clickable: true }}
           loop={true}
           autoplay={{
