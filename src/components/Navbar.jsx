@@ -22,6 +22,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from '../icon/logo.png'
+import logo2 from '../icon/n.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -172,7 +173,7 @@ const Navbar = () => {
       {/* Mobile Top Bar */}
       <div className="md:hidden absolute top-0 left-0 right-0 p-6 flex justify-center z-20 pointer-events-none bg-gradient-to-b from-black/80 to-transparent">
         <Link href="/" className="pointer-events-auto flex items-center h-15">
-          <span className="text-2xl font-bold text-white tracking-tight">NexoviaSoft</span>
+          <Image src={logo2} alt="Logo" width={150} height={150} />
         </Link>
       </div>
 
@@ -213,7 +214,7 @@ const Navbar = () => {
             <Link href="/contact">
               <div className="bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)] transform transition-transform hover:scale-110 flex items-center justify-center">
                 <Image
-                  src={logo}
+                  src={logo2}
                   alt="Center Icon"
                   width={28}
                   height={28}
