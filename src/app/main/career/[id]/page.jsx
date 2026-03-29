@@ -113,7 +113,7 @@ const JobApplyPage = () => {
         <CosmicBackground />
       </div>
 
-      <div className="relative mt-20 max-w-4xl mx-auto space-y-8 px-4 md:px-8">
+      <div className="relative mt-20 max-w-7xl mx-auto space-y-8 px-4 md:px-8">
         <Link
           href="/career"
           className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
@@ -175,6 +175,10 @@ const JobApplyPage = () => {
                 <div className="flex items-center text-gray-300">
                   <Users size={18} className="text-[#d946ef] mr-3" />
                   <span>{job.applicants} Applicants</span>
+                </div>
+                <div className="flex items-center text-red-400 font-medium">
+                  <Clock size={18} className="mr-3" />
+                  <span>Deadline: {new Date(job.expiryDate).toLocaleDateString()}</span>
                 </div>
               </div>
 

@@ -60,6 +60,10 @@ const JobCard = ({ job, onApply }) => {
             <Users size={16} className="text-[#d946ef] mr-2" />
             {job.applicants} Applied
           </div>
+          <div className="flex items-center text-red-400 text-sm font-medium">
+            <Clock size={16} className="mr-2" />
+            Ends: {new Date(job.expiryDate).toLocaleDateString()}
+          </div>
         </div>
 
         <div className="pt-4 border-t border-white/10 flex justify-end">
