@@ -10,7 +10,7 @@ const CareerPage = () => {
   const { data, isLoading, isError } = useQuery("/recruitment/job-postings");
 
   const jobs = data?.data || [];
-  const activeJobs = jobs.filter((job) => job.status === "Active");
+  const activeJobs = jobs?.filter((job) => job.status === "Active") || [];
 
   return (
     <div className="min-h-screen mt-20 relative overflow-x-hidden pb-30">

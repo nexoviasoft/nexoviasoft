@@ -14,6 +14,15 @@ const JobCard = ({ job, onApply }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#d946ef]/5 to-[#f97316]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
       
       <div className="relative z-10 flex flex-col h-full">
+        {job.imageUrl && (
+          <div className="mb-5 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+            <img
+              src={job.imageUrl}
+              alt={`${job.title} cover`}
+              className="h-44 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        )}
         <div className="flex justify-between items-start mb-4">
           <div>
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{job.title}</h3>
@@ -45,7 +54,7 @@ const JobCard = ({ job, onApply }) => {
           </div>
           <div className="flex items-center text-gray-300 text-sm">
             <Briefcase size={16} className="text-[#d946ef] mr-2" />
-            Exp Required
+            {job.vacancy || 1} Vacancy
           </div>
           <div className="flex items-center text-gray-300 text-sm">
             <Users size={16} className="text-[#d946ef] mr-2" />
@@ -54,13 +63,20 @@ const JobCard = ({ job, onApply }) => {
         </div>
 
         <div className="pt-4 border-t border-white/10 flex justify-end">
-          <Link
-            href={`/career/${job.id}`}
-            className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-2 rounded-full hover:bg-gradient-to-r hover:from-[#d946ef] hover:to-[#f97316] hover:border-transparent transition-all group-hover:shadow-[0_0_15px_rgba(217,70,239,0.3)]"
-          >
-            <span className="font-semibold text-sm">Apply Now</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          {job.expiryDate && new Date(job.expiryDate) < new Date() ? (
+            <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 text-red-500 px-6 py-2 rounded-full cursor-not-allowed">
+              <span className="font-semibold text-sm">Position Closed</span>
+              <Clock size={16} />
+            </div>
+          ) : (
+            <Link
+              href={`/career/${job.id}`}
+              className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-6 py-2 rounded-full hover:bg-gradient-to-r hover:from-[#d946ef] hover:to-[#f97316] hover:border-transparent transition-all group-hover:shadow-[0_0_15px_rgba(217,70,239,0.3)]"
+            >
+              <span className="font-semibold text-sm">Apply Now</span>
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>

@@ -10,7 +10,7 @@ import { useParams, useRouter } from "next/navigation";
 const JobApplyPage = () => {
   const { id } = useParams();
   const router = useRouter();
-  
+
   const { data, isLoading: isJobLoading, isError: isJobError } = useQuery(`/recruitment/job-postings/${id}`);
   const job = data?.data;
 
@@ -31,8 +31,36 @@ const JobApplyPage = () => {
     e.preventDefault();
     if (!job) return;
 
+    let cvUrl = null;
+
+    // Upload to ImageBB if file is selected
+    if (formData.cvData) {
+      try {
+        const apiKey = "4ba7f7ac04e8b97db1e85e7a46c609d7";
+        const base64Content = formData.cvData.split("base64,")[1];
+        const body = new FormData();
+        body.append("image", base64Content);
+
+        const uploadRes = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
+          method: "POST",
+          body: body,
+        });
+        const uploadData = await uploadRes.json();
+
+        if (uploadData.success) {
+          cvUrl = uploadData.data.url;
+        } else {
+          console.error("ImageBB upload failed:", uploadData);
+        }
+      } catch (err) {
+        console.error("Error uploading to ImageBB:", err);
+      }
+    }
+
+    // If ImageBB failed or skipped, we still have cvData in formData
     const payload = {
       ...formData,
+      cvUrl,
       jobPostingId: job.id,
       position: job.title,
       skills: formData.skills.split(",").map((s) => s.trim()),
@@ -62,7 +90,7 @@ const JobApplyPage = () => {
         alert("File size must be less than 5MB");
         return;
       }
-      
+
       const reader = new FileReader();
       reader.onloadend = () => {
         setFormData((prev) => ({
@@ -86,8 +114,8 @@ const JobApplyPage = () => {
       </div>
 
       <div className="relative mt-20 max-w-4xl mx-auto space-y-8 px-4 md:px-8">
-        <Link 
-          href="/career" 
+        <Link
+          href="/career"
           className="inline-flex items-center text-gray-400 hover:text-white transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
@@ -105,11 +133,20 @@ const JobApplyPage = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 z-10 relative">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="md:col-span-5 bg-[#0A0A0A] border border-white/10 rounded-3xl p-6 h-fit"
             >
+              {job.imageUrl && (
+                <div className="mb-6 overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                  <img
+                    src={job.imageUrl}
+                    alt={`${job.title} cover`}
+                    className="h-64 w-full object-cover"
+                  />
+                </div>
+              )}
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">{job.title}</h1>
               <div className="flex items-center mb-6">
                 <span className="flex items-center text-[#d946ef] bg-[#d946ef]/10 px-3 py-1 rounded-full font-medium text-sm">
@@ -121,7 +158,7 @@ const JobApplyPage = () => {
                   </span>
                 )}
               </div>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="flex items-center text-gray-300">
                   <MapPin size={18} className="text-[#d946ef] mr-3" />
@@ -130,6 +167,10 @@ const JobApplyPage = () => {
                 <div className="flex items-center text-gray-300">
                   <Clock size={18} className="text-[#d946ef] mr-3" />
                   <span>Posted {new Date(job.postedDate).toLocaleDateString()}</span>
+                </div>
+                <div className="flex items-center text-gray-300">
+                  <Briefcase size={18} className="text-[#d946ef] mr-3" />
+                  <span>{job.vacancy || 1} Vacancy</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Users size={18} className="text-[#d946ef] mr-3" />
@@ -145,15 +186,21 @@ const JobApplyPage = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               className="md:col-span-7 bg-[#0A0A0A] border border-white/10 rounded-3xl p-6 md:p-8"
             >
               <div>
                 <h2 className="text-2xl font-bold text-white mb-6">Submit Your Application</h2>
-                
-                {isSuccess ? (
+
+                {job.expiryDate && new Date(job.expiryDate) < new Date() ? (
+                  <div className="bg-red-500/10 border border-red-500/20 text-red-500 px-6 py-8 rounded-2xl text-center">
+                    <Clock size={40} className="mx-auto mb-4 opacity-50" />
+                    <h3 className="text-lg font-semibold mb-2">Application Period Closed</h3>
+                    <p className="text-gray-400">This job posting expired on {new Date(job.expiryDate).toLocaleDateString()}. We are no longer accepting new applications for this position.</p>
+                  </div>
+                ) : isSuccess ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -235,7 +282,7 @@ const JobApplyPage = () => {
 
                     <div className="space-y-1">
                       <label className="text-sm font-medium text-gray-300">Upload CV / Resume (PDF, DOCX)</label>
-                      
+
                       {!formData.cvFilename ? (
                         <div className="relative border-2 border-dashed border-white/20 rounded-xl p-6 hover:border-[#d946ef]/50 transition-colors bg-white/5 text-center group cursor-pointer">
                           <input
