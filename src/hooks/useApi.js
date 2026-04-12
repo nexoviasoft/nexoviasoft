@@ -1,13 +1,66 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 
-const BASE_URL = "https://nexoviasoft-api.vercel.app"
+const BASE_URL = "https://nexoviasoft-api.vercel.app";
 const getFullUrl = (url) => {
   if (url.startsWith("/")) {
     return `${BASE_URL}${url}`;
   }
   return url;
 };
+
+/** url -> { data, isError, error } after settled */
+const queryCache = new Map();
+/** url -> Promise (in-flight dedupe) */
+const inflight = new Map();
+
+/**
+ * Prefetch multiple GET endpoints in parallel (deduped with useQuery).
+ * @param {string[]} urls
+ */
+export async function prefetchQueries(urls) {
+  await Promise.allSettled(urls.map((url) => fetchQuery(url)));
+}
+
+/**
+ * @param {string} url
+ * @param {{ bypassCache?: boolean }} [opts]
+ */
+export async function fetchQuery(url, { bypassCache = false } = {}) {
+  if (bypassCache) {
+    queryCache.delete(url);
+  }
+
+  if (!bypassCache && queryCache.has(url)) {
+    const c = queryCache.get(url);
+    if (c.isError) throw c.error;
+    return c.data;
+  }
+
+  if (!bypassCache && inflight.has(url)) {
+    return inflight.get(url);
+  }
+
+  const p = (async () => {
+    try {
+      const response = await fetch(getFullUrl(url));
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const result = await response.json();
+      queryCache.set(url, { data: result, isError: false, error: null });
+      return result;
+    } catch (err) {
+      queryCache.set(url, { data: null, isError: true, error: err });
+      throw err;
+    } finally {
+      inflight.delete(url);
+    }
+  })();
+
+  inflight.set(url, p);
+  return p;
+}
 
 /**
  * Custom hook for fetching data (GET requests)
@@ -24,35 +77,35 @@ export const useQuery = (url, { skip = false, deps = [] } = {}) => {
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchData = useCallback(async () => {
-    if (skip) return;
+  const fetchData = useCallback(
+    async ({ bypassCache = false } = {}) => {
+      if (skip) return;
 
-    setIsLoading(true);
-    setIsError(false);
-    setError(null);
+      setIsLoading(true);
+      setIsError(false);
+      setError(null);
 
-    try {
-      const response = await fetch(getFullUrl(url));
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      try {
+        const result = await fetchQuery(url, { bypassCache });
+        setData(result);
+      } catch (err) {
+        setIsError(true);
+        setError(err);
+      } finally {
+        setIsLoading(false);
       }
-
-      const result = await response.json();
-      setData(result);
-    } catch (err) {
-      setIsError(true);
-      setError(err);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [url, skip]);
+    },
+    [url, skip]
+  );
 
   useEffect(() => {
+    if (skip) return;
     fetchData();
-  }, [fetchData, ...deps]);
+  }, [fetchData, skip, ...deps]);
 
-  return { data, isLoading, isError, error, refetch: fetchData };
+  const refetch = useCallback(() => fetchData({ bypassCache: true }), [fetchData]);
+
+  return { data, isLoading, isError, error, refetch };
 };
 
 /**

@@ -14,6 +14,7 @@ import Testimonial from "@/components/Home/Testimonial";
 import CosmicBackground from "@/components/Home/CosmicBackground";
 import DevOpsWorkflow from "@/components/Home/DevOpsWorkflow";
 import PortfolioCard from "@/components/case-studies/PortfolioCard";
+import HomePageGate from "@/components/home/HomePageGate";
 
 const TestPages = () => {
   return (
@@ -21,54 +22,56 @@ const TestPages = () => {
       <div className="fixed inset-0 z-0 pointer-events-none">
         <CosmicBackground />
       </div>
-      <div className="relative lg:pt-20 pt-0 z-10">
-        <section>
-          <Banner />
-        </section>
+      <HomePageGate>
+        <div className="relative lg:pt-20 pt-0 z-10">
+          <section>
+            <Banner />
+          </section>
 
-        <section>
-          <Innovation />
-        </section>
+          <section>
+            <Innovation />
+          </section>
 
-        {/* grid-cols-1 lg:grid-cols-12 gap-6 */}
-        <section>
-          <PortfolioCard />
-        </section>
-        <section>
-          <Support />
-        </section>
-        <section>
-          <AboutNexoviaSoft />
-        </section>
-        <section>
-          <Integration />
-        </section>
+          {/* grid-cols-1 lg:grid-cols-12 gap-6 */}
+          <section>
+            <PortfolioCard />
+          </section>
+          <section>
+            <Support />
+          </section>
+          <section>
+            <AboutNexoviaSoft />
+          </section>
+          <section>
+            <Integration />
+          </section>
 
-        {/* <section>
+          {/* <section>
           <Pricing />
         </section> */}
-        <section>
-          <OurProcess />
-        </section>
-        <section>
-          <LaunchYourSite />
-        </section>
+          <section>
+            <OurProcess />
+          </section>
+          <section>
+            <LaunchYourSite />
+          </section>
 
-        <section>
-          <DevOpsWorkflow />
-        </section>
-        <section>
-          <Comparison />
-        </section>
+          <section>
+            <DevOpsWorkflow />
+          </section>
+          <section>
+            <Comparison />
+          </section>
 
-        <section>
-          <Testimonial />
-        </section>
+          <section>
+            <Testimonial />
+          </section>
 
-        <section>
-          <Faq />
-        </section>
-      </div>
+          <section>
+            <Faq />
+          </section>
+        </div>
+      </HomePageGate>
     </div>
   );
 };
