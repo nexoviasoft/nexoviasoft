@@ -1,11 +1,35 @@
 "use client";
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useQuery } from "@/hooks/useApi";
+
 const Banner = () => {
   // Partner logos for marquee
   const { data, isLoading, isError } = useQuery("/hero-crasol");
+  const partners = data?.data ?? [];
+  const marqueeItems =
+    partners.length > 0 ? [...partners, ...partners] : [];
+
+  const trackRef = useRef(null);
+  const [loopPx, setLoopPx] = useState(0);
+
+  useLayoutEffect(() => {
+    if (isLoading || isError || marqueeItems.length === 0) return;
+
+    const el = trackRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const w = el.scrollWidth;
+      if (w > 0) setLoopPx(w / 2);
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [marqueeItems, isLoading, isError]);
 
   return (
     <div className="min-h-screen text-white  mt-2 md:-mt-8  overflow-hidden bg-transparent">
@@ -72,42 +96,63 @@ const Banner = () => {
             </button>
           </motion.div>
 
-          {/* Partner Logos Marquee */}
+          {/* Partner Logos — auto-sliding marquee */}
           <motion.div
-            className="w-full max-w-4xl overflow-hidden relative"
+            className="w-full max-w-4xl overflow-hidden relative py-16 md:py-24"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.3 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            {/* Gradient masks for smooth fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-            <div className="flex items-center justify-center gap-16 md:gap-24 grayscale">
-              {isLoading ? (
+            {isLoading ? (
+              <div className="flex items-center justify-center py-4">
                 <span className="text-gray-500 animate-pulse">
                   Loading partners...
                 </span>
-              ) : isError ? (
+              </div>
+            ) : isError ? (
+              <div className="flex items-center justify-center py-4">
                 <span className="text-red-500 text-sm">
                   Failed to load partners
                 </span>
-              ) : (
-                data?.data?.map((item, index) => (
+              </div>
+            ) : marqueeItems.length > 0 ? (
+              <motion.div
+                ref={trackRef}
+                className="flex w-max items-center gap-12 md:gap-20 grayscale will-change-transform"
+                initial={{ x: 0 }}
+                animate={loopPx > 0 ? { x: -loopPx } : { x: 0 }}
+                transition={
+                  loopPx > 0
+                    ? {
+                        x: {
+                          duration: 35,
+                          repeat: Infinity,
+                          ease: "linear",
+                          repeatType: "loop",
+                        },
+                      }
+                    : undefined
+                }
+              >
+                {marqueeItems.map((item, index) => (
                   <div
-                    key={item.id || index}
-                    className="relative w-40 h-40 grayscale opacity-70 hover:opacity-100 transition-opacity"
+                    key={`${item.id ?? "p"}-${index}`}
+                    className="relative h-[60px] w-[60px] shrink-0 opacity-70 hover:opacity-100 transition-opacity"
                   >
                     <Image
                       src={item.logoUrl}
                       alt="Partner Logo"
-                      fill
-                      className="object-contain"
+                      width={60}
+                      height={60}
+                      className="object-contain h-[60px] w-[60px]"
                     />
                   </div>
-                ))
-              )}
-            </div>
+                ))}
+              </motion.div>
+            ) : null}
           </motion.div>
         </div>
       </section>

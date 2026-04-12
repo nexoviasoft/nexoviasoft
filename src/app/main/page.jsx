@@ -44,9 +44,9 @@ const TestPages = () => {
           <Integration />
         </section>
 
-        <section>
+        {/* <section>
           <Pricing />
-        </section>
+        </section> */}
         <section>
           <OurProcess />
         </section>

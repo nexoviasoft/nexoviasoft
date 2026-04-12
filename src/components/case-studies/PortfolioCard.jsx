@@ -1,20 +1,59 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Check, ExternalLink } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import SmoothButton from "@/Share/SmoothButton";
-import { caseStudiesData } from "@/constants/caseStudies";
 import Link from "next/link";
 import { useQuery } from "@/hooks/useApi";
 
+/** Shown first and selected by default when present (API category name). */
+const DEFAULT_CATEGORY_NAME = "Web Development";
+
 const PortfolioCard = () => {
-
-  // const projects = caseStudiesData;
-
   const { data, isLoading, isError } = useQuery("/case-studies");
-  console.log("case-studies", data);
 
-  // gfgggg
+  const projects = data?.data ?? [];
+
+  const categoryTabs = useMemo(() => {
+    const map = new Map();
+    for (const p of projects) {
+      for (const c of p.categories ?? []) {
+        if (c?.id != null && c?.name) map.set(c.id, c);
+      }
+    }
+    const sorted = Array.from(map.values()).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+    const preferredIdx = sorted.findIndex(
+      (c) =>
+        c.name.trim().toLowerCase() === DEFAULT_CATEGORY_NAME.toLowerCase()
+    );
+    if (preferredIdx <= 0) return sorted;
+    const [preferred] = sorted.splice(preferredIdx, 1);
+    return [preferred, ...sorted];
+  }, [projects]);
+
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
+
+  const effectiveCategoryId = useMemo(() => {
+    if (categoryTabs.length === 0) return null;
+    if (
+      activeCategoryId != null &&
+      categoryTabs.some((c) => c.id === activeCategoryId)
+    ) {
+      return activeCategoryId;
+    }
+    return categoryTabs[0].id;
+  }, [categoryTabs, activeCategoryId]);
+
+  const filteredProjects = useMemo(() => {
+    if (categoryTabs.length === 0 || effectiveCategoryId == null) {
+      return projects;
+    }
+    return projects.filter((p) =>
+      p.categories?.some((c) => c.id === effectiveCategoryId)
+    );
+  }, [projects, effectiveCategoryId, categoryTabs.length]);
 
   return (
     <div
@@ -39,9 +78,28 @@ const PortfolioCard = () => {
           </motion.div>
         </div>
 
+        {categoryTabs.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-12 px-1">
+            {categoryTabs.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setActiveCategoryId(cat.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${
+                  effectiveCategoryId === cat.id
+                    ? "border-[#d946ef]/60 bg-[#d946ef]/15 text-white shadow-[0_0_20px_-5px_rgba(217,70,239,0.4)]"
+                    : "border-white/10 bg-white/5 text-gray-300 hover:border-white/20 hover:bg-white/10"
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Portfolio Grid */}
         <div className="space-y-8">
-          {data?.data?.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={index}
               className="grid grid-cols-2 lg:grid-cols-12  md:gap-6"
